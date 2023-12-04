@@ -149,19 +149,23 @@ export default {
               console.log(res.data)
               if (res.data.status === 200) {
                 this.setUser(res.data)
-                localStorage.setItem("ticket", JSON.stringify(res.data))
-              }else{
+                localStorage.setItem(
+                  "ticket",
+                  JSON.stringify(res.data)
+                )
+                this.$router.push('/')
+              } else {
                 const h = this.$createElement;
                 this.$notify({
-                  title:"登录失败",
+                  title: "登录失败",
                   messge: h(
                     "i",
-                    {style:"color:teal"},
-                    "文案文案"
+                    { style: "color:teal" },
+                    "用户名密码错误"
                   ),
-                })
+                });
               }
-            })
+            });
           }
           if (this.activeTab === "register") {
             console.log(this.registerForm)
