@@ -6,6 +6,7 @@ import qs from "qs"
 import store from "../store"
 
 axios.defaults.baseURL = "http://localhost:8080/" 
+// axios.defaults.baseURL = "http://127.0.0.1:5000/"
 
 axios.defaults.timeout = sysConfig.TIMEOUT
 
@@ -35,17 +36,18 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
     (response) => {
         const res = response.data
-        if(res.code) {
+        if (res.code) {
             if (res.code === 200) {
-                return Promise.resolve(res) }
-            else if(res.code === 400) {
+                return Promise.resolve(res)
+            }
+            else if (res.code === 400) {
                 ElNotification({
                     title: '提示',
                     message: '请先登录',
                     type: 'warning'
                 })
                 router.push('/login')
-            }else if(res.code === 401) {
+            } else if (res.code === 401) {
                 ElNotification({
                     title: '提示',
                     message: '登录已过期',
@@ -53,14 +55,14 @@ axios.interceptors.response.use(
                 })
                 localStorage.removeItem('TOKEN')
                 router.push('/login')
-            } else if(res.code === 404) {
+            } else if (res.code === 404) {
                 ElNotification({
                     title: '提示',
                     message: '您无权访问该页面',
                     type: 'warning'
                 })
                 router.push('/login')
-            }else {
+            } else {
                 return Promise.reject(res)
             }
         }
@@ -86,7 +88,7 @@ axios.interceptors.response.use(
                     confirmButtonText: '重新登录'
                 }).then(() => {
                     router.replace({ path: '/login' })
-                }).catch(() => {})
+                }).catch(() => { })
             } else {
                 ElNotification.error({
                     title: '请求错误',

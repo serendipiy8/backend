@@ -54,6 +54,8 @@
 // import { validate } from 'json-schema';
 
 import api from "@/api"
+import { mapMutations } from "vuex"
+
 
 export default {
   data() {
@@ -137,6 +139,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations("login", ["setUser"]),
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
@@ -144,8 +147,19 @@ export default {
             console.log(this.loginForm)
             api.login(this.loginForm).then(res => {
               console.log(res.data)
-              if(res.data.status === 200){
-                
+              if (res.data.status === 200) {
+                this.setUser(res.data)
+                localStorage.setItem("ticket", JSON.stringify(res.data))
+              }else{
+                const h = this.$createElement;
+                this.$notify({
+                  title:"登录失败",
+                  messge: h(
+                    "i",
+                    {style:"color:teal"},
+                    "文案文案"
+                  ),
+                })
               }
             })
           }

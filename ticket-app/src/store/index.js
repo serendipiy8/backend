@@ -1,5 +1,11 @@
 import { createStore } from 'vuex';
 import userModule from './users';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import login from "./modules/login"
+
+Vue.use(Vuex)
+
 
 const store = createStore({
   modules: {
@@ -8,4 +14,10 @@ const store = createStore({
   }
 });
 
-export default store;
+export default new Vuex.Store({
+  modules: {
+    login
+  }
+})
+
+
