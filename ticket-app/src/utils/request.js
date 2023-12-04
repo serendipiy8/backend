@@ -1,107 +1,97 @@
-import axios from 'axios'
-import { ElNotification, ElMessageBox } from 'element-plus'
-import sysConfig from "@/config"
-import router from '@/router'
+import axios from "axios"
 import qs from "qs"
+import router from "../router"
 import store from "../store"
 
-axios.defaults.baseURL = "http://localhost:8080/" 
-// axios.defaults.baseURL = "http://127.0.0.1:5000/"
+const toLogin = () =>{
+    router.push("/login")
+}
 
-axios.defaults.timeout = sysConfig.TIMEOUT
+const errorHandle = (status,info) =>{
+    switch(status){
+        case 400:
+            console.log("服务器收到客户端通过PUT或者POST请求提交的表示，表示的格式正确，但服务器不懂它什么意思");
+            toLogin();
+            break;
+        case 401:
+            console.log("客户端试图对一个受保护的资源进行操作，却又没有提供正确的认证证书");
+            toLogin();
+            break;
+        case 403:
+            console.log("客户端请求的结构正确，但是服务器不想处理它");
+            toLogin();
+            break;
+        case 404:
+            console.log("资源被围定义(网络请求地址错误)");
+            break;
+        case 500:
+            console.log("执行请求处理代码时遇到了异常，它们就发送此响应代码");
+            break;
+        case 503:
+            console.log("最可能的原因是资源不足：服务器突然收到太多请求，以至于无法全部处理");
+            break;
+        default:
+            console.log(info);
+            break;
+    }
+}
 
-// HTTP request 拦截器
-axios.interceptors.request.use(
+const instance = axios.create({
+    timeout:5000
+})
 
-    (config) => {
-        let token = localStorage.getItem('TOKEN')
-        if (token) {
-            config.headers['token'] = token
+instance.all = axios.all;
+instance.spread = axios.spread
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+
+instance.interceptors.request.use(
+    config =>{
+        if(config.method === 'post'){
+            config.data = qs.stringify(config.data);
         }
-        // 避免被缓存命中，强制拉取远程
-        if (!sysConfig.REQUEST_CACHE && config.method === 'get') {
-            config.params = config.params || {}
-            config.params['_'] = new Date().getTime()
-
-        }
-        Object.assign(config.headers, sysConfig.HEADERS)
-        return config
+        // 判断token是否存在，存在就添加到请求头上
+        // const token = store.state.loginModule.user.token;
+        // if(token){
+        //     config.headers.authorization = store.state.loginModule.user.token;
+        // }
+        return config;
     },
-    (error) => {
-        return Promise.reject(error)
+    error => Promise.reject(error)
+)
+
+instance.interceptors.response.use(
+    response => response.status === 200 ? Promise.resolve(response) : Promise.reject(response) ,
+    error =>{
+        const { response } = error;
+        if(response){
+            errorHandle(response.status,response.data);
+            return Promise.reject(response);
+        }else{
+            console.log("请求被中断");
+        }
     }
 )
 
-// HTTP response 拦截器
-axios.interceptors.response.use(
-    (response) => {
-        const res = response.data
-        if (res.code) {
-            if (res.code === 200) {
-                return Promise.resolve(res)
-            }
-            else if (res.code === 400) {
-                ElNotification({
-                    title: '提示',
-                    message: '请先登录',
-                    type: 'warning'
-                })
-                router.push('/login')
-            } else if (res.code === 401) {
-                ElNotification({
-                    title: '提示',
-                    message: '登录已过期',
-                    type: 'warning'
-                })
-                localStorage.removeItem('TOKEN')
-                router.push('/login')
-            } else if (res.code === 404) {
-                ElNotification({
-                    title: '提示',
-                    message: '您无权访问该页面',
-                    type: 'warning'
-                })
-                router.push('/login')
-            } else {
-                return Promise.reject(res)
-            }
-        }
-        return Promise.resolve(res)
-    },
-    (error) => {
-        if (error.response) {
-            if (error.response.status === 404) {
-                ElNotification.error({
-                    title: '请求错误',
-                    message: "Status:404，正在请求不存在的服务器记录！"
-                })
-            } else if (error.response.status === 500) {
-                ElNotification.error({
-                    title: '请求错误',
-                    message: error.response.data.message || "Status:500，服务器发生错误！"
-                })
-            } else if (error.response.status === 401) {
-                ElMessageBox.confirm('当前用户已被登出或无权限访问当前资源，请尝试重新登录后再操作。', '无权限访问', {
-                    type: 'error',
-                    closeOnClickModal: false,
-                    center: true,
-                    confirmButtonText: '重新登录'
-                }).then(() => {
-                    router.replace({ path: '/login' })
-                }).catch(() => { })
-            } else {
-                ElNotification.error({
-                    title: '请求错误',
-                    message: error.response.data.message || `Status:${error.response.status}，未知错误！`
-                })
-            }
-        } else {
-            ElNotification.error({
-                title: '请求错误',
-                message: "请求服务器无响应！"
-            })
-        }
-        return Promise.reject(error.response)
-    }
-)
-export default axios
+export function get(url,params){
+    return new Promise((resolve,reject) =>{
+        instance.get(url,{
+            params
+        }).then(res =>{
+            resolve(res.data);
+        }).catch(err =>{
+            reject(err.data);
+        })
+    })
+}
+
+export function post(url,params){
+    return new Promise((resolve,reject) =>{
+        instance.post(url,params).then(res =>{
+            resolve(res.data)
+        }).catch(err =>{
+            reject(err.data)
+        })
+    })
+}
+
+export default instance

@@ -9,8 +9,6 @@ import './router/permission'
 
 const app = createApp(App)
 app.use(ElementPlus)
-
 app.use(router)
-app.use(store)
-
 app.mount('#app')
+app.use(store)

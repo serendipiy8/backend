@@ -7,12 +7,6 @@ const client = mysql.createConnection({
     password: "20030205",
     database: "ticketsystem"
 })
-// const client = mysql.createConnection({
-//     host: "10.110.16.103",
-//     user: "root",
-//     password: "1234",
-//     database: "project_1"
-// })
 
 client.connect((err) => {
     if (err) throw err

@@ -55,7 +55,7 @@
 
 import api from "@/api"
 import { mapMutations } from "vuex"
-
+import { h } from 'vue'
 
 export default {
   data() {
@@ -155,17 +155,27 @@ export default {
                 )
                 this.$router.push('/')
               } else {
-                const h = this.$createElement;
-                this.$notify({
+                // const h = this.$createElement;
+                // this.$notify({
+                //   title: "登录失败",
+                //   message: h(
+                //     "i",
+                //     { style: "color:teal" },
+                //     "用户名密码错误"
+                //   ),
+                // });
+                const notification = {
                   title: "登录失败",
-                  messge: h(
+                  message: h(
                     "i",
                     { style: "color:teal" },
                     "用户名密码错误"
                   ),
-                });
+                };
+
+                this.$notify(notification);
               }
-            });
+            })
           }
           if (this.activeTab === "register") {
             console.log(this.registerForm)
