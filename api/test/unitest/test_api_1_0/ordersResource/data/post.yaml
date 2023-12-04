@@ -1,0 +1,22 @@
+- name: orders添加接口
+  request:
+    method: post
+    url: /api_1_0/orders
+    headers:
+      token: token
+    data:
+      OrderID: 
+      UserID: 
+      TicketID: 
+      PurchaseTime: 
+      OrderStatus: 
+      Quantity: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+    - eq:
+        - code
+        - "2000"
+    

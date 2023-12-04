@@ -1,0 +1,19 @@
+- name: adminfunctions添加接口
+  request:
+    method: post
+    url: /api_1_0/adminfunctions
+    headers:
+      token: token
+    data:
+      FunctionID: 
+      Name: 
+      Permissions: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+    - eq:
+        - code
+        - "2000"
+    

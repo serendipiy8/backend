@@ -1,0 +1,21 @@
+- name: administrators添加接口
+  request:
+    method: post
+    url: /api_1_0/administrators
+    headers:
+      token: token
+    data:
+      AdminID: 
+      AdminType: 
+      Account: 
+      Password: 
+      Permissions: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+    - eq:
+        - code
+        - "2000"
+    

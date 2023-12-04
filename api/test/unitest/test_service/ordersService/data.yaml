@@ -1,0 +1,17 @@
+-
+  module_name: ordersService
+  class_name: ordersService
+  function_name: xxx
+  params:
+      OrderID: 
+      UserID: 
+      TicketID: 
+      PurchaseTime: 
+      OrderStatus: 
+      Quantity: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

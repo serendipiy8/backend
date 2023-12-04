@@ -1,0 +1,16 @@
+-
+  module_name: theatersService
+  class_name: theatersService
+  function_name: xxx
+  params:
+      TheaterID: 
+      TheaterName: 
+      Address: 
+      Capacity: 
+      AdminID: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

@@ -1,0 +1,17 @@
+-
+  module_name: ticketpricesService
+  class_name: ticketpricesService
+  function_name: xxx
+  params:
+      TicketID: 
+      ShowID: 
+      Price: 
+      Category: 
+      TotalQuantity: 
+      RemainingQuantity: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

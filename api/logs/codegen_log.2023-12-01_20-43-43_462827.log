@@ -1,0 +1,1480 @@
+2023-12-01 20:43:43.405 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x000001E8C9D71FC0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x000001E8CBA6D300>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001E8CB8F31C0>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001E8CB8F31C0>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 27308)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001E8CB8F31C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001E8C638EE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 27308)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001E8C638EB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 27308)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 27308)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 27308)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001E8C90D1C30>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 27308)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001E8C6A07E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001E8C90D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54722)
+    │    │               └ <socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001E8C8258040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001E8C90D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54722)
+    │    │              └ <socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001E8C8258160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001E8C90D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001E8C90D1C30>
+    │    │                   │        └ ('127.0.0.1', 54722)
+    │    │                   └ <socket.socket fd=720, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001E8C90D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001E8C9251AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001E8CB8C6920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001E8C8259870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001E8CB8C6920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001E8CB8C6920>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001E8CB8C6DD0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001E8C90D1C30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001E8CB8C6920>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001E8CB9D3490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001E8CB873990>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001E8CB9D1EA0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=720>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001E8CB8C6DD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001E8CB9D1EA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=720>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001E8C95ABC70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001E8C95AB1C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001E8C95AB130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (POST, OPTIONS) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001E8CA1967A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001E8C95AB400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000001E8CB54C040>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x000001E8CB54C5E0>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 33, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ (1, '24', '423')
+              │       └ <function query_to_dict at 0x000001E8CB39AB00>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ (1, '24', '423')
+                   └ (1, '24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys
+2023-12-01 20:44:32.947 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x000001F327611AB0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x000001F327D0FEE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001F323EAA710>
+    └ <Thread(Thread-1 (serve_forever), started daemon 25108)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001F323EAA440>
+    └ <Thread(Thread-1 (serve_forever), started daemon 25108)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 25108)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 25108)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001F328111F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 25108)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001F323EABE20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F328111F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54748)
+    │    │               └ <socket.socket fd=924, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001F323EB4040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F328111F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54748)
+    │    │              └ <socket.socket fd=924, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001F323EB4160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F328111F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001F328111F30>
+    │    │                   │        └ ('127.0.0.1', 54748)
+    │    │                   └ <socket.socket fd=924, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F328111F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001F325C5C790>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F328158280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001F325AA57E0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F328158280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001F328158280>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001F3280EBA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F328111F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F328158280>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001F3281665F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001F3280BB450>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001F328166C20>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=924>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001F3280EBA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001F328166C20>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=924>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001F326507F40>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001F326507490>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001F326507400>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (POST, OPTIONS) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001F327A0AF80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001F3265076D0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000001F327DACCA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x000001F327DAD120>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 33, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ (1, '24', '423')
+              │       └ <function query_to_dict at 0x000001F327C2DB40>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ (1, '24', '423')
+                   └ (1, '24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys
+2023-12-01 20:45:07.301 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x0000017D45BF1AB0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x0000017D467E2440>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000017D424AE710>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24064)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000017D424AE440>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24064)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 24064)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 24064)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000017D466F1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24064)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000017D424AFE20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017D466F1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54753)
+    │    │               └ <socket.socket fd=984, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000017D424B4040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017D466F1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54753)
+    │    │              └ <socket.socket fd=984, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000017D424B4160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017D466F1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000017D466F1F30>
+    │    │                   │        └ ('127.0.0.1', 54753)
+    │    │                   └ <socket.socket fd=984, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017D466F1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000017D4423C790>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017D4673C1F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000017D440857E0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017D4673C1F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000017D4673C1F0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000017D466CBA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017D466F1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017D4673C1F0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000017D467472E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000017D466976F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000017D46746200>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=984>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000017D466CBA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000017D46746200>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=984>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000017D44AE7F40>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000017D44AE7490>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000017D44AE7400>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000017D45FD6F80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000017D44AE76D0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x0000017D4638CCA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x0000017D4638D120>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 33, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ (1, '24', '423')
+              │       └ <function query_to_dict at 0x0000017D4620DB40>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ (1, '24', '423')
+                   └ (1, '24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys
+2023-12-01 20:45:35.417 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x000002472F3D1AB0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x000002472FFE1BA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002472BCAE710>
+    └ <Thread(Thread-1 (serve_forever), started daemon 21468)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002472BCAE440>
+    └ <Thread(Thread-1 (serve_forever), started daemon 21468)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 21468)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 21468)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002472FED1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 21468)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002472BCAFE20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002472FED1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54767)
+    │    │               └ <socket.socket fd=860, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000002472BCB4040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002472FED1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54767)
+    │    │              └ <socket.socket fd=860, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000002472BCB4160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002472FED1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002472FED1F30>
+    │    │                   │        └ ('127.0.0.1', 54767)
+    │    │                   └ <socket.socket fd=860, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002472FED1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002472DA1C790>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002472FF181C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002472D8657E0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002472FF181C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002472FF181C0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002472FEABA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002472FED1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002472FF181C0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002472FF27D90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002472FE7AC00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002472FF279A0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=860>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002472FEABA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002472FF279A0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=860>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000002472E2C7F40>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002472E2C7490>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002472E2C7400>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002472F7CAF80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002472E2C76D0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002472FB6CCA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x000002472FB6D120>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 32, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ ('24', '423')
+              │       └ <function query_to_dict at 0x000002472F9EDB40>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ ('24', '423')
+                   └ ('24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys
+2023-12-01 20:48:56.093 | ERROR    | utils.loggings:exception:40 - type object 'UsersService' has no attribute 'account'
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001ED6E92E710>
+    └ <Thread(Thread-1 (serve_forever), started daemon 18204)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001ED6E92E440>
+    └ <Thread(Thread-1 (serve_forever), started daemon 18204)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 18204)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 18204)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001ED72B51F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 18204)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001ED6E92FE20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001ED72B51F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54879)
+    │    │               └ <socket.socket fd=896, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001ED6E934040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001ED72B51F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54879)
+    │    │              └ <socket.socket fd=896, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001ED6E934160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001ED72B51F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001ED72B51F30>
+    │    │                   │        └ ('127.0.0.1', 54879)
+    │    │                   └ <socket.socket fd=896, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001ED72B51F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001ED7069C790>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001ED72B9C340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001ED704E57E0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001ED72B9C340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001ED72B9C340>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001ED72B2BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001ED72B51F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001ED72B9C340>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001ED72BA6A70>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001ED72AF78B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001ED72BA5BD0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=896>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001ED72B2BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001ED72BA5BD0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=896>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001ED70F47F40>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001ED70F47490>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001ED70F47400>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (POST, OPTIONS) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001ED7244AF80>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001ED70F476D0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000001ED727ECCA0>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x000001ED727ED120>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 23, in login
+    cls.account,
+    └ <class 'service.usersService.UsersService'>
+
+AttributeError: type object 'UsersService' has no attribute 'account'
+2023-12-01 20:51:04.706 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x00000209CF701FC0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x00000209D140C6A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x00000209D12871C0>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x00000209D12871C0>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 24180)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x00000209D12871C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000209CBCDEE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 24180)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000209CBCDEB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 24180)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 24180)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 24180)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000209CEA61C30>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 24180)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x00000209CC397E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000209CEA61C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54925)
+    │    │               └ <socket.socket fd=1100, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x00000209CDBE8040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000209CEA61C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54925)
+    │    │              └ <socket.socket fd=1100, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x00000209CDBE8160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000209CEA61C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000209CEA61C30>
+    │    │                   │        └ ('127.0.0.1', 54925)
+    │    │                   └ <socket.socket fd=1100, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000209CEA61C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000209CEBE1AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000209D1287340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000209CDBE9870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000209D1287340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000209D1287340>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000209D1256DD0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000209CEA61C30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000209D1287340>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000209D1361510>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000209D1203220>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000209D13620E0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1100>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000209D1256DD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000209D13620E0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1100>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x00000209CEF3BC70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000209CEF3B1C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000209CEF3B130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (POST, OPTIONS) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000209CFB227A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000209CEF3B400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x00000209D0EDC040>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x00000209D0EDC5E0>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 32, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ ('24', '423')
+              │       └ <function query_to_dict at 0x00000209D0D2AB00>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ ('24', '423')
+                   └ ('24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys
+2023-12-01 20:51:57.825 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x000002376F03DFC0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x00000237707DDEA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000023770BC31F0>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000023770BC31F0>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 25308)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000023770BC31F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002376B61EE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 25308)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002376B61EB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 25308)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 25308)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 25308)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002376E3A1C60>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 25308)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002376BCD7E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002376E3A1C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54962)
+    │    │               └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000002376D528040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002376E3A1C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54962)
+    │    │              └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000002376D528160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002376E3A1C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002376E3A1C60>
+    │    │                   │        └ ('127.0.0.1', 54962)
+    │    │                   └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002376E3A1C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002376E525AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023770B96950>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002376D529870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023770B96950>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000023770B96950>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000023770B96E00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002376E3A1C60>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023770B96950>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000023770CB3520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000023770B43A70>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023770CB24D0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1148>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000023770B96E00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023770CB24D0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1148>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000002376E863C70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002376E8631C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002376E863130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (POST, OPTIONS) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002376F4667A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002376E863400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002377081C040>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x000002377081C5E0>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 32, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ ('24', '423')
+              │       └ <function query_to_dict at 0x0000023770666B00>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ ('24', '423')
+                   └ ('24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys
+2023-12-01 20:53:48.168 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x0000022CE2371FC0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x0000022CE3AD6620>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000022CE3EF71C0>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000022CE3EF71C0>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 22408)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000022CE3EF71C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000022CDE96EE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 22408)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000022CDE96EB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 22408)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 22408)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 22408)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000022CE16D1C30>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 22408)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000022CDF007E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000022CE16D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 55005)
+    │    │               └ <socket.socket fd=892, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000022CE0858040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000022CE16D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 55005)
+    │    │              └ <socket.socket fd=892, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000022CE0858160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000022CE16D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000022CE16D1C30>
+    │    │                   │        └ ('127.0.0.1', 55005)
+    │    │                   └ <socket.socket fd=892, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000022CE16D1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000022CE1851AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000022CE3EC6920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000022CE0859870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000022CE3EC6920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000022CE3EC6920>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000022CE3EC6DD0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000022CE16D1C30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000022CE3EC6920>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000022CE3FD1990>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000022CE3E73370>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000022CE3FD1EA0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=892>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000022CE3EC6DD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000022CE3FD1EA0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=892>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000022CE1BAFC70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000022CE1BAF1C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000022CE1BAF130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000022CE27927A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000022CE1BAF400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x0000022CE3B4C040>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x0000022CE3B4C5E0>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 32, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ ('24', '423')
+              │       └ <function query_to_dict at 0x0000022CE3996B00>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ ('24', '423')
+                   └ ('24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys
+2023-12-01 20:54:01.069 | ERROR    | utils.loggings:exception:40 - keys
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 202, in _key_not_found
+    self._key_fallback(key, None)
+    │    │             └ 'keys'
+    │    └ <function ResultMetaData._key_fallback at 0x00000275095DDFC0>
+    └ <sqlalchemy.engine.result.SimpleResultMetaData object at 0x000002750B2ADF00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 141, in _key_fallback
+    raise KeyError(key) from err
+                   │         └ None
+                   └ 'keys'
+
+KeyError: 'keys'
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000002750B1671C0>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000002750B1671C0>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 20740)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000002750B1671C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000027505BEEE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 20740)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000027505BEEB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 20740)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 20740)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 20740)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000027508941C30>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 20740)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000027506277E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000027508941C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 55021)
+    │    │               └ <socket.socket fd=724, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000027507AC8040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000027508941C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 55021)
+    │    │              └ <socket.socket fd=724, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000027507AC8160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000027508941C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000027508941C30>
+    │    │                   │        └ ('127.0.0.1', 55021)
+    │    │                   └ <socket.socket fd=724, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000027508941C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000027508AC1AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002750B136920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000027507AC9870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002750B136920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002750B136920>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002750B136DD0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000027508941C30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002750B136920>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002750B23ECB0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002750AFEF140>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002750B23E7A0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=724>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002750B136DD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002750B23E7A0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=724>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000027508E1FC70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000027508E1F1C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000027508E1F130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000027509A027A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000027508E1F400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002750ADBC040>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 30, in login
+    res=UsersService.login(**kwargs)
+        │            │       └ {'account': '24', 'password': '423'}
+        │            └ <classmethod(<function UsersService.login at 0x000002750ADBC5E0>)>
+        └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 32, in login
+    user_info=commons.query_to_dict(user_info)
+              │       │             └ ('24', '423')
+              │       └ <function query_to_dict at 0x000002750AC0AB00>
+              └ <module 'utils.commons' from 'C:\\Users\\Lenovo\\PycharmProjects\\api_project\\api\\utils\\commons.py'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\utils\commons.py", line 67, in query_to_dict
+    res = dict(zip(models.keys(), models))
+                   │              └ ('24', '423')
+                   └ ('24', '423')
+
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 60, in sqlalchemy.cyextension.resultproxy.BaseRow.__getattr__
+  File "lib\\sqlalchemy\\cyextension\\resultproxy.pyx", line 57, in sqlalchemy.cyextension.resultproxy.BaseRow._get_by_key_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\result.py", line 204, in _key_not_found
+    raise AttributeError(ke.args[0]) from ke
+
+AttributeError: keys

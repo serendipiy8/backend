@@ -1,0 +1,11 @@
+- name: adminfunctions查询接口
+  request:
+    method: get
+    url: /api_1_0/adminfunctions
+    headers:
+      token: token
+  validate:
+    - eq:
+        - status_code
+        - 200
+    

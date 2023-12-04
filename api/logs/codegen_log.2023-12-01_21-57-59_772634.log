@@ -1,0 +1,1183 @@
+2023-12-01 21:57:59.677 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1364, "Field 'UserID' doesn't have a default value")
+[SQL: INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001F6B7FB85E0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001F6B8369750>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001F6B9BF0490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Passwo...
+    │      │       └ 'INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName...
+    │      └ <function Cursor.execute at 0x000001F6B850AEF0>
+    └ <pymysql.cursors.Cursor object at 0x000001F6B9BF3A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+             │    └ <function Cursor._query at 0x000001F6B850B370>
+             └ <pymysql.cursors.Cursor object at 0x000001F6B9BF3A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+    │    └ <function Connection.query at 0x000001F6B855E680>
+    └ <pymysql.connections.Connection object at 0x000001F6B9BF07F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001F6B855ECB0>
+    │    │                └ <pymysql.connections.Connection object at 0x000001F6B9BF07F0>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000001F6B9BF07F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001F6B855F490>
+    └ <pymysql.connections.MySQLResult object at 0x000001F6B9AD3E80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001F6B9AD3E80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001F6B855D240>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001F6B9BF0D00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001F6B9BF0D00>
+    │   └ <function raise_mysql_exception at 0x000001F6B8430670>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Field 'UserID' doesn't have a default value"
+          │          └ 1364
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1364, "Field 'UserID' doesn't have a default value")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001F6B9AD3640>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001F6B9AD3640>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 16872)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001F6B9AD3640>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001F6B451EE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 16872)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001F6B451EB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 16872)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 16872)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 16872)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001F6B72B5C60>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 16872)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001F6B4BE7E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F6B72B5C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 52373)
+    │    │               └ <socket.socket fd=1260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000001F6B6438040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F6B72B5C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 52373)
+    │    │              └ <socket.socket fd=1260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000001F6B6438160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F6B72B5C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001F6B72B5C60>
+    │    │                   │        └ ('127.0.0.1', 52373)
+    │    │                   └ <socket.socket fd=1260, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F6B72B5C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001F6B7435AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F6B9AD3A00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001F6B6439870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F6B9AD3A00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001F6B9AD3A00>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001F6B9AA6890>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F6B72B5C60>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F6B9AD3A00>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001F6B9BC1510>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001F6B9A53300>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001F6B9BC1B40>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1260>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001F6B9AA6890>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001F6B9BC1B40>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1260>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000001F6B7773C70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001F6B77731C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001F6B7773130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.register'
+           │    │           │    │              └ <Rule '/api_1_0/users/register' (POST, OPTIONS) -> users.register>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001F6B83767A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001F6B7773400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 21, in register
+    return UsersOtherResource.register()
+           │                  └ <classmethod(<function UsersOtherResource.register at 0x000001F6B972C280>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 52, in register
+    res = UsersService.register(**kwargs)
+          │            │          └ {'account': '26', 'password': '423'}
+          │            └ <classmethod(<function UsersService.register at 0x000001F6B9A8ACB0>)>
+          └ <class 'service.usersService.UsersService'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 62, in register
+    new_user.add(Account=account, Password=password)
+    │        │           │                 └ '423'
+    │        │           └ '26'
+    │        └ <classmethod(<function UsersController.add at 0x000001F6B96F9E10>)>
+    └ <UsersService (transient 2159188721472)>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\controller\usersController.py", line 31, in add
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x000001F6B82DBAC0>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001F6B79301C0>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x000001F6B82E5BC0>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001F6B79301C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x000001F6B82553F0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F6B958BD00>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F6B958BD00>
+                └ <function SessionTransaction.commit at 0x000001F6B8255360>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x000001F6B82552D0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F6B958BD00>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F6B958BD00>
+                └ <function SessionTransaction._prepare_impl at 0x000001F6B82551B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x000001F6B8257EB0>
+    │    └ <sqlalchemy.orm.session.Session object at 0x000001F6B9BF0400>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F6B958BD00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x000001F6B825C0D0>
+    └ <sqlalchemy.orm.session.Session object at 0x000001F6B9BF0400>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x000001F6B971AF00>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1364, "Field \'UserID\' doesn\'t have a default value")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x000001F6B8242290>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001F6B9BF19F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001F6B9BF19F0>
+    │   └ <function SaveUpdateAll.execute at 0x000001F6B8242B90>
+    └ SaveUpdateAll(Mapper[Users(users)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x000001F6B822D120>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x000001F6B822DB40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x000001F6B7F14EE0>
+             └ <sqlalchemy.engine.base.Connection object at 0x000001F6B9BF0490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x000001F6B9BF1E70>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001F6B7F151B0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001F6B9BF0490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001F6B7F15360>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001F6B9BF0490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001F6B7F153F0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001F6B9BF0490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001F6B7F15630>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001F6B9BF0490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1364, "Field 'UserID' doesn't have a default value")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1364, "Field 'UserID' doesn't have a default value"), <traceback ob...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1364, "Field \'UserID\' doesn\'t have a default value")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001F6B7FB85E0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001F6B8369750>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001F6B9BF0490>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Passwo...
+    │      │       └ 'INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName...
+    │      └ <function Cursor.execute at 0x000001F6B850AEF0>
+    └ <pymysql.cursors.Cursor object at 0x000001F6B9BF3A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+             │    └ <function Cursor._query at 0x000001F6B850B370>
+             └ <pymysql.cursors.Cursor object at 0x000001F6B9BF3A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+    │    └ <function Connection.query at 0x000001F6B855E680>
+    └ <pymysql.connections.Connection object at 0x000001F6B9BF07F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001F6B855ECB0>
+    │    │                └ <pymysql.connections.Connection object at 0x000001F6B9BF07F0>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000001F6B9BF07F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001F6B855F490>
+    └ <pymysql.connections.MySQLResult object at 0x000001F6B9AD3E80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001F6B9AD3E80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001F6B855D240>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001F6B9BF0D00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001F6B9BF0D00>
+    │   └ <function raise_mysql_exception at 0x000001F6B8430670>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Field 'UserID' doesn't have a default value"
+          │          └ 1364
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1364, "Field 'UserID' doesn't have a default value")
+[SQL: INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-12-01 22:04:31.651 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1364, "Field 'UserID' doesn't have a default value")
+[SQL: INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001D4C81785E0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001D4C8529720>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001D4C9DB02B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Passwo...
+    │      │       └ 'INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName...
+    │      └ <function Cursor.execute at 0x000001D4C969AEF0>
+    └ <pymysql.cursors.Cursor object at 0x000001D4C9DB32B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+             │    └ <function Cursor._query at 0x000001D4C969B370>
+             └ <pymysql.cursors.Cursor object at 0x000001D4C9DB32B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+    │    └ <function Connection.query at 0x000001D4C96EA680>
+    └ <pymysql.connections.Connection object at 0x000001D4C9DB0A30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001D4C96EACB0>
+    │    │                └ <pymysql.connections.Connection object at 0x000001D4C9DB0A30>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000001D4C9DB0A30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001D4C96EB490>
+    └ <pymysql.connections.MySQLResult object at 0x000001D4C9C93E20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001D4C9C93E20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001D4C96E9240>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001D4C9DB25F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001D4C9DB25F0>
+    │   └ <function raise_mysql_exception at 0x000001D4C85F0670>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Field 'UserID' doesn't have a default value"
+          │          └ 1364
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1364, "Field 'UserID' doesn't have a default value")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001D4C9C93610>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001D4C9C93610>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 17184)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000001D4C9C93610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001D4C474EE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 17184)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001D4C474EB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 17184)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 17184)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 17184)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001D4C7471C30>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 17184)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001D4C4DC7E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D4C7471C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 52530)
+    │    │               └ <socket.socket fd=792, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001D4C65F8040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D4C7471C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 52530)
+    │    │              └ <socket.socket fd=792, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001D4C65F8160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D4C7471C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001D4C7471C30>
+    │    │                   │        └ ('127.0.0.1', 52530)
+    │    │                   └ <socket.socket fd=792, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D4C7471C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001D4C75F1AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001D4C9C66FE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001D4C65F9870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001D4C9C66FE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001D4C9C66FE0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001D4C9C66860>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D4C7471C30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001D4C9C66FE0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001D4C9D609D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001D4C9B1FBC0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001D4C9D615A0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=792>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001D4C9C66860>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001D4C9D615A0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=792>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001D4C794FC70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001D4C794F1C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001D4C794F130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.register'
+           │    │           │    │              └ <Rule '/api_1_0/users/register' (POST, OPTIONS) -> users.register>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001D4C85367A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001D4C794F400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 21, in register
+    return UsersOtherResource.register()
+           │                  └ <classmethod(<function UsersOtherResource.register at 0x000001D4C98F0280>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 52, in register
+    res = UsersService.register(**kwargs)
+          │            │          └ {'account': '26', 'password': '423'}
+          │            └ <classmethod(<function UsersService.register at 0x000001D4C9C46CB0>)>
+          └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 64, in register
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x000001D4C8497AC0>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001D4C7AF0190>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x000001D4C84A1C10>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001D4C7AF0190>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x000001D4C84153F0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001D4C9C96BC0>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001D4C9C96BC0>
+                └ <function SessionTransaction.commit at 0x000001D4C8415360>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x000001D4C84152D0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001D4C9C96BC0>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001D4C9C96BC0>
+                └ <function SessionTransaction._prepare_impl at 0x000001D4C84151B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x000001D4C8417EB0>
+    │    └ <sqlalchemy.orm.session.Session object at 0x000001D4C9C93E80>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001D4C9C96BC0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x000001D4C841C0D0>
+    └ <sqlalchemy.orm.session.Session object at 0x000001D4C9C93E80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x000001D4C9E0E140>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1364, "Field \'UserID\' doesn\'t have a default value")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x000001D4C8402290>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001D4C9DB2D70>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001D4C9DB2D70>
+    │   └ <function SaveUpdateAll.execute at 0x000001D4C8402B90>
+    └ SaveUpdateAll(Mapper[Users(users)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x000001D4C83ED120>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x000001D4C83EDB40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x000001D4C80D0EE0>
+             └ <sqlalchemy.engine.base.Connection object at 0x000001D4C9DB02B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x000001D4C9DB1B70>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001D4C80D11B0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001D4C9DB02B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001D4C80D1360>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001D4C9DB02B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001D4C80D13F0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001D4C9DB02B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001D4C80D1630>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001D4C9DB02B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1364, "Field 'UserID' doesn't have a default value")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1364, "Field 'UserID' doesn't have a default value"), <traceback ob...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1364, "Field \'UserID\' doesn\'t have a default value")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001D4C81785E0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001D4C8529720>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001D4C9DB02B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Passwo...
+    │      │       └ 'INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName...
+    │      └ <function Cursor.execute at 0x000001D4C969AEF0>
+    └ <pymysql.cursors.Cursor object at 0x000001D4C9DB32B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+             │    └ <function Cursor._query at 0x000001D4C969B370>
+             └ <pymysql.cursors.Cursor object at 0x000001D4C9DB32B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+    │    └ <function Connection.query at 0x000001D4C96EA680>
+    └ <pymysql.connections.Connection object at 0x000001D4C9DB0A30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001D4C96EACB0>
+    │    │                └ <pymysql.connections.Connection object at 0x000001D4C9DB0A30>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000001D4C9DB0A30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001D4C96EB490>
+    └ <pymysql.connections.MySQLResult object at 0x000001D4C9C93E20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001D4C9C93E20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001D4C96E9240>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001D4C9DB25F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001D4C9DB25F0>
+    │   └ <function raise_mysql_exception at 0x000001D4C85F0670>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Field 'UserID' doesn't have a default value"
+          │          └ 1364
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1364, "Field 'UserID' doesn't have a default value")
+[SQL: INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-12-01 22:08:11.105 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1364, "Field 'UserID' doesn't have a default value")
+[SQL: INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x0000023E2F7E45E0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023E2FB95720>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000023E314240D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Passwo...
+    │      │       └ 'INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName...
+    │      └ <function Cursor.execute at 0x0000023E2FD3AEF0>
+    └ <pymysql.cursors.Cursor object at 0x0000023E31427250>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+             │    └ <function Cursor._query at 0x0000023E2FD3B370>
+             └ <pymysql.cursors.Cursor object at 0x0000023E31427250>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+    │    └ <function Connection.query at 0x0000023E2FD8A680>
+    └ <pymysql.connections.Connection object at 0x0000023E314248E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x0000023E2FD8ACB0>
+    │    │                └ <pymysql.connections.Connection object at 0x0000023E314248E0>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x0000023E314248E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x0000023E2FD8B490>
+    └ <pymysql.connections.MySQLResult object at 0x0000023E31307DF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x0000023E31307DF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000023E2FD89240>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000023E314265F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000023E314265F0>
+    │   └ <function raise_mysql_exception at 0x0000023E2FC60670>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Field 'UserID' doesn't have a default value"
+          │          └ 1364
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1364, "Field 'UserID' doesn't have a default value")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000023E313075E0>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000023E313075E0>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 23208)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x0000023E313075E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000023E2BD7EE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 23208)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000023E2BD7EB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 23208)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 23208)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 23208)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000023E2EAE1C30>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 23208)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000023E2C417E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023E2EAE1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 52588)
+    │    │               └ <socket.socket fd=1124, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x0000023E2DC68040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023E2EAE1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 52588)
+    │    │              └ <socket.socket fd=1124, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x0000023E2DC68160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023E2EAE1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000023E2EAE1C30>
+    │    │                   │        └ ('127.0.0.1', 52588)
+    │    │                   └ <socket.socket fd=1124, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023E2EAE1C30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000023E2EC61AB0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023E31307850>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000023E2DC69870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023E31307850>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000023E31307850>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000023E312D6830>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023E2EAE1C30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023E31307850>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000023E313D1480>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000023E31283220>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023E313D1240>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1124>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000023E312D6830>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023E313D1240>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1124>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x0000023E2EFBBC70>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000023E2EFBB1C0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000023E2EFBB130>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.register'
+           │    │           │    │              └ <Rule '/api_1_0/users/register' (POST, OPTIONS) -> users.register>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000023E2FBA27A0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000023E2EFBB400>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 21, in register
+    return UsersOtherResource.register()
+           │                  └ <classmethod(<function UsersOtherResource.register at 0x0000023E30F60280>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 52, in register
+    res = UsersService.register(**kwargs)
+          │            │          └ {'account': '26', 'password': '423'}
+          │            └ <classmethod(<function UsersService.register at 0x0000023E312B6CB0>)>
+          └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 64, in register
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x0000023E2FB03AC0>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x0000023E2F160190>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x0000023E2FB15B20>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x0000023E2F160190>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x0000023E2FA853F0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023E31073740>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023E31073740>
+                └ <function SessionTransaction.commit at 0x0000023E2FA85360>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x0000023E2FA852D0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023E31073740>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023E31073740>
+                └ <function SessionTransaction._prepare_impl at 0x0000023E2FA851B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x0000023E2FA87EB0>
+    │    └ <sqlalchemy.orm.session.Session object at 0x0000023E31307E50>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023E31073740>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x0000023E2FA8C0D0>
+    └ <sqlalchemy.orm.session.Session object at 0x0000023E31307E50>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000023E3147E540>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1364, "Field \'UserID\' doesn\'t have a default value")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x0000023E2FA72290>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x0000023E31426D70>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x0000023E31426D70>
+    │   └ <function SaveUpdateAll.execute at 0x0000023E2FA72B90>
+    └ SaveUpdateAll(Mapper[Users(users)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x0000023E2FA5D120>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x0000023E2FA5DB40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x0000023E2F738EE0>
+             └ <sqlalchemy.engine.base.Connection object at 0x0000023E314240D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x0000023E31425B10>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x0000023E2F7391B0>
+           └ <sqlalchemy.engine.base.Connection object at 0x0000023E314240D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x0000023E2F739360>
+          └ <sqlalchemy.engine.base.Connection object at 0x0000023E314240D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x0000023E2F7393F0>
+           └ <sqlalchemy.engine.base.Connection object at 0x0000023E314240D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x0000023E2F739630>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000023E314240D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1364, "Field 'UserID' doesn't have a default value")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1364, "Field 'UserID' doesn't have a default value"), <traceback ob...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1364, "Field \'UserID\' doesn\'t have a default value")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x0000023E2F7E45E0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023E2FB95720>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000023E314240D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Passwo...
+    │      │       └ 'INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName...
+    │      └ <function Cursor.execute at 0x0000023E2FD3AEF0>
+    └ <pymysql.cursors.Cursor object at 0x0000023E31427250>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+             │    └ <function Cursor._query at 0x0000023E2FD3B370>
+             └ <pymysql.cursors.Cursor object at 0x0000023E31427250>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (NULL, NULL...
+    │    └ <function Connection.query at 0x0000023E2FD8A680>
+    └ <pymysql.connections.Connection object at 0x0000023E314248E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x0000023E2FD8ACB0>
+    │    │                └ <pymysql.connections.Connection object at 0x0000023E314248E0>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x0000023E314248E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x0000023E2FD8B490>
+    └ <pymysql.connections.MySQLResult object at 0x0000023E31307DF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x0000023E31307DF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000023E2FD89240>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000023E314265F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000023E314265F0>
+    │   └ <function raise_mysql_exception at 0x0000023E2FC60670>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Field 'UserID' doesn't have a default value"
+          │          └ 1364
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1364, "Field 'UserID' doesn't have a default value")
+[SQL: INSERT INTO users (`UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '26', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

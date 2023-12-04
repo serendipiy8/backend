@@ -1,0 +1,22 @@
+- name: ticketprices添加接口
+  request:
+    method: post
+    url: /api_1_0/ticketprices
+    headers:
+      token: token
+    data:
+      TicketID: 
+      ShowID: 
+      Price: 
+      Category: 
+      TotalQuantity: 
+      RemainingQuantity: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+    - eq:
+        - code
+        - "2000"
+    

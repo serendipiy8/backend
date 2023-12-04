@@ -1,0 +1,14 @@
+-
+  module_name: adminfunctionsService
+  class_name: adminfunctionsService
+  function_name: xxx
+  params:
+      FunctionID: 
+      Name: 
+      Permissions: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

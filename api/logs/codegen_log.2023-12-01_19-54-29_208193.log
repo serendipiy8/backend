@@ -1,0 +1,1336 @@
+2023-12-01 19:54:29.217 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000025AC9ACE7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 23804)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000025AC9ACE4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 23804)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 23804)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 23804)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000025ACDCE1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 23804)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000025AC9ACFEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025ACDCE1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 52823)
+    │    │               └ <socket.socket fd=860, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000025AC9AD40D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025ACDCE1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 52823)
+    │    │              └ <socket.socket fd=860, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000025AC9AD41F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025ACDCE1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000025ACDCE1F30>
+    │    │                   │        └ ('127.0.0.1', 52823)
+    │    │                   └ <socket.socket fd=860, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025ACDCE1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000025ACB82C820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000025ACDD2C280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000025ACB675870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000025ACDD2C280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000025ACDD2C280>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000025ACDCBBA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025ACDCE1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000025ACDD2C280>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000025ACDD35EA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000025ACDC8B990>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000025ACDD371C0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=860>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000025ACDCBBA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000025ACDD371C0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=860>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000025ACC0DC040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000025ACC0D7520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000025ACC0D7490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000025ACD5C7010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000025ACC0D7760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x0000025ACD97CD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 25, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x0000025ACD7FD090>
+           └ <flask_restful.reqparse.RequestParser object at 0x0000025ACDD2C6A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000025ACDD2C6A0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x0000025ACD7FCEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x0000025ACD7FCE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x0000025ACD7C4D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x0000025ACBEFA7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x0000025ACD572980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-12-01 20:00:19.378 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000198A346A7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 25640)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000198A346A4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 25640)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 25640)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 25640)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000198A76B1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 25640)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x00000198A346BEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000198A76B1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53296)
+    │    │               └ <socket.socket fd=380, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x00000198A34740D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000198A76B1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53296)
+    │    │              └ <socket.socket fd=380, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x00000198A34741F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000198A76B1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000198A76B1F30>
+    │    │                   │        └ ('127.0.0.1', 53296)
+    │    │                   └ <socket.socket fd=380, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000198A76B1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000198A51FC820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000198A76FC340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000198A5045870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000198A76FC340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000198A76FC340>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000198A768BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000198A76B1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000198A76FC340>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000198A7709F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000198A76576F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000198A770A560>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=380>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000198A768BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000198A770A560>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=380>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x00000198A5AAC040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000198A5AA7520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000198A5AA7490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (POST, OPTIONS) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000198A6F97010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000198A5AA7760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x00000198A734CD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 23, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x00000198A71CD090>
+           └ <flask_restful.reqparse.RequestParser object at 0x00000198A76FC6A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000198A76FC6A0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x00000198A71CCEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x00000198A71CCE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x00000198A7194D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x00000198A58CA7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000198A6F46980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-12-01 20:05:27.535 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002301BD5A7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 9816)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002301BD5A4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 9816)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 9816)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 9816)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002301FF41F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 9816)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002301BD5BEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002301FF41F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53442)
+    │    │               └ <socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000002301BD640D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002301FF41F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53442)
+    │    │              └ <socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000002301BD641F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002301FF41F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002301FF41F30>
+    │    │                   │        └ ('127.0.0.1', 53442)
+    │    │                   └ <socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002301FF41F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002301DA8C820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002301FF8C190>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002301D8F5870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002301FF8C190>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002301FF8C190>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002301FF1BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002301FF41F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002301FF8C190>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002301FF97D00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002301FEEAF80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002301FF97C70>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=888>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002301FF1BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002301FF97C70>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=888>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000002301E33C040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002301E337520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002301E337490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002301F827010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002301E337760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002301FBDCD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 24, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x000002301FA5D090>
+           └ <flask_restful.reqparse.RequestParser object at 0x000002301FF8C6A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000002301FF8C6A0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x000002301FA5CEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x000002301FA5CE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x000002301FA24D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002301E15A7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x000002301F7D6980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-12-01 20:07:33.132 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002C80D94A7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002C80D94A4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002C80D94BEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53498)
+    │    │               └ <socket.socket fd=976, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000002C80D9540D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53498)
+    │    │              └ <socket.socket fd=976, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000002C80D9541F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+    │    │                   │        └ ('127.0.0.1', 53498)
+    │    │                   └ <socket.socket fd=976, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002C80F6FC820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC1F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002C80F545870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC1F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC1F0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002C811B8BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC1F0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002C811C068C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002C811B5B760>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002C811C077F0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=976>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002C811B8BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002C811C077F0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=976>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000002C80FFAC040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002C80FFA7520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002C80FFA7490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002C811497010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002C80FFA7760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002C81184CD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 24, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x000002C8116CD090>
+           └ <flask_restful.reqparse.RequestParser object at 0x000002C811BFC6A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000002C811BFC6A0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x000002C8116CCEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x000002C8116CCE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x000002C811694D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002C80FDCA7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x000002C811446980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-12-01 20:11:33.199 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002C80D94A7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002C80D94A4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002C80D94BEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53657)
+    │    │               └ <socket.socket fd=852, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000002C80D9540D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53657)
+    │    │              └ <socket.socket fd=852, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000002C80D9541F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+    │    │                   │        └ ('127.0.0.1', 53657)
+    │    │                   └ <socket.socket fd=852, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002C80F6FC820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC3D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002C80F545870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC3D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC3D0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002C811B8BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811BFC3D0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002C811DC7880>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002C811B5B760>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002C811DC7D90>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=852>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002C811B8BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002C811DC7D90>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=852>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000002C80FFAC040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002C80FFA7520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002C80FFA7490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002C811497010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002C80FFA7760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002C81184CD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 24, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x000002C8116CD090>
+           └ <flask_restful.reqparse.RequestParser object at 0x000002C811CCAD10>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000002C811CCAD10>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x000002C8116CCEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x000002C8116CCE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x000002C811694D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002C80FDCA7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x000002C811446980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-12-01 20:11:36.442 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002C80D94A7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002C80D94A4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 16696)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002C80D94BEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53659)
+    │    │               └ <socket.socket fd=960, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000002C80D9540D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53659)
+    │    │              └ <socket.socket fd=960, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000002C80D9541F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+    │    │                   │        └ ('127.0.0.1', 53659)
+    │    │                   └ <socket.socket fd=960, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002C80F6FC820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811CCB280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002C80F545870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811CCB280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002C811CCB280>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002C811B8BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002C811BB1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002C811CCB280>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002C811DC6F80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002C811D46880>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002C811DC5240>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=960>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002C811B8BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002C811DC5240>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=960>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000002C80FFAC040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002C80FFA7520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002C80FFA7490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002C811497010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002C80FFA7760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002C81184CD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 24, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x000002C8116CD090>
+           └ <flask_restful.reqparse.RequestParser object at 0x000002C811E54C10>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000002C811E54C10>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x000002C8116CCEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x000002C8116CCE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x000002C811694D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000002C80FDCA7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x000002C811446980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-12-01 20:16:42.745 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002027636A7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002027636A4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002027636BEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53768)
+    │    │               └ <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x00000202763740D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53768)
+    │    │              └ <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x00000202763741F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+    │    │                   │        └ ('127.0.0.1', 53768)
+    │    │                   └ <socket.socket fd=544, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002027810C820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002027A60C280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000020277F55870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002027A60C280>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002027A60C280>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002027A59BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002027A60C280>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002027A616A70>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002027A56A960>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002027A616DD0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=544>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002027A59BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002027A616DD0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=544>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x00000202789BC040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000202789B7520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000202789B7490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000020279EA7010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000202789B7760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002027A25CD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 23, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x000002027A0DD090>
+           └ <flask_restful.reqparse.RequestParser object at 0x000002027A60C6A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000002027A60C6A0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x000002027A0DCEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x000002027A0DCE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x000002027A0A4D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x00000202787DA7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x0000020279E56980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2023-12-01 20:17:04.506 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002027636A7A0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002027636A4D0>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 24764)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002027636BEB0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53780)
+    │    │               └ <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x00000202763740D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53780)
+    │    │              └ <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x00000202763741F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+    │    │                   │        └ ('127.0.0.1', 53780)
+    │    │                   └ <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002027810C820>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002027A6DB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000020277F55870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002027A6DB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002027A6DB820>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002027A59BA00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002027A5C1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002027A6DB820>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002027A7D60E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002027A808900>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002027A7D63B0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1092>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002027A59BA00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002027A7D63B0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1092>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x00000202789BC040>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000202789B7520>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000202789B7490>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/api_1_0/users/login' (OPTIONS, POST) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000020279EA7010>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000202789B7760>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 16, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod(<function UsersOtherResource.login at 0x000002027A25CD30>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 23, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x000002027A0DD090>
+           └ <flask_restful.reqparse.RequestParser object at 0x000002027A6DAC50>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000002027A6DAC50>
+                   │   │     └ <Request 'http://127.0.0.1:5000/api_1_0/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x000002027A0DCEE0>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x000002027A0DCE50>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x000002027A0A4D30>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x00000202787DA7A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x0000020279E56980>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.

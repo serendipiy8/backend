@@ -1,0 +1,23 @@
+- name: users修改接口
+  request:
+    method: put
+    url: /api_1_0/users
+    headers:
+      content-type: application/json
+    data:
+      UserID: 
+      UserName: 
+      RealName: 
+      Gender: 
+      IDCard: 
+      Email: 
+      Address: 
+      Account: 
+      Password: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

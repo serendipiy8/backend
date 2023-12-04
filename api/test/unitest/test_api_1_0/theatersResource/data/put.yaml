@@ -1,0 +1,19 @@
+- name: theaters修改接口
+  request:
+    method: put
+    url: /api_1_0/theaters
+    headers:
+      content-type: application/json
+    data:
+      TheaterID: 
+      TheaterName: 
+      Address: 
+      Capacity: 
+      AdminID: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

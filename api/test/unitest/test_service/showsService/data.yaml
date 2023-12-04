@@ -1,0 +1,21 @@
+-
+  module_name: showsService
+  class_name: showsService
+  function_name: xxx
+  params:
+      ShowID: 
+      TheaterID: 
+      ShowName: 
+      Description: 
+      ShowDate: 
+      Duration: 
+      AdminID: 
+      Image: 
+      Category: 
+      City: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

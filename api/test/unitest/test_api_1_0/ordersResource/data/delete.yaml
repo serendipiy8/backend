@@ -1,0 +1,20 @@
+- name: orders删除接口
+  request:
+    method: delete
+    url: /api_1_0/orders
+    headers:
+      content-type: application/json
+    data:
+      OrderID: 
+      UserID: 
+      TicketID: 
+      PurchaseTime: 
+      OrderStatus: 
+      Quantity: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

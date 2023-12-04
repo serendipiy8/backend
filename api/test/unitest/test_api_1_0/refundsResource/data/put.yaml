@@ -1,0 +1,21 @@
+- name: refunds修改接口
+  request:
+    method: put
+    url: /api_1_0/refunds
+    headers:
+      content-type: application/json
+    data:
+      RefundID: 
+      UserID: 
+      AdminID: 
+      RefundTime: 
+      RefundReason: 
+      TicketStatus: 
+      OrderID: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

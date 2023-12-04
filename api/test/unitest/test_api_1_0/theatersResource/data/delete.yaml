@@ -1,0 +1,19 @@
+- name: theaters删除接口
+  request:
+    method: delete
+    url: /api_1_0/theaters
+    headers:
+      content-type: application/json
+    data:
+      TheaterID: 
+      TheaterName: 
+      Address: 
+      Capacity: 
+      AdminID: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

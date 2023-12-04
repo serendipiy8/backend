@@ -1,0 +1,18 @@
+-
+  module_name: refundsService
+  class_name: refundsService
+  function_name: xxx
+  params:
+      RefundID: 
+      UserID: 
+      AdminID: 
+      RefundTime: 
+      RefundReason: 
+      TicketStatus: 
+      OrderID: 
+
+  validate:
+    - eq:
+        - code
+        - "2000"
+    

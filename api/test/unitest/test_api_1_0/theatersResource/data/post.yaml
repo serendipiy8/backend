@@ -1,0 +1,21 @@
+- name: theaters添加接口
+  request:
+    method: post
+    url: /api_1_0/theaters
+    headers:
+      token: token
+    data:
+      TheaterID: 
+      TheaterName: 
+      Address: 
+      Capacity: 
+      AdminID: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+    - eq:
+        - code
+        - "2000"
+    

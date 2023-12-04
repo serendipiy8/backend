@@ -1,0 +1,19 @@
+- name: administrators修改接口
+  request:
+    method: put
+    url: /api_1_0/administrators
+    headers:
+      content-type: application/json
+    data:
+      AdminID: 
+      AdminType: 
+      Account: 
+      Password: 
+      Permissions: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

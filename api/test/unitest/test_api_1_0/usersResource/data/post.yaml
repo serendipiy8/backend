@@ -1,0 +1,25 @@
+- name: users添加接口
+  request:
+    method: post
+    url: /api_1_0/users
+    headers:
+      token: token
+    data:
+      UserID: 
+      UserName: 
+      RealName: 
+      Gender: 
+      IDCard: 
+      Email: 
+      Address: 
+      Account: 
+      Password: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+    - eq:
+        - code
+        - "2000"
+    

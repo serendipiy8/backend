@@ -1,0 +1,17 @@
+- name: adminfunctions删除接口
+  request:
+    method: delete
+    url: /api_1_0/adminfunctions
+    headers:
+      content-type: application/json
+    data:
+      FunctionID: 
+      Name: 
+      Permissions: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

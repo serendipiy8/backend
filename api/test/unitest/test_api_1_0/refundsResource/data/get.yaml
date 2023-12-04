@@ -1,0 +1,11 @@
+- name: refunds查询接口
+  request:
+    method: get
+    url: /api_1_0/refunds
+    headers:
+      token: token
+  validate:
+    - eq:
+        - status_code
+        - 200
+    

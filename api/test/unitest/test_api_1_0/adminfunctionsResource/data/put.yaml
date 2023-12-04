@@ -1,0 +1,17 @@
+- name: adminfunctions修改接口
+  request:
+    method: put
+    url: /api_1_0/adminfunctions
+    headers:
+      content-type: application/json
+    data:
+      FunctionID: 
+      Name: 
+      Permissions: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    

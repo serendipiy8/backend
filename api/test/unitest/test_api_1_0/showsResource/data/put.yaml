@@ -1,0 +1,24 @@
+- name: shows修改接口
+  request:
+    method: put
+    url: /api_1_0/shows
+    headers:
+      content-type: application/json
+    data:
+      ShowID: 
+      TheaterID: 
+      ShowName: 
+      Description: 
+      ShowDate: 
+      Duration: 
+      AdminID: 
+      Image: 
+      Category: 
+      City: 
+
+  validate:
+    - eq:
+        - status_code
+        - 200
+
+    
