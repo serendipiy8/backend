@@ -1,16 +1,3 @@
-# backend
-
-
-
-
-
-
-
-
-
-
-
-
 # ticket-app
 
 ## Project setup
