@@ -53,8 +53,12 @@ class UsersService(UsersController):
     def register(cls, **kwargs):
         account = kwargs.get('account')
         password = kwargs.get('password')
+        password_again=kwargs.get('password_again')
 
         try:
+            if password!=password_again:
+                return {'code':RET.PWDERR,'message':error_map_EN[RET.PWDERR],'error':'两次输入密码不一致'}
+
             existing_user = db.session.query(cls).filter_by(Account=account).first()
             if existing_user:
                 return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "账户已存在"}

@@ -39,6 +39,7 @@ class UsersOtherResource(Resource):
 		parser = reqparse.RequestParser()
 		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
 		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('password_again',type=str,location='form',required=True,help='密码类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
