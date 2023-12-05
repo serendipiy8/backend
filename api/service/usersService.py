@@ -15,15 +15,15 @@ class UsersService(UsersController):
     @classmethod
     def login(cls,**kwargs):
 
-        account=kwargs.get('account')
+        username=kwargs.get('username')
         password=kwargs.get('password')
 
         try:
             user_info=db.session.query(
-                cls.Account,
+                cls.UserName,
                 cls.Password,
             )\
-            .filter(cls.Account==account)\
+            .filter(cls.UserName==username)\
             .first()
 
             if not user_info:
@@ -39,7 +39,7 @@ class UsersService(UsersController):
 
             print(user_info)
             back_dict={
-                "account": user_info['Account'],
+                "username": user_info['UserName'],
             }
 
             return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}

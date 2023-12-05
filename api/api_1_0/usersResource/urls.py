@@ -16,6 +16,7 @@ api.add_resource(UsersResource, '/users/<UserID>', '/users', endpoint='Users')
 def login():
     return UsersOtherResource.login()
 
+
 @users_blueprint.route('/users/register', methods=['POST'], endpoint='register')
 def register():
     return UsersOtherResource.register()
