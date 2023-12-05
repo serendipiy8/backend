@@ -51,36 +51,39 @@ class UsersService(UsersController):
 
     @classmethod
     def register(cls, **kwargs):
-        account = kwargs.get('account')
+        username = kwargs.get('username')
+        email=kwargs.get('email')
         password = kwargs.get('password')
-        password_again=kwargs.get('password_again')
+        configure_password=kwargs.get('configurePassword')
 
         try:
-            if password!=password_again:
+            if password!=configurePassword:
                 return {'code':RET.PWDERR,'message':error_map_EN[RET.PWDERR],'error':'两次输入密码不一致'}
 
-            existing_user = db.session.query(cls).filter_by(Account=account).first()
+            existing_user = db.session.query(cls).filter_by(UserName=username).first()
             if existing_user:
                 return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "账户已存在"}
 
             id=int(GenerateID.create_random_id())
-            new_user = cls(UserID=id,Account=account, Password=password)
+            new_user = cls(UserID=id,Email=email,UserName=username, Password=password)
             # new_user.add(Account=account, Password=password)
             db.session.add(new_user)
             db.session.commit()
 
             # 获取新用户信息
             user_info = db.session.query(
-                cls.Account,
+                cls.Email,
+                cls.UserName,
                 cls.Password,
-            ).filter(cls.Account == account).first()
+            ).filter(cls.UserName == username).first()
 
             user_info = dict(user_info._asdict())
 
             db.session.close()
 
             back_dict = {
-                "account": user_info['Account'],
+                "email":user_info['Email'],
+                "username": user_info['UserName'],
             }
 
             return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}

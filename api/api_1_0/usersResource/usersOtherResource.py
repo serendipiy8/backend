@@ -38,8 +38,9 @@ class UsersOtherResource(Resource):
 	def register(cls):
 		parser = reqparse.RequestParser()
 		parser.add_argument('username', type=str, location='form', required=True, help='账户数据类型不匹配')
+		parser.add_argument('email', type=str, location='form', required=True, help='账户数据类型不匹配')
 		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
-		parser.add_argument('password_again',type=str,location='form',required=True,help='密码类型不匹配')
+		parser.add_argument('configurePassword',type=str,location='form',required=True,help='密码类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -56,7 +57,6 @@ class UsersOtherResource(Resource):
 			return jsonify(code=res['code'], message=res['message'], data=res['data'])
 		else:
 			return jsonify(code=res['code'], message=res['message'], error=res['error'])
-
 
 def validate_length(value):
 	if len(value)>6:
