@@ -18,7 +18,7 @@ export default {
     <div>
       <!-- 导航栏 -->
       <header>
-        <img src="/path/to/logo.png" alt="Logo" />
+        <img src="../../assets/logo.png" alt="Logo" />
         <nav>
           <router-link to="/">首页</router-link>
           <router-link to="/categories">分类</router-link>
@@ -61,21 +61,21 @@ export default {
         searchKeyword: '',
         loggedIn: false, // 根据实际情况处理登录状态
         carouselItems: [
-          { image: '/path/to/carousel1.jpg' },
-          { image: '/path/to/carousel2.jpg' },
+          { image: 'https://gw.alicdn.com/tfs/TB1KiMMq7L0gK0jSZFtXXXQCXXa-1200-320.png' },
+          // { image: '../../assets/1.png' },
           // Add more carousel items as needed
         ],
         concerts: [
           {
             name: '演唱会1', 
-            poster: '/path/to/concert1.jpg',
+            poster: 'https://img.alicdn.com/bao/uploaded/i1/2251059038/O1CN01vQlt0k2GdSXWKrrk9_!!2-item_pic.png_q60.jpg_.webp',
             date: '2023-01-01',
             location: '演唱会地点1',
             price: '$50',
           },
           {
             name: '演唱会2',
-            poster: '/path/to/concert2.jpg',
+            poster: 'https://img.alicdn.com/bao/uploaded/i3/2251059038/O1CN01gsB4WE2GdSXgarchv_!!2-item_pic.png_q60.jpg_.webp',
             date: '2023-02-01',
             location: '演唱会地点2',
             price: '$60',
@@ -149,7 +149,7 @@ export default {
   }
   
   .concert img {
-    max-width: 100%;
+    max-width: 40%;
     height: auto;
   }
   
