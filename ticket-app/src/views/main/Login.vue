@@ -147,7 +147,7 @@ export default {
             console.log(this.loginForm)
             api.login(this.loginForm).then(res => {
               console.log(res.data)
-              if (res.data.status === 200) {
+              if (res.data.code === "2000") {
                 this.setUser(res.data)
                 localStorage.setItem(
                   "ticket",
@@ -155,15 +155,6 @@ export default {
                 )
                 this.$router.push('/')
               } else {
-                // const h = this.$createElement;
-                // this.$notify({
-                //   title: "登录失败",
-                //   message: h(
-                //     "i",
-                //     { style: "color:teal" },
-                //     "用户名密码错误"
-                //   ),
-                // });
                 const notification = {
                   title: "登录失败",
                   message: h(

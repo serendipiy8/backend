@@ -5,7 +5,7 @@ const client = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "20030205",
-    database: "ticketsystem"
+    database: "ticket-app"
 })
 
 client.connect((err) => {

@@ -31,7 +31,7 @@ router.post("/register", (req, res) => {
 //登录
 router.post("/login", (req, res) => {
     const { username, password } = req.body;
-    const sql = "select * from userTest where username=? and password=?"
+    const sql = "select * from users where username=? and password=?"
     const arr = [username, password]
     sqlClient(sql, arr, result => {
         if (result.length > 0) {
