@@ -170,14 +170,16 @@ export default {
           if (this.activeTab === "register") {
             console.log(this.registerForm)
             api.register(this.registerForm).then(res => {
-              if (res.data.coode === "2000") {
-                const h = this.$createElement
-                this.notify({
+              if (res.data.code === "2000") {
+                const notification = {
                   title: "注册成功",
-                  message: h("i",
+                  message: h(
+                    "i",
                     { style: "color:teal" },
-                    "请完善个人信息")
-                })
+                    "请返回首页登录"
+                  ),
+                }
+                this.$notify(notification)
                 this.$router.push('/')
               }else{
                 const notification = {
