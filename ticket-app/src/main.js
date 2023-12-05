@@ -6,6 +6,8 @@ import router from './router'
 import './assets/css/reset.css'
 import store from './store/index'
 import './router/permission'
+import "./utils/init"
+
 
 const app = createApp(App)
 app.use(ElementPlus)

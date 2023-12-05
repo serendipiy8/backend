@@ -54,7 +54,7 @@ class UsersService(UsersController):
         username = kwargs.get('username')
         email=kwargs.get('email')
         password = kwargs.get('password')
-        configure_password=kwargs.get('configurePassword')
+        configurePassword=kwargs.get('configurePassword')
 
         try:
             if password!=configurePassword:

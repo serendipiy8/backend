@@ -162,14 +162,35 @@ export default {
                     { style: "color:teal" },
                     "用户名密码错误"
                   ),
-                };
-
-                this.$notify(notification);
+                }
+                this.$notify(notification)
               }
             })
           }
           if (this.activeTab === "register") {
             console.log(this.registerForm)
+            api.register(this.registerForm).then(res => {
+              if (res.data.coode === "2000") {
+                const h = this.$createElement
+                this.notify({
+                  title: "注册成功",
+                  message: h("i",
+                    { style: "color:teal" },
+                    "请完善个人信息")
+                })
+                this.$router.push('/')
+              }else{
+                const notification = {
+                  title: "注册失败",
+                  message: h(
+                    "i",
+                    { style: "color:teal" },
+                    "请重新填写信息"
+                  ),
+                }
+                this.$notify(notification)
+              }
+            })
           }
         } else {
           return;
