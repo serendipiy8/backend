@@ -1,0 +1,1410 @@
+2023-12-01 22:35:05.617 | ERROR    | utils.loggings:exception:40 - (pymysql.err.DataError) (1264, "Out of range value for column 'UserID' at row 1")
+[SQL: INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserID)s, %(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserID': 2023120122357132, 'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '22', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x00000282CA3484C0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x00000282CA6F56F0>
+    └ <sqlalchemy.engine.base.Connection object at 0x00000282CBF685E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserID': 2023120122357132, 'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': No...
+    │      │       └ 'INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (...
+    │      └ <function Cursor.execute at 0x00000282CB86ADD0>
+    └ <pymysql.cursors.Cursor object at 0x00000282CBF6BBB0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (...
+             │    └ <function Cursor._query at 0x00000282CB86B250>
+             └ <pymysql.cursors.Cursor object at 0x00000282CBF6BBB0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (...
+    │    └ <function Connection.query at 0x00000282CB8BE560>
+    └ <pymysql.connections.Connection object at 0x00000282CBF68A60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x00000282CB8BEB90>
+    │    │                └ <pymysql.connections.Connection object at 0x00000282CBF68A60>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x00000282CBF68A60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x00000282CB8BF370>
+    └ <pymysql.connections.MySQLResult object at 0x00000282CBE42EF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x00000282CBE42EF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x00000282CB8BD120>
+    └ <pymysql.protocol.MysqlPacket object at 0x00000282CBF6A5F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x00000282CBF6A5F0>
+    │   └ <function raise_mysql_exception at 0x00000282CA7C0550>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Out of range value for column 'UserID' at row 1"
+          │          └ 1264
+          └ <class 'pymysql.err.DataError'>
+
+pymysql.err.DataError: (1264, "Out of range value for column 'UserID' at row 1")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x00000282CBE73940>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x00000282CBE73940>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 26092)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x00000282CBE73940>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000282C689EE60>
+    └ <Thread(Thread-5 (serve_forever), started daemon 26092)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000282C689EB90>
+    └ <Thread(Thread-5 (serve_forever), started daemon 26092)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 26092)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 26092)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000282C9641C00>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 26092)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x00000282C6F77E20>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000282C9641C00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54750)
+    │    │               └ <socket.socket fd=972, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x00000282C87C8040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000282C9641C00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54750)
+    │    │              └ <socket.socket fd=972, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x00000282C87C8160>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000282C9641C00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000282C9641C00>
+    │    │                   │        └ ('127.0.0.1', 54750)
+    │    │                   └ <socket.socket fd=972, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000282C9641C00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000282C97BD990>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000282CBE42A40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000282C87C9870>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000282CBE42A40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000282CBE42A40>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000282CBE42B00>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000282C9641C00>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000282CBE42A40>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000282CBF2D900>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000282CBCEFA70>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000282CBF2DBD0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=972>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000282CBE42B00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000282CBF2DBD0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=972>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x00000282C9B03B50>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000282C9B030A0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000282C9B03010>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.register'
+           │    │           │    │              └ <Rule '/api_1_0/users/register' (POST, OPTIONS) -> users.register>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000282CA702680>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000282C9B032E0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\urls.py", line 21, in register
+    return UsersOtherResource.register()
+           │                  └ <classmethod(<function UsersOtherResource.register at 0x00000282CBE23D00>)>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+  File "C:\Users\Lenovo\PycharmProjects\api_project\api\api_1_0\usersResource\usersOtherResource.py", line 52, in register
+    res = UsersService.register(**kwargs)
+          │            │          └ {'account': '22', 'password': '423'}
+          │            └ <classmethod(<function UsersService.register at 0x00000282CBE22F80>)>
+          └ <class 'service.usersService.UsersService'>
+
+> File "C:\Users\Lenovo\PycharmProjects\api_project\api\service\usersService.py", line 66, in register
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x00000282CA66B9A0>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x00000282C9CBC160>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x00000282CA675C60>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x00000282C9CBC160>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x00000282CA5E12D0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x00000282CBC1DF80>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x00000282CBC1DF80>
+                └ <function SessionTransaction.commit at 0x00000282CA5E1240>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x00000282CA5E11B0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x00000282CBC1DF80>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x00000282CBC1DF80>
+                └ <function SessionTransaction._prepare_impl at 0x00000282CA5E1090>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x00000282CA5E3D90>
+    │    └ <sqlalchemy.orm.session.Session object at 0x00000282CBF68220>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x00000282CBC1DF80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x00000282CA5E3F40>
+    └ <sqlalchemy.orm.session.Session object at 0x00000282CBF68220>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x00000282CBFDB240>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1264, "Out of range value for column \'UserID\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x00000282CA5D2170>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x00000282CBF6A9B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x00000282CBF6A9B0>
+    │   └ <function SaveUpdateAll.execute at 0x00000282CA5D2A70>
+    └ SaveUpdateAll(Mapper[Users(users)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x00000282CA5BD000>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x00000282CA5BDA20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1043, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x00000282CA2A4DC0>
+             └ <sqlalchemy.engine.base.Connection object at 0x00000282CBF685E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x00000282CBF69FC0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x00000282CA2A5090>
+           └ <sqlalchemy.engine.base.Connection object at 0x00000282CBF685E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x00000282CA2A5240>
+          └ <sqlalchemy.engine.base.Connection object at 0x00000282CBF685E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x00000282CA2A52D0>
+           └ <sqlalchemy.engine.base.Connection object at 0x00000282CBF685E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x00000282CA2A5510>
+    └ <sqlalchemy.engine.base.Connection object at 0x00000282CBF685E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ DataError(1264, "Out of range value for column 'UserID' at row 1")
+          │                    │              └ (<class 'pymysql.err.DataError'>, DataError(1264, "Out of range value for column 'UserID' at row 1"), <traceback object at 0x...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1264, "Out of range value for column \'UserID\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x00000282CA3484C0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x00000282CA6F56F0>
+    └ <sqlalchemy.engine.base.Connection object at 0x00000282CBF685E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserID': 2023120122357132, 'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': No...
+    │      │       └ 'INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (...
+    │      └ <function Cursor.execute at 0x00000282CB86ADD0>
+    └ <pymysql.cursors.Cursor object at 0x00000282CBF6BBB0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (...
+             │    └ <function Cursor._query at 0x00000282CB86B250>
+             └ <pymysql.cursors.Cursor object at 0x00000282CBF6BBB0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (...
+    │    └ <function Connection.query at 0x00000282CB8BE560>
+    └ <pymysql.connections.Connection object at 0x00000282CBF68A60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x00000282CB8BEB90>
+    │    │                └ <pymysql.connections.Connection object at 0x00000282CBF68A60>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x00000282CBF68A60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x00000282CB8BF370>
+    └ <pymysql.connections.MySQLResult object at 0x00000282CBE42EF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x00000282CBE42EF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x00000282CB8BD120>
+    └ <pymysql.protocol.MysqlPacket object at 0x00000282CBF6A5F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x00000282CBF6A5F0>
+    │   └ <function raise_mysql_exception at 0x00000282CA7C0550>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Out of range value for column 'UserID' at row 1"
+          │          └ 1264
+          └ <class 'pymysql.err.DataError'>
+
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1264, "Out of range value for column 'UserID' at row 1")
+[SQL: INSERT INTO users (`UserID`, `UserName`, `RealName`, `Gender`, `IDCard`, `Email`, `Address`, `Account`, `Password`) VALUES (%(UserID)s, %(UserName)s, %(RealName)s, %(Gender)s, %(IDCard)s, %(Email)s, %(Address)s, %(Account)s, %(Password)s)]
+[parameters: {'UserID': 2023120122357132, 'UserName': None, 'RealName': None, 'Gender': None, 'IDCard': None, 'Email': None, 'Address': None, 'Account': '22', 'Password': '423'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2023-12-05 16:05:19.496 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x0000023227857CA0>
+    │                        └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+    └ <sqlalchemy.engine.base.Connection object at 0x00000232294AF5E0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x0000023227413160>
+           │    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+           │                └ <classmethod object at 0x000002322740C790>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+            │                 └ <classmethod object at 0x000002322740C970>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 716, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x0000023227431700>
+          └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\impl.py", line 170, in _do_get
+    self._dec_overflow()
+    │    └ <function QueuePool._dec_overflow at 0x0000023227431820>
+    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x00000232294DD2C0>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\impl.py", line 167, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x000002322740FEE0>
+           └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 678, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x00000232294CAA00>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 903, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+    │    │      └ <function Logger.debug at 0x0000023207110EE0>
+    │    └ <Logger sqlalchemy.pool.impl.QueuePool (WARNING)>
+    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x00000232294D68C0>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x00000232294CAA00>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x0000023227D09700>
+    │    │                               └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x00000232294CAA00>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\create.py", line 637, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': '127.0.0.1', 'database': 'project_1', 'user': 'root', 'password': '1234', 'port': 3306, 'charset': 'utf8', 'client_f...
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x0000023227907820>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023227D10A60>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': '127.0.0.1', 'database': 'project_1', 'user': 'root', 'password': '1234', 'port': 3306, 'charset': 'utf8', 'client_f...
+           │    │            │        └ ()
+           │    │            └ <class 'pymysql.connections.Connection'>
+           │    └ <module 'pymysql' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\__init__.py'>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023227D10A60>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 352, in __init__
+    self.connect()
+    │    └ <function Connection.connect at 0x0000023228EC7D30>
+    └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+    │    └ <function Connection._request_authentication at 0x0000023228EC81F0>
+    └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 925, in _request_authentication
+    auth_packet = self._process_auth(plugin_name, auth_packet)
+                  │    │             │            └ <pymysql.protocol.MysqlPacket object at 0x00000232294AFD60>
+                  │    │             └ b'mysql_native_password'
+                  │    └ <function Connection._process_auth at 0x0000023228EC8280>
+                  └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1019, in _process_auth
+    pkt = self._read_packet()
+          │    └ <function Connection._read_packet at 0x0000023228EC7E50>
+          └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000023228EC65E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x00000232294AFC40>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x00000232294AFC40>
+    │   └ <function raise_mysql_exception at 0x0000023228D85D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Access denied for user 'root'@'localhost' (using password: YES)"
+          │          └ 1045
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000023206E24670>
+    └ <Thread(Thread-1, started daemon 14284)>
+
+  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000023206E243A0>
+    └ <Thread(Thread-1, started daemon 14284)>
+
+  File "D:\Python\Python39\lib\threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 14284)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1, started daemon 14284)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002322940B520>>
+    └ <Thread(Thread-1, started daemon 14284)>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000023226956AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002322940B520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 58516)
+    │    │               └ <socket.socket fd=856, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000023226956CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002322940B520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 58516)
+    │    │              └ <socket.socket fd=856, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000023226956DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002322940B520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002322940B520>
+    │    │                   │        └ ('127.0.0.1', 58516)
+    │    │                   └ <socket.socket fd=856, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002322940B520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000023226B93550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000232294AF910>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000023226A82160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000232294AF910>
+
+  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000232294AF910>>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002322940BE20>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002322940B520>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000232294AF910>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002322949D1F0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002322946AF20>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002322949D430>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=856>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002322940BE20>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002322949D430>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=856>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x00000232270BA790>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000232270B7CA0>
+               └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000232270B7C10>
+         └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'UserID': 'login'}
+           │    │           │    │              │    └ 'users.Users'
+           │    │           │    │              └ <Rule '/users/<UserID>' (HEAD, POST, DELETE, OPTIONS, PUT, GET) -> users.Users>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000023227CF78B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000232270B7EE0>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {'UserID': 'login'}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x00000232290693A0>
+
+  File "D:\Python\Python39\lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           │                       │    │                   └ {'UserID': 'login'}
+           │                       │    └ <function Resource.dispatch_request at 0x0000023228EE95E0>
+           │                       └ <api_1_0.usersResource.usersResource.UsersResource object at 0x00000232294918E0>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {'UserID': 'login'}
+           │     └ ()
+           └ <bound method UsersResource.get of <class 'api_1_0.usersResource.usersResource.UsersResource'>>
+
+  File "E:\code\backend\api\api_1_0\usersResource\usersResource.py", line 23, in get
+    res = UsersController.get(**kwargs)
+          │               │     └ {'UserID': 'login'}
+          │               └ <classmethod object at 0x000002322906B340>
+          └ <class 'controller.usersController.UsersController'>
+
+> File "E:\code\backend\api\controller\usersController.py", line 83, in get
+    count = users_info.count()
+            │          └ <function Query.count at 0x0000023227B555E0>
+            └ <flask_sqlalchemy.query.Query object at 0x0000023229462730>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 3132, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+    │    │                 └ <sqlalchemy.sql.functions.count at 0x23229462d00; count>
+    │    └ <function Query._legacy_from_self at 0x0000023227B3FD30>
+    └ <flask_sqlalchemy.query.Query object at 0x0000023229462730>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 2825, in scalar
+    ret = self.one()
+          │    └ <function Query.one at 0x0000023227B50DC0>
+          └ <flask_sqlalchemy.query.Query object at 0x00000232294AF610>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 2798, in one
+    return self._iter().one()  # type: ignore
+           │    └ <function Query._iter at 0x0000023227B50F70>
+           └ <flask_sqlalchemy.query.Query object at 0x00000232294AF610>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+            │                  │    │      │      │    │       └ <function Session.execute at 0x0000023227BD8040>
+            │                  │    │      │      │    └ <sqlalchemy.orm.session.Session object at 0x00000232294917C0>
+            │                  │    │      │      └ <flask_sqlalchemy.query.Query object at 0x00000232294AF610>
+            │                  │    │      └ ~_T
+            │                  │    └ <class 'sqlalchemy.engine.result.Result'>
+            │                  └ ~_T
+            └ typing.Union
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x0000023227BD2F70>
+           └ <sqlalchemy.orm.session.Session object at 0x00000232294917C0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           │    │                    └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+           │    └ <function Session._connection_for_bind at 0x0000023227BD2EE0>
+           └ <sqlalchemy.orm.session.Session object at 0x00000232294917C0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           │     │                    │       └ None
+           │     │                    └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+           │     └ <function SessionTransaction._connection_for_bind at 0x0000023227BCDC10>
+           └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023229439DC0>
+
+  File "<string>", line 2, in _connection_for_bind
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ (Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8), None)
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023229439DC0>
+                └ <function SessionTransaction._connection_for_bind at 0x0000023227BCDAF0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+           │    └ <function Engine.connect at 0x0000023227857C10>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+           │    │               └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+           │    └ <class 'sqlalchemy.engine.base.Connection'>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    │          └ <classmethod object at 0x000002322783F4F0>
+    └ <class 'sqlalchemy.engine.base.Connection'>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 2430, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: Y...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1045, "Access denied for user \'root\'@\'localhost\' (using password: YES)")')
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x0000023227857CA0>
+    │                        └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+    └ <sqlalchemy.engine.base.Connection object at 0x00000232294AF5E0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x0000023227413160>
+           │    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8)
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+           │                └ <classmethod object at 0x000002322740C790>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+            │                 └ <classmethod object at 0x000002322740C970>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 716, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x0000023227431700>
+          └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\impl.py", line 170, in _do_get
+    self._dec_overflow()
+    │    └ <function QueuePool._dec_overflow at 0x0000023227431820>
+    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x00000232294DD2C0>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\impl.py", line 167, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x000002322740FEE0>
+           └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 678, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x00000232294CAA00>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 903, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+    │    │      └ <function Logger.debug at 0x0000023207110EE0>
+    │    └ <Logger sqlalchemy.pool.impl.QueuePool (WARNING)>
+    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x00000232294D68C0>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\pool\base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x00000232294CAA00>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x0000023227D09700>
+    │    │                               └ <sqlalchemy.pool.impl.QueuePool object at 0x0000023228DA2B80>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x00000232294CAA00>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\create.py", line 637, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': '127.0.0.1', 'database': 'project_1', 'user': 'root', 'password': '1234', 'port': 3306, 'charset': 'utf8', 'client_f...
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x0000023227907820>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023227D10A60>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': '127.0.0.1', 'database': 'project_1', 'user': 'root', 'password': '1234', 'port': 3306, 'charset': 'utf8', 'client_f...
+           │    │            │        └ ()
+           │    │            └ <class 'pymysql.connections.Connection'>
+           │    └ <module 'pymysql' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\__init__.py'>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023227D10A60>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 352, in __init__
+    self.connect()
+    │    └ <function Connection.connect at 0x0000023228EC7D30>
+    └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+    │    └ <function Connection._request_authentication at 0x0000023228EC81F0>
+    └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 925, in _request_authentication
+    auth_packet = self._process_auth(plugin_name, auth_packet)
+                  │    │             │            └ <pymysql.protocol.MysqlPacket object at 0x00000232294AFD60>
+                  │    │             └ b'mysql_native_password'
+                  │    └ <function Connection._process_auth at 0x0000023228EC8280>
+                  └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1019, in _process_auth
+    pkt = self._read_packet()
+          │    └ <function Connection._read_packet at 0x0000023228EC7E50>
+          └ <pymysql.connections.Connection object at 0x00000232294AF3D0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000023228EC65E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x00000232294AFC40>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x00000232294AFC40>
+    │   └ <function raise_mysql_exception at 0x0000023228D85D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Access denied for user 'root'@'localhost' (using password: YES)"
+          │          └ 1045
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-12-05 16:07:26.968 | ERROR    | utils.loggings:exception:40 - (pymysql.err.ProgrammingError) (1146, "Table 'ticketsystem.users' doesn't exist")
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`RealName` AS `users_RealName`, users.`Gender` AS `users_Gender`, users.`IDCard` AS `users_IDCard`, users.`Email` AS `users_Email`, users.`Address` AS `users_Address`, users.`Account` AS `users_Account`, users.`Password` AS `users_Password` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s) AS anon_1]
+[parameters: {'UserID_1': 'login'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001A7085EC3A0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001A7089F0A60>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001A70A17F4F0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserID_1': 'login'}
+    │      │       └ 'SELECT count(*) AS count_1 \nFROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`Rea...
+    │      └ <function Cursor.execute at 0x000001A709B9D4C0>
+    └ <pymysql.cursors.Cursor object at 0x000001A70A1B95E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "SELECT count(*) AS count_1 \nFROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`Rea...
+             │    └ <function Cursor._query at 0x000001A709B9D940>
+             └ <pymysql.cursors.Cursor object at 0x000001A70A1B95E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "SELECT count(*) AS count_1 \nFROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`Rea...
+    │    └ <function Connection.query at 0x000001A709BA79D0>
+    └ <pymysql.connections.Connection object at 0x000001A70A17F5E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001A709BA8040>
+    │    │                └ <pymysql.connections.Connection object at 0x000001A70A17F5E0>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001A70A17F5E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001A709BA8820>
+    └ <pymysql.connections.MySQLResult object at 0x000001A70A1B96A0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001A70A1B96A0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001A709BA65E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001A70A1B9FD0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001A70A1B9FD0>
+    │   └ <function raise_mysql_exception at 0x000001A708A95D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Table 'ticketsystem.users' doesn't exist"
+          │          └ 1146
+          └ <class 'pymysql.err.ProgrammingError'>
+
+pymysql.err.ProgrammingError: (1146, "Table 'ticketsystem.users' doesn't exist")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001A767B04670>
+    └ <Thread(Thread-1, started daemon 14356)>
+
+  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001A767B043A0>
+    └ <Thread(Thread-1, started daemon 14356)>
+
+  File "D:\Python\Python39\lib\threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 14356)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1, started daemon 14356)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001A70A0EA520>>
+    └ <Thread(Thread-1, started daemon 14356)>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001A707636AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001A70A0EA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 58600)
+    │    │               └ <socket.socket fd=980, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001A707636CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001A70A0EA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 58600)
+    │    │              └ <socket.socket fd=980, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001A707636DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001A70A0EA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001A70A0EA520>
+    │    │                   │        └ ('127.0.0.1', 58600)
+    │    │                   └ <socket.socket fd=980, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001A70A0EA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001A707874550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001A70A143730>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001A707762160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001A70A143730>
+
+  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001A70A143730>>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001A70A0EAE20>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001A70A0EA520>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001A70A143730>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001A70A14D3A0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001A70A14AEB0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001A70A14DF70>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=980>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001A70A0EAE20>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001A70A14DF70>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=980>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001A707D9A790>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001A707D97CA0>
+               └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001A707D97C10>
+         └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'UserID': 'login'}
+           │    │           │    │              │    └ 'users.Users'
+           │    │           │    │              └ <Rule '/users/<UserID>' (HEAD, PUT, GET, POST, DELETE, OPTIONS) -> users.Users>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001A7089D78B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001A707D97EE0>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {'UserID': 'login'}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x000001A709D493A0>
+
+  File "D:\Python\Python39\lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           │                       │    │                   └ {'UserID': 'login'}
+           │                       │    └ <function Resource.dispatch_request at 0x000001A709BC95E0>
+           │                       └ <api_1_0.usersResource.usersResource.UsersResource object at 0x000001A70A143A60>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {'UserID': 'login'}
+           │     └ ()
+           └ <bound method UsersResource.get of <class 'api_1_0.usersResource.usersResource.UsersResource'>>
+
+  File "E:\code\backend\api\api_1_0\usersResource\usersResource.py", line 23, in get
+    res = UsersController.get(**kwargs)
+          │               │     └ {'UserID': 'login'}
+          │               └ <classmethod object at 0x000001A709D4B340>
+          └ <class 'controller.usersController.UsersController'>
+
+> File "E:\code\backend\api\controller\usersController.py", line 83, in get
+    count = users_info.count()
+            │          └ <function Query.count at 0x000001A7088355E0>
+            └ <flask_sqlalchemy.query.Query object at 0x000001A70A143C70>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 3132, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+    │    │                 └ <sqlalchemy.sql.functions.count at 0x1a70a143cd0; count>
+    │    └ <function Query._legacy_from_self at 0x000001A70881FD30>
+    └ <flask_sqlalchemy.query.Query object at 0x000001A70A143C70>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 2825, in scalar
+    ret = self.one()
+          │    └ <function Query.one at 0x000001A708830DC0>
+          └ <flask_sqlalchemy.query.Query object at 0x000001A70A17F340>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 2798, in one
+    return self._iter().one()  # type: ignore
+           │    └ <function Query._iter at 0x000001A708830F70>
+           └ <flask_sqlalchemy.query.Query object at 0x000001A70A17F340>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+            │                  │    │      │      │    │       └ <function Session.execute at 0x000001A7088B8040>
+            │                  │    │      │      │    └ <sqlalchemy.orm.session.Session object at 0x000001A70A143A30>
+            │                  │    │      │      └ <flask_sqlalchemy.query.Query object at 0x000001A70A17F340>
+            │                  │    │      └ ~_T
+            │                  │    └ <class 'sqlalchemy.engine.result.Result'>
+            │                  └ ~_T
+            └ typing.Union
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x000001A7088B1F70>
+           └ <sqlalchemy.orm.session.Session object at 0x000001A70A143A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                   │      │                 └ <classmethod object at 0x000001A70873AFA0>
+                   │      └ <class 'sqlalchemy.orm.context.ORMSelectCompileState'>
+                   └ typing.Any
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             │    └ <function Connection.execute at 0x000001A7085304C0>
+             └ <sqlalchemy.engine.base.Connection object at 0x000001A70A17F4F0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.selectable.Select object at 0x000001A70A143D60>>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001A708530790>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001A70A17F4F0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001A708530940>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001A70A17F4F0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001A7085309D0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001A70A17F4F0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001A708530C10>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001A70A17F4F0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ ProgrammingError(1146, "Table 'ticketsystem.users' doesn't exist")
+          │                    │              └ (<class 'pymysql.err.ProgrammingError'>, ProgrammingError(1146, "Table 'ticketsystem.users' doesn't exist"), <traceback objec...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ ProgrammingError('(pymysql.err.ProgrammingError) (1146, "Table \'ticketsystem.users\' doesn\'t exist")')
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001A7085EC3A0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001A7089F0A60>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001A70A17F4F0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'UserID_1': 'login'}
+    │      │       └ 'SELECT count(*) AS count_1 \nFROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`Rea...
+    │      └ <function Cursor.execute at 0x000001A709B9D4C0>
+    └ <pymysql.cursors.Cursor object at 0x000001A70A1B95E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "SELECT count(*) AS count_1 \nFROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`Rea...
+             │    └ <function Cursor._query at 0x000001A709B9D940>
+             └ <pymysql.cursors.Cursor object at 0x000001A70A1B95E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "SELECT count(*) AS count_1 \nFROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`Rea...
+    │    └ <function Connection.query at 0x000001A709BA79D0>
+    └ <pymysql.connections.Connection object at 0x000001A70A17F5E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001A709BA8040>
+    │    │                └ <pymysql.connections.Connection object at 0x000001A70A17F5E0>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001A70A17F5E0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001A709BA8820>
+    └ <pymysql.connections.MySQLResult object at 0x000001A70A1B96A0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001A70A1B96A0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001A709BA65E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001A70A1B9FD0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001A70A1B9FD0>
+    │   └ <function raise_mysql_exception at 0x000001A708A95D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Table 'ticketsystem.users' doesn't exist"
+          │          └ 1146
+          └ <class 'pymysql.err.ProgrammingError'>
+
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'ticketsystem.users' doesn't exist")
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT users.`UserID` AS `users_UserID`, users.`UserName` AS `users_UserName`, users.`RealName` AS `users_RealName`, users.`Gender` AS `users_Gender`, users.`IDCard` AS `users_IDCard`, users.`Email` AS `users_Email`, users.`Address` AS `users_Address`, users.`Account` AS `users_Account`, users.`Password` AS `users_Password` 
+FROM users 
+WHERE users.`UserID` = %(UserID_1)s) AS anon_1]
+[parameters: {'UserID_1': 'login'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-12-05 16:11:32.320 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001B18B6E4670>
+    └ <Thread(Thread-1, started daemon 6804)>
+
+  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001B18B6E43A0>
+    └ <Thread(Thread-1, started daemon 6804)>
+
+  File "D:\Python\Python39\lib\threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 6804)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1, started daemon 6804)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001B1ADCCA520>>
+    └ <Thread(Thread-1, started daemon 6804)>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001B1AB216AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001B1ADCCA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 58776)
+    │    │               └ <socket.socket fd=1060, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000001B1AB216CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001B1ADCCA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 58776)
+    │    │              └ <socket.socket fd=1060, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000001B1AB216DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001B1ADCCA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001B1ADCCA520>
+    │    │                   │        └ ('127.0.0.1', 58776)
+    │    │                   └ <socket.socket fd=1060, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001B1ADCCA520>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001B1AB454550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001B1ADD966D0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001B1AB342160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001B1ADD966D0>
+
+  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001B1ADD966D0>>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001B1ADCCAE20>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001B1ADCCA520>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001B1ADD966D0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001B1ADD2D3A0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001B1ADD2AEB0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001B1ADD2D0D0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1060>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001B1ADCCAE20>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001B1ADD2D0D0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1060>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000001B1AB97B790>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001B1AB978CA0>
+               └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001B1AB978C10>
+         └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'users.login'
+           │    │           │    │              └ <Rule '/users/login' (POST, OPTIONS) -> users.login>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001B1AC5B78B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001B1AB978EE0>
+           └ <Flask 'app'>
+
+  File "E:\code\backend\api\api_1_0\usersResource\urls.py", line 17, in login
+    return UsersOtherResource.login()
+           │                  └ <classmethod object at 0x000001B1AD920520>
+           └ <class 'api_1_0.usersResource.usersOtherResource.UsersOtherResource'>
+
+> File "E:\code\backend\api\api_1_0\usersResource\usersOtherResource.py", line 22, in login
+    kwargs=parser.parse_args()
+           │      └ <function RequestParser.parse_args at 0x000001B1AD7D64C0>
+           └ <flask_restful.reqparse.RequestParser object at 0x000001B1ADD98640>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000001B1ADD98640>
+                   │   │     └ <Request 'http://127.0.0.1:5000/users/login' [POST]>
+                   │   └ <function Argument.parse at 0x000001B1AD7D6310>
+                   └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x000001B1AD7D6280>
+    └ Argument('account', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ac...
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'account': '账户数据类型不匹配'}
+    │             └ <function abort at 0x000001B1AC7BAD30>
+    └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x000001B1AB7DC670>
+
+  File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x000001B1AB1C3C10>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
