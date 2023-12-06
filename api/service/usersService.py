@@ -59,9 +59,9 @@ class UsersService(UsersController):
             # if password != configurePassword:
             #     return {'code': RET.PWDERR, 'message': error_map_EN[RET.PWDERR], 'error': '两次输入密码不一致'}
             #
-            # existing_user = db.session.query(cls).filter_by(UserName=username).first()
-            # if existing_user:
-            #     return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "账户已存在"}
+            existing_user = db.session.query(cls).filter_by(UserName=username).first()
+            if existing_user:
+                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "账户已存在"}
 
             id = int(GenerateID.create_random_id())
             new_user = cls(UserID=id, Email=email, UserName=username, Password=password)
