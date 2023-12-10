@@ -5,6 +5,7 @@ import Layout from '../views/Layout.vue';
 
 
 const routes = [
+  
   {
     path: '/',
     name: 'Layout',
