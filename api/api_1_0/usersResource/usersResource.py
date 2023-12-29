@@ -36,7 +36,6 @@ class UsersResource(Resource):
         parser.add_argument('Address', location='args', required=False, help='Address参数类型不正确或缺失')
         parser.add_argument('Account', location='args', required=False, help='Account参数类型不正确或缺失')
         parser.add_argument('Password', location='args', required=False, help='Password参数类型不正确或缺失')
-        
         parser.add_argument('Page', location='args', required=False, help='Page参数类型不正确或缺失')
         parser.add_argument('Size', location='args', required=False, help='Size参数类型不正确或缺失')
 

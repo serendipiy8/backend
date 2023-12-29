@@ -31,7 +31,7 @@ def user_validation():
 @app.before_request
 def user_require_token():
     # 不需要token验证的请求点列表
-    permission = ['apiversion.Apiversion', 'adminfunctions.Adminfunctions', 'shows.Shows', 'refunds.Refunds', 'orders.Orders', 'administrators.Administrators', 'ticketprices.Ticketprices', 'theaters.Theaters', 'users.Users','users.login','users.register']
+    permission = ['apiversion.Apiversion', 'adminfunctions.Adminfunctions', 'shows.Shows', 'refunds.Refunds', 'orders.Orders', 'administrators.Administrators', 'ticketprices.Ticketprices', 'theaters.Theaters', 'users.Users','users.login','users.register','users.information']
 
     # 如果不是请求上述列表中的接口，需要验证token
     if request.endpoint not in permission:
