@@ -9,5 +9,5 @@ from api_1_0.adminfunctionsResource.adminfunctionsOtherResource import Adminfunc
 
 api = Api(adminfunctions_blueprint)
 
-api.add_resource(AdminfunctionsResource, '/adminfunctions/<FunctionID>', '/adminfunctions', endpoint='Adminfunctions')
+api.add_resource(AdminfunctionsResource, '/adminfunctions/<FunctionID>', '/Adminfunctions', endpoint='Adminfunctions')
 

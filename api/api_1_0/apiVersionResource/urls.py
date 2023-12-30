@@ -7,4 +7,4 @@ from api_1_0.apiVersionResource.apiVersionResource import ApiVersionResource
 
 api = Api(apiversion_blueprint)
 
-api.add_resource(ApiVersionResource, '/apiversion', endpoint='Apiversion')  # 测试接口，获取当前接口的版本
+api.add_resource(ApiVersionResource, '/Apiversion', endpoint='Apiversion')  # 测试接口，获取当前接口的版本

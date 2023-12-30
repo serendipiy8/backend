@@ -9,5 +9,5 @@ from api_1_0.ordersResource.ordersOtherResource import OrdersOtherResource
 
 api = Api(orders_blueprint)
 
-api.add_resource(OrdersResource, '/orders/<OrderID>', '/orders', endpoint='Orders')
+api.add_resource(OrdersResource, '/orders/<OrderID>', '/Orders', endpoint='Orders')
 

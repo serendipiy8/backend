@@ -10,7 +10,7 @@ from api_1_0.usersResource.usersOtherResource import UsersOtherResource
 
 api = Api(users_blueprint)
 
-api.add_resource(UsersResource, '/users/<UserID>', '/users', endpoint='Users')
+api.add_resource(UsersResource, '/users/<UserID>', '/Users', endpoint='Users')
 
 
 @users_blueprint.route('/users/login', methods=['POST'], endpoint='login')
