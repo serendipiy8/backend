@@ -9,5 +9,5 @@ from api_1_0.administratorsResource.administratorsOtherResource import Administr
 
 api = Api(administrators_blueprint)
 
-api.add_resource(AdministratorsResource, '/administrators/<AdminID>', '/administrators', endpoint='Administrators')
+api.add_resource(AdministratorsResource, '/administrators/<AdminID>', '/Administrators', endpoint='Administrators')
 

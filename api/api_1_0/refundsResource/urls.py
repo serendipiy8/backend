@@ -9,5 +9,5 @@ from api_1_0.refundsResource.refundsOtherResource import RefundsOtherResource
 
 api = Api(refunds_blueprint)
 
-api.add_resource(RefundsResource, '/refunds/<RefundID>', '/refunds', endpoint='Refunds')
+api.add_resource(RefundsResource, '/refunds/<RefundID>', '/Refunds', endpoint='Refunds')
 

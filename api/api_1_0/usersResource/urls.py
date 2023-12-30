@@ -20,3 +20,10 @@ def login():
 @users_blueprint.route('/users/register', methods=['POST'], endpoint='register')
 def register():
     return UsersOtherResource.register()
+
+@users_blueprint.route('/users/information',methods=['PUT','GET'],endpoint='information')
+def information():
+    if request.method=='PUT':
+        return UsersOtherResource.information_post()
+    if request.method=='GET':
+        return UsersOtherResource.information_query()
