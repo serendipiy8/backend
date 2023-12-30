@@ -36,12 +36,9 @@ class TheatersOtherResource(Resource):
 		else:
 			return jsonify(code=res['code'], message=res['message'], error=res['error'])
 
-
 	@classmethod
 	def theaters_query(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -61,11 +58,14 @@ class TheatersOtherResource(Resource):
 			return jsonify(code=res['code'], message=res['message'], error=res['error'])
 
 
+
 	@classmethod
 	def theaters_revise(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('TheaterID', type=str, location='form', required=True, help='剧院ID数据类型不匹配')
+		parser.add_argument('TheaterName', type=str, location='form', required=True, help='剧院名字类型不匹配')
+		parser.add_argument('Address', type=str, location='form', required=True, help='地址类型不匹配')
+		parser.add_argument('Capacity', type=str, location='form', required=True, help='容量类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -88,8 +88,7 @@ class TheatersOtherResource(Resource):
 	@classmethod
 	def theaters_delete(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('TheaterID', type=str, location='form', required=True, help='剧院ID数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象

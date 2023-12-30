@@ -60,39 +60,24 @@ class TheatersService(TheatersController):
 
     @classmethod
     def theaters_query(cls, **kwargs):
-        account = kwargs.get('account')
-        password = kwargs.get('password')
-        password_again = kwargs.get('password_again')
 
         try:
-            if password != password_again:
-                return {'code': RET.PWDERR, 'message': error_map_EN[RET.PWDERR], 'error': '两次输入密码不一致'}
+            existing_show = db.session.query(cls).all()
+            if existing_show==None:
+                return {'code': RET.DATAERR, 'message': error_map_EN[RET.DATAERR], 'error': "查询数据不存在"}
 
-            existing_user = db.session.query(cls).filter_by(Account=account).first()
-            if existing_user:
-                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "账户已存在"}
+            back_show=[]
+            for entry in existing_show:
+                show_dict={
+                    'TheaterID':entry.TheaterID,
+                    'TheaterName': entry.TheaterName,
+                    'Address': entry.Address,
+                    'Capacity': entry.Capacity,
+                    'AdminID': entry.AdminID
+                }
+                back_show.append(show_dict)
 
-            id = int(GenerateID.create_random_id())
-            new_user = cls(UserID=id, Account=account, Password=password)
-            # new_user.add(Account=account, Password=password)
-            db.session.add(new_user)
-            db.session.commit()
-
-            # 获取新用户信息
-            user_info = db.session.query(
-                cls.Account,
-                cls.Password,
-            ).filter(cls.Account == account).first()
-
-            user_info = dict(user_info._asdict())
-
-            db.session.close()
-
-            back_dict = {
-                "account": user_info['Account'],
-            }
-
-            return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}
+            return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_show}
         except Exception as e:
             loggings.exception(1, e)
             return {'code': RET.DBERR, 'message': error_map_EN[RET.DBERR], 'error': str(e)}
@@ -101,36 +86,42 @@ class TheatersService(TheatersController):
 
     @classmethod
     def theaters_revise(cls, **kwargs):
-        account = kwargs.get('account')
-        password = kwargs.get('password')
-        password_again = kwargs.get('password_again')
+        theaterid = kwargs.get('TheaterID')
+        theatername = kwargs.get('TheaterName')
+        address = kwargs.get('Address')
+        capacity = kwargs.get('Capacity')
 
         try:
-            if password != password_again:
-                return {'code': RET.PWDERR, 'message': error_map_EN[RET.PWDERR], 'error': '两次输入密码不一致'}
+            existing_theater = db.session.query(cls).filter_by(TheaterID=theaterid).first()
+            if existing_theater==None:
+                return {'code': RET.NODATA, 'message': error_map_EN[RET.NODATA], 'error': "数据不存在"}
 
-            existing_user = db.session.query(cls).filter_by(Account=account).first()
-            if existing_user:
-                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "账户已存在"}
 
-            id = int(GenerateID.create_random_id())
-            new_user = cls(UserID=id, Account=account, Password=password)
-            # new_user.add(Account=account, Password=password)
-            db.session.add(new_user)
+            existing_theater.TheaterName=theatername
+            existing_theater.Address=address
+            existing_theater.Capacity=capacity
+
             db.session.commit()
 
             # 获取新用户信息
             user_info = db.session.query(
-                cls.Account,
-                cls.Password,
-            ).filter(cls.Account == account).first()
+                cls.TheaterID,
+                cls.TheaterName,
+                cls.Address,
+                cls.Capacity,
+                cls.AdminID,
+            ).filter(cls.TheaterID==theaterid).first()
 
             user_info = dict(user_info._asdict())
 
             db.session.close()
 
             back_dict = {
-                "account": user_info['Account'],
+                    'TheaterID':user_info["TheaterID"],
+                    'TheaterName': user_info["TheaterName"],
+                    'Address': user_info["Address"],
+                    'Capacity': user_info["Capacity"],
+                    'AdminID': user_info["AdminID"],
             }
 
             return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}
@@ -142,36 +133,27 @@ class TheatersService(TheatersController):
 
     @classmethod
     def theaters_delete(cls, **kwargs):
-        account = kwargs.get('account')
-        password = kwargs.get('password')
-        password_again = kwargs.get('password_again')
+        theaterid = kwargs.get('TheaterID')
 
         try:
-            if password != password_again:
-                return {'code': RET.PWDERR, 'message': error_map_EN[RET.PWDERR], 'error': '两次输入密码不一致'}
+            existing_theater = db.session.query(cls).filter_by(TheaterID=theaterid).first()
+            if existing_theater == None:
+                return {'code': RET.NODATA, 'message': error_map_EN[RET.NODATA], 'error': "数据不存在"}
 
-            existing_user = db.session.query(cls).filter_by(Account=account).first()
-            if existing_user:
-                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "账户已存在"}
-
-            id = int(GenerateID.create_random_id())
-            new_user = cls(UserID=id, Account=account, Password=password)
-            # new_user.add(Account=account, Password=password)
-            db.session.add(new_user)
+            db.session.delete(existing_theater)
             db.session.commit()
 
-            # 获取新用户信息
-            user_info = db.session.query(
-                cls.Account,
-                cls.Password,
-            ).filter(cls.Account == account).first()
 
-            user_info = dict(user_info._asdict())
+            user_info = dict(existing_theater._asdict())
 
             db.session.close()
 
             back_dict = {
-                "account": user_info['Account'],
+                'TheaterID': user_info["TheaterID"],
+                'TheaterName': user_info["TheaterName"],
+                'Address': user_info["Address"],
+                'Capacity': user_info["Capacity"],
+                'AdminID': user_info["AdminID"],
             }
 
             return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}
