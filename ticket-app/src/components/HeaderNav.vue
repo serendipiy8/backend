@@ -8,18 +8,20 @@
         router>
         <el-menu-item index="/">首页</el-menu-item>
         <el-menu-item index="/concert">演出</el-menu-item>
-        <el-sub-menu index="3">
-            <template #title>票务</template>
-            <el-menu-item index="3-1">选项1</el-menu-item>
-            <el-menu-item index="3-2">选项2</el-menu-item>
-        </el-sub-menu>
+        <el-menu-item index="/ticket">票务</el-menu-item>
         <div class="flex-grow" />
         <el-menu-item index="login">登录</el-menu-item>
         <el-menu-item index="login">注册</el-menu-item>
+        <el-sub-menu index="3">
+            <template #title>个人中心</template>
+            <el-menu-item index="/information">个人信息</el-menu-item>
+            <el-menu-item index="/" @click="logoutHandle">注销</el-menu-item>
+        </el-sub-menu>
     </el-menu>
 </template>
   
 <script>
+import { mapMutations } from "vuex"
 export default {
     data() {
         return {
@@ -30,6 +32,11 @@ export default {
         handleSelect(key, keyPath) {
             console.log(key, keyPath);
         },
+        ...mapMutations("users", ["setAuthentication"]),
+        logoutHandle() {
+            this.$store.dispatch('logout');
+            this.$router.push("/login")
+        }
     },
 };
 </script>

@@ -154,7 +154,8 @@ export default {
                   "ticket",
                   JSON.stringify(res.data)
                 )
-                store.commit('setAuthentication',true)
+                this.$store.dispatch('login');
+                // store.commit('setAuthentication',true)
                 this.$router.push('/')
               } else {
                 const notification = {

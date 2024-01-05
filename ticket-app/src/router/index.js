@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../views/main/Home.vue';
+import Home from '../views/main/HomePage/Home.vue';
 import Layout from '../views/Layout.vue';
 // import Concert from '../views/main/Concert.vue'
 
@@ -21,7 +21,15 @@ const routes = [
       meta: {
         requireAuth: true // 标记需要登录
       }
-    }]
+    },
+    {
+      path: 'information',
+      name: 'Information',
+      component: () => import("../views/main/Information.vue"),
+      meta: {
+        requireAuth: true // 标记需要登录
+      }
+    }],
   },
   {
     path: '/login',
