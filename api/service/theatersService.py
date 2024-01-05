@@ -57,24 +57,34 @@ class TheatersService(TheatersController):
 
     @classmethod
     def theaters_query(cls, **kwargs):
+        theaterid = kwargs.get('TheaterID')
 
         try:
-            existing_show = db.session.query(cls).all()
-            if existing_show==None:
-                return {'code': RET.DATAERR, 'message': error_map_EN[RET.DATAERR], 'error': "查询数据不存在"}
+            existing_user = db.session.query(cls).filter_by(TheaterID=theaterid).first()
+            if existing_user == None:
+                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "用户id不存在"}
 
-            back_show=[]
-            for entry in existing_show:
-                show_dict={
-                    'TheaterID':entry.TheaterID,
-                    'TheaterName': entry.TheaterName,
-                    'Address': entry.Address,
-                    'Capacity': entry.Capacity,
-                    'AdminID': entry.AdminID
-                }
-                back_show.append(show_dict)
+            # 获取新用户信息
+            user_info = db.session.query(
+                cls.TheaterID,
+                cls.TheaterName,
+                cls.Address,
+                cls.Capacity,
+                cls.AdminID,
+            ).filter(cls.TheaterID == theaterid).first()
 
-            return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_show}
+            user_info = dict(user_info._asdict())
+
+            db.session.close()
+
+            back_dict = {
+                "TheaterID": user_info['TheaterID'],
+                "TheaterName": user_info['TheaterName'],
+                "Address": user_info['Address'],
+                "Capacity": user_info['Capacity'],
+                "AdminID": user_info['AdminID'],
+            }
+            return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}
         except Exception as e:
             loggings.exception(1, e)
             return {'code': RET.DBERR, 'message': error_map_EN[RET.DBERR], 'error': str(e)}

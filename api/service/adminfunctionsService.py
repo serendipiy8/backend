@@ -130,4 +130,37 @@ class AdminfunctionsService(AdminfunctionsController):
         finally:
             db.session.close()
 
-    pass
+    @classmethod
+    def adminfunctions_query(cls, **kwargs):
+        functionid = kwargs.get('FunctionID')
+
+        try:
+
+            existing_order = db.session.query(cls).filter_by(FunctionID=functionid).first()
+            if existing_order is None:
+                return {'code': RET.NODATA, 'message': error_map_EN[RET.NODATA], 'error': "查询不到输入订单ID"}
+
+            # 获取新用户信息
+            user_info = db.session.query(
+                cls.FunctionID,
+                cls.Name,
+                cls.Permissions,
+            ).filter(cls.FunctionID == functionid).first()
+
+            user_info = dict(user_info._asdict())
+
+            db.session.close()
+
+            back_dict = {
+                "FunctionID": user_info['FunctionID'],
+                "Name": user_info['Name'],
+                "Permissions": user_info['Permissions'],
+            }
+
+            return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}
+        except Exception as e:
+            loggings.exception(1, e)
+            return {'code': RET.DBERR, 'message': error_map_EN[RET.DBERR], 'error': str(e)}
+        finally:
+            db.session.close()
+

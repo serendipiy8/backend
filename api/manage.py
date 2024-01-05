@@ -31,7 +31,7 @@ def user_validation():
 @app.before_request
 def user_require_token():
     # 不需要token验证的请求点列表
-    permission = ['apiversion.Apiversion', 'adminfunctions.Adminfunctions', 'shows.Shows', 'refunds.Refunds','ticketprices.Ticketprices', 'orders.Orders', 'administrators.Administrators',  'theaters.Theaters', 'users.Users','users.login','users.register','users.information','ticketprices.ticketprices','ticketprices.TicketpricesQuery','theaters.theaters','shows.adminpost','shows.queryShowName','shows.adminadvise','shows.admindelete','administrators.administrators','orders.orders','orders.queryUser','refunds.refunds','refunds.refundsOrder','adminfunctions.adminfunctions','shows.queryITheaterID']
+    permission = ['apiversion.Apiversion', 'adminfunctions.Adminfunctions', 'shows.queryShowID','shows.Shows', 'refunds.Refunds','ticketprices.Ticketprices', 'orders.Orders', 'administrators.Administrators',  'theaters.Theaters', 'users.Users','users.login','users.register','users.information','ticketprices.ticketprices','ticketprices.TicketpricesQuery','theaters.theaters','shows.adminpost','shows.queryShowName','shows.adminadvise','shows.admindelete','administrators.administrators','orders.orders','orders.queryUser','refunds.refunds','refunds.refundsOrder','adminfunctions.adminfunctions','shows.queryITheaterID']
 
     # 如果不是请求上述列表中的接口，需要验证token
     if request.endpoint not in permission:

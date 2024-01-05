@@ -19,6 +19,8 @@ def orders():
         return OrdersOtherResource.orders_post()
     if request.method=='PUT':
         return OrdersOtherResource.orders_revise()
+    if request.method=='GET':
+        return OrdersOtherResource.orders_query()
 
 @orders_blueprint.route('orders/queryUser',methods=['GET'],endpoint='queryUser')
 def queryUser():

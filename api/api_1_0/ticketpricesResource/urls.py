@@ -11,7 +11,7 @@ api = Api(ticketprices_blueprint)
 
 api.add_resource(TicketpricesResource, '/ticketprices/<TicketID>', '/Ticketprices', endpoint='Ticketprices')
 
-@ticketprices_blueprint.route('/ticketprices', methods=['POST','PUT','DEL'], endpoint='ticketprices')
+@ticketprices_blueprint.route('/ticketprices', methods=['POST','PUT','DEL','GET'], endpoint='ticketprices')
 def ticketprices():
     if request.method=='POST':
         return TicketpricesOtherResource.ticketprices_post()
@@ -19,6 +19,8 @@ def ticketprices():
         return TicketpricesOtherResource.ticketprices_del()
     if request.method=='PUT':
         return TicketpricesOtherResource.ticketprices_put()
+    if request.method=='GET':
+        return TicketpricesOtherResource.ticketprices_query()
 
 @ticketprices_blueprint.route('/TicketpricesQuery', methods=['GET'], endpoint='TicketpricesQuery')
 def TicketpricesQuery():

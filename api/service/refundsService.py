@@ -110,6 +110,47 @@ class RefundsService(RefundsController):
             db.session.close()
 
     @classmethod
+    def refunds_query(cls, **kwargs):
+        refundid = kwargs.get('RefundID')
+
+        try:
+            existing_user = db.session.query(cls).filter_by(RefundID=refundid).first()
+            if existing_user == None:
+                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "用户id不存在"}
+
+            # 获取新用户信息
+            user_info = db.session.query(
+                cls.RefundID,
+                cls.UserID,
+                cls.AdminID,
+                cls.RefundTime,
+                cls.RefundReason,
+                cls.TicketStatus,
+                cls.OrderID,
+            ).filter(cls.RefundID == refundid).first()
+
+            user_info = dict(user_info._asdict())
+
+            db.session.close()
+
+            back_dict = {
+                "RefundID": user_info['RefundID'],
+                "UserID": user_info['UserID'],
+                "AdminID": user_info['AdminID'],
+                "RefundTime": user_info['RefundTime'],
+                "RefundReason": user_info['RefundReason'],
+                "TicketStatus": user_info['TicketStatus'],
+                "OrderID": user_info['OrderID'],
+            }
+
+            return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}
+        except Exception as e:
+            loggings.exception(1, e)
+            return {'code': RET.DBERR, 'message': error_map_EN[RET.DBERR], 'error': str(e)}
+        finally:
+            db.session.close()
+
+    @classmethod
     def refunds_revise(cls, **kwargs):
         refundid = kwargs.get('RefundID')
         ticketstatus = kwargs.get('TicketStatus')

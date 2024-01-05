@@ -39,6 +39,7 @@ class TheatersOtherResource(Resource):
 	@classmethod
 	def theaters_query(cls):
 		parser = reqparse.RequestParser()
+		parser.add_argument('TheaterID', type=str, location='form', required=True, help='剧院ID数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象

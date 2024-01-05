@@ -199,3 +199,42 @@ class TicketpricesService(TicketpricesController):
             db.session.close()
 
     pass
+
+    @classmethod
+    def ticketprices_query(cls, **kwargs):
+        ticketid = kwargs.get('TicketID')
+
+        try:
+            existing_user = db.session.query(cls).filter_by(TicketID=ticketid).first()
+            if existing_user == None:
+                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "用户id不存在"}
+
+            # 获取新用户信息
+            user_info = db.session.query(
+                cls.TicketID,
+                cls.ShowID,
+                cls.Price,
+                cls.Category,
+                cls.TotalQuantity,
+                cls.RemainingQuantity,
+            ).filter(cls.TicketID == ticketid).first()
+
+            user_info = dict(user_info._asdict())
+
+            db.session.close()
+
+            back_dict = {
+                "TicketID": user_info['TicketID'],
+                "ShowID": user_info['ShowID'],
+                "Price": user_info['Price'],
+                "Category": user_info['Category'],
+                "TotalQuantity": user_info['TotalQuantity'],
+                "RemainingQuantity": user_info['RemainingQuantity'],
+            }
+
+            return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}
+        except Exception as e:
+            loggings.exception(1, e)
+            return {'code': RET.DBERR, 'message': error_map_EN[RET.DBERR], 'error': str(e)}
+        finally:
+            db.session.close()
