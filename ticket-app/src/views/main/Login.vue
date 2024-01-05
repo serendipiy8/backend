@@ -56,6 +56,7 @@
 import api from "@/api"
 import { mapMutations } from "vuex"
 import { h } from 'vue'
+import store from "../../store"
 
 export default {
   data() {
@@ -153,6 +154,7 @@ export default {
                   "ticket",
                   JSON.stringify(res.data)
                 )
+                store.commit('setAuthentication',true)
                 this.$router.push('/')
               } else {
                 const notification = {
