@@ -12,22 +12,20 @@ router.beforeEach((to, from, next) => {
   if (requiresAuth && !isAuthenticated) {
     // 如果需要登录且用户未登录，则跳转到登录页面
     next({ name: 'Login' });
-  } else {
-    // 允许访问目标页面
-    next();
-  }
-
-  if (to.meta.isLogin) {
+  } else if (to.meta.isLogin) {
+    // 如果是登录页面
     let token = store.state.loginModule.user.token;
     if (token) {
       next();
     } else {
+      console.log('Token not found')
       next({
         path: "/login"
-      })
+      });
     }
   } else {
+    // 允许访问目标页面
     next();
   }
-  
 });
+
