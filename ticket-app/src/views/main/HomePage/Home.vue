@@ -35,7 +35,7 @@ export default {
 .index-warp {
   width: 1200px;
   margin: 0 auto;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .index-left {
@@ -45,7 +45,7 @@ export default {
 
 }
 .index-right {
-  margin-top: 100px;
+  margin-top: 15px;
   width: 900px;
   float: left;
 }

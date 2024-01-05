@@ -62,8 +62,73 @@ export default {
                             hot: false
                         },
                     ]
-                }
-
+                },
+                {
+                    title: "音乐会",
+                    list: [
+                        {
+                            id: 1,
+                            name: "欧阳娜娜·初星Stardust古典跨界巡回音乐会-广州站",
+                            url: "",
+                            hot: true
+                        },
+                        {
+                            id: 2,
+                            name: "郎朗钢琴元宇宙暨郎朗钢琴盛典",
+                            url: "",
+                            hot: true
+                        }, {
+                            id: 3,
+                            name: "春节序曲”经典名曲——北京新春交响音乐会",
+                            url: "",
+                            hot: false
+                        },
+                    ]
+                },
+                {
+                    title: "展览休闲",
+                    list: [
+                        {
+                            id: 1,
+                            name: "X美术馆冬季三联展",
+                            url: "",
+                            hot: false
+                        },
+                        {
+                            id: 2,
+                            name: "永久的当下：斯蒂芬·肖尔回顾展",
+                            url: "",
+                            hot: false
+                        }, {
+                            id: 3,
+                            name: "天生我材·李白——中国古诗词新媒体艺术系列展",
+                            url: "",
+                            hot: true
+                        },
+                    ]
+                },
+                {
+                    title: "舞蹈芭蕾",
+                    list: [
+                        {
+                            id: 1,
+                            name: "中央芭蕾舞团《灰姑娘》",
+                            url: "",
+                            hot: false
+                        },
+                        {
+                            id: 2,
+                            name: "“为人民而舞”-《舞动经典》",
+                            url: "",
+                            hot: false
+                        }, {
+                            id: 3,
+                            name: "大型民族舞剧《醒·狮》",
+                            url: "",
+                            hot: true
+                        },
+                    ]
+                },
             ]
         }
     }
@@ -96,7 +161,7 @@ export default {
 }
 
 .index-left-block .h3 {
-    padding: 0 15px 5px 15px;
+    padding: 5px 15px 5px 15px;
     font-weight: bold;
     color: #222;
 }
@@ -180,15 +245,6 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-.swiperimg {
-    width: 100%;
-    height: 350px;
-}
-
-.swiper-size {
-    margin-top: 15px;
 }
 
 .button {

@@ -7,6 +7,9 @@ import './assets/css/reset.css'
 import store from './store/index'
 import './router/permission'
 import "./utils/init"
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css'
+
 
 
 const app = createApp(App)
