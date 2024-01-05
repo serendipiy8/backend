@@ -105,7 +105,7 @@ class UsersService(UsersController):
         try:
             existing_user = db.session.query(cls).filter_by(UserID=userid).first()
             if existing_user==None:
-                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "用户id不存在"}
+                return {'code': RET.NODATA, 'message': error_map_EN[RET.NODATA], 'error': "用户id不存在"}
 
             existing_user.Gender=gender
             existing_user.RealName=realname

@@ -9,7 +9,7 @@ from api_1_0.theatersResource.theatersOtherResource import TheatersOtherResource
 
 api = Api(theaters_blueprint)
 
-api.add_resource(TheatersResource, '/Theaters/<TheaterID>', '/Theaters', endpoint='Theaters')
+api.add_resource(TheatersResource, '/theaters/<TheaterID>', '/Theaters', endpoint='Theaters')
 
 @theaters_blueprint.route('/theaters', methods=['POST','PUT','GET','DELETE'], endpoint='theaters')
 def theaters():

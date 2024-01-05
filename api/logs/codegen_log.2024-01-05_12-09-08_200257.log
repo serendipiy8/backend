@@ -1,0 +1,1325 @@
+2024-01-05 12:09:08.165 | ERROR    | utils.loggings:exception:40 - (pymysql.err.DataError) (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+[SQL: INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s, %(Account)s, %(Password)s, %(Permissions)s)]
+[parameters: {'AdminID': 2024010512092749, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001F49AA6C0D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001F49ADF6350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001F49D66FBE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'AdminID': 2024010512092749, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+    │      │       └ 'INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s...
+    │      └ <function Cursor.execute at 0x000001F49AFE3010>
+    └ <pymysql.cursors.Cursor object at 0x000001F49D66EF50>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512092749, '系统管理员',...
+             │    └ <function Cursor._query at 0x000001F49AFE3490>
+             └ <pymysql.cursors.Cursor object at 0x000001F49D66EF50>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512092749, '系统管理员',...
+    │    └ <function Connection.query at 0x000001F49AFFE4D0>
+    └ <pymysql.connections.Connection object at 0x000001F49D66C610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001F49AFFEB00>
+    │    │                └ <pymysql.connections.Connection object at 0x000001F49D66C610>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001F49D66C610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001F49AFFF2E0>
+    └ <pymysql.connections.MySQLResult object at 0x000001F49D66F040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001F49D66F040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001F49AFFD120>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001F49D66F0D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001F49D66F0D0>
+    │   └ <function raise_mysql_exception at 0x000001F49AEC4F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect integer value: 'adsD' for column 'Password' at row 1"
+          │          └ 1366
+          └ <class 'pymysql.err.DataError'>
+
+pymysql.err.DataError: (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001F4972BA950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 20612)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001F4972BA680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 20612)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 20612)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 20612)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001F49D5ABC40>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 20612)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001F4972C00D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F49D5ABC40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 51351)
+    │    │               └ <socket.socket fd=1112, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000001F4972C0280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F49D5ABC40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 51351)
+    │    │              └ <socket.socket fd=1112, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000001F4972C03A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F49D5ABC40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001F49D5ABC40>
+    │    │                   │        └ ('127.0.0.1', 51351)
+    │    │                   └ <socket.socket fd=1112, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F49D5ABC40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001F4990689D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F49D5D3010>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001F498EADA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F49D5D3010>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001F49D5D3010>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001F49D5AA650>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001F49D5ABC40>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001F49D5D3010>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001F49D639C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001F49D5DA2D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001F49D639480>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1112>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001F49D5AA650>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001F49D639480>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1112>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000001F4999181F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001F4999136D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001F499913640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'administrators.administrators'
+           │    │           │    │              └ <Rule '/administrators' (DELETE, OPTIONS, GET, POST, HEAD, PUT) -> administrators.administrators>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001F49AE171C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001F499913910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\urls.py", line 20, in administrators
+    return AdministratorsOtherResource.administrators_post()
+           │                           └ <classmethod(<function AdministratorsOtherResource.administrators_post at 0x000001F49D502E60>)>
+           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 30, in administrators_post
+    res = AdministratorsService.administrators_post(**kwargs)
+          │                     │                     └ {'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+          │                     └ <classmethod(<function AdministratorsService.administrators_post at 0x000001F49D502EF0>)>
+          └ <class 'service.administratorsService.AdministratorsService'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\service\administratorsService.py", line 30, in administrators_post
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x000001F49AD7F490>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001F49994B4C0>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x000001F49AD96340>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001F49994B4C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x000001F49ACF4DC0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F49D6CF740>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F49D6CF740>
+                └ <function SessionTransaction.commit at 0x000001F49ACF4D30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x000001F49ACF4CA0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F49D6CF740>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F49D6CF740>
+                └ <function SessionTransaction._prepare_impl at 0x000001F49ACF4B80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x000001F49ACF7880>
+    │    └ <sqlalchemy.orm.session.Session object at 0x000001F49D66FAF0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001F49D6CF740>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x000001F49ACF7A30>
+    └ <sqlalchemy.orm.session.Session object at 0x000001F49D66FAF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x000001F49D6CE480>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1366, "Incorrect integer value: \'adsD\' for column \'Password\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x000001F49ACDDC60>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001F49D66F3D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001F49D66F3D0>
+    │   └ <function SaveUpdateAll.execute at 0x000001F49ACDE560>
+    └ SaveUpdateAll(Mapper[Administrators(administrators)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x000001F49ACC8AF0>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x000001F49ACC9510>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1043, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x000001F49A9C4C10>
+             └ <sqlalchemy.engine.base.Connection object at 0x000001F49D66FBE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x000001F49D66CBE0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001F49A9C4EE0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001F49D66FBE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001F49A9C5090>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001F49D66FBE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001F49A9C5120>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001F49D66FBE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001F49A9C5360>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001F49D66FBE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ DataError(1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+          │                    │              └ (<class 'pymysql.err.DataError'>, DataError(1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1"), <traceba...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1366, "Incorrect integer value: \'adsD\' for column \'Password\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001F49AA6C0D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001F49ADF6350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001F49D66FBE0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'AdminID': 2024010512092749, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+    │      │       └ 'INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s...
+    │      └ <function Cursor.execute at 0x000001F49AFE3010>
+    └ <pymysql.cursors.Cursor object at 0x000001F49D66EF50>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512092749, '系统管理员',...
+             │    └ <function Cursor._query at 0x000001F49AFE3490>
+             └ <pymysql.cursors.Cursor object at 0x000001F49D66EF50>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512092749, '系统管理员',...
+    │    └ <function Connection.query at 0x000001F49AFFE4D0>
+    └ <pymysql.connections.Connection object at 0x000001F49D66C610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001F49AFFEB00>
+    │    │                └ <pymysql.connections.Connection object at 0x000001F49D66C610>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001F49D66C610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001F49AFFF2E0>
+    └ <pymysql.connections.MySQLResult object at 0x000001F49D66F040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001F49D66F040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001F49AFFD120>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001F49D66F0D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001F49D66F0D0>
+    │   └ <function raise_mysql_exception at 0x000001F49AEC4F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect integer value: 'adsD' for column 'Password' at row 1"
+          │          └ 1366
+          └ <class 'pymysql.err.DataError'>
+
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+[SQL: INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s, %(Account)s, %(Password)s, %(Permissions)s)]
+[parameters: {'AdminID': 2024010512092749, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-01-05 12:10:56.054 | ERROR    | utils.loggings:exception:40 - (pymysql.err.DataError) (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+[SQL: INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s, %(Account)s, %(Password)s, %(Permissions)s)]
+[parameters: {'AdminID': 2024010512105267, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002444C0148B0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002444C522050>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002444D06B7C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'AdminID': 2024010512105267, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+    │      │       └ 'INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s...
+    │      └ <function Cursor.execute at 0x000002444C6E9E10>
+    └ <pymysql.cursors.Cursor object at 0x000002444D0C11B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512105267, '系统管理员',...
+             │    └ <function Cursor._query at 0x000002444C6EA290>
+             └ <pymysql.cursors.Cursor object at 0x000002444D0C11B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512105267, '系统管理员',...
+    │    └ <function Connection.query at 0x000002444C7115A0>
+    └ <pymysql.connections.Connection object at 0x000002444D06B670>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002444C711BD0>
+    │    │                └ <pymysql.connections.Connection object at 0x000002444D06B670>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000002444D06B670>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002444C7123B0>
+    └ <pymysql.connections.MySQLResult object at 0x000002444D06BF10>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002444D06BF10>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002444C710160>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002444D0C06A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002444D0C06A0>
+    │   └ <function raise_mysql_exception at 0x000002444C5D7520>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect integer value: 'adsD' for column 'Password' at row 1"
+          │          └ 1366
+          └ <class 'pymysql.err.DataError'>
+
+pymysql.err.DataError: (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "E:\pycharm\PyCharm2023.2.4\plugins\python\helpers\pydev\_pydev_bundle\pydev_monkey.py", line 805, in __call__
+    ret = self.original_func(*self.args, **self.kwargs)
+          │    │              │    │       │    └ {}
+          │    │              │    │       └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000002444CF86410>
+          │    │              │    └ ()
+          │    │              └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000002444CF86410>
+          │    └ <bound method Thread._bootstrap of <Thread(Thread-5 (serve_forever), started daemon 19152)>>
+          └ <_pydev_bundle.pydev_monkey._NewThreadStartupWithTrace object at 0x000002444CF86410>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002444663F010>
+    └ <Thread(Thread-5 (serve_forever), started daemon 19152)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002444663ED40>
+    └ <Thread(Thread-5 (serve_forever), started daemon 19152)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-5 (serve_forever), started daemon 19152)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-5 (serve_forever), started daemon 19152)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002444A511BD0>>
+    └ <Thread(Thread-5 (serve_forever), started daemon 19152)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000024448744040>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002444A511BD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 51384)
+    │    │               └ <socket.socket fd=1324, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x00000244487441F0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002444A511BD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 51384)
+    │    │              └ <socket.socket fd=1324, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x0000024448744310>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002444A511BD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002444A511BD0>
+    │    │                   │        └ ('127.0.0.1', 51384)
+    │    │                   └ <socket.socket fd=1324, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002444A511BD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002444A653D00>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002444CF868C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000024448745A20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002444CF868C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002444CF868C0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002444CF3D600>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002444A511BD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002444CF868C0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002444D0493F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002444CFE15B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002444D049360>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1324>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002444CF3D600>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002444D049360>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1324>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000002444B94BD00>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002444B94B250>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002444B94B1C0>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'administrators.administrators'
+           │    │           │    │              └ <Rule '/administrators' (PUT, HEAD, DELETE, OPTIONS, POST, GET) -> administrators.administrators>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002444C5396C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002444B94B490>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\urls.py", line 20, in administrators
+    return AdministratorsOtherResource.administrators_post()
+           │                           └ <classmethod(<function AdministratorsOtherResource.administrators_post at 0x000002444CDD7520>)>
+           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 30, in administrators_post
+    res = AdministratorsService.administrators_post(**kwargs)
+          │                     │                     └ {'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+          │                     └ <classmethod(<function AdministratorsService.administrators_post at 0x000002444CDD75B0>)>
+          └ <class 'service.administratorsService.AdministratorsService'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\service\administratorsService.py", line 30, in administrators_post
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x000002444C4C7BE0>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000002444B99A110>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x000002444C4D5850>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x000002444B99A110>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x000002444C419510>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002444D06D080>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002444D06D080>
+                └ <function SessionTransaction.commit at 0x000002444C419480>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x000002444C4193F0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002444D06D080>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002444D06D080>
+                └ <function SessionTransaction._prepare_impl at 0x000002444C4192D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x000002444C444040>
+    │    └ <sqlalchemy.orm.session.Session object at 0x000002444CF86DA0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002444D06D080>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x000002444C4441F0>
+    └ <sqlalchemy.orm.session.Session object at 0x000002444CF86DA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x000002444D0ABB00>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1366, "Incorrect integer value: \'adsD\' for column \'Password\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x000002444C42A3B0>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000002444D06BAF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000002444D06BAF0>
+    │   └ <function SaveUpdateAll.execute at 0x000002444C42ACB0>
+    └ SaveUpdateAll(Mapper[Administrators(administrators)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x000002444C40D240>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x000002444C40DC60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1043, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x000002444BF691B0>
+             └ <sqlalchemy.engine.base.Connection object at 0x000002444D06B7C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x000002444D06BF70>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000002444BF69480>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002444D06B7C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000002444BF69630>
+          └ <sqlalchemy.engine.base.Connection object at 0x000002444D06B7C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000002444BF696C0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002444D06B7C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000002444BF69900>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002444D06B7C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ DataError(1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+          │                    │              └ (<class 'pymysql.err.DataError'>, DataError(1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1"), <traceba...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1366, "Incorrect integer value: \'adsD\' for column \'Password\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002444C0148B0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002444C522050>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002444D06B7C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'AdminID': 2024010512105267, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+    │      │       └ 'INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s...
+    │      └ <function Cursor.execute at 0x000002444C6E9E10>
+    └ <pymysql.cursors.Cursor object at 0x000002444D0C11B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512105267, '系统管理员',...
+             │    └ <function Cursor._query at 0x000002444C6EA290>
+             └ <pymysql.cursors.Cursor object at 0x000002444D0C11B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512105267, '系统管理员',...
+    │    └ <function Connection.query at 0x000002444C7115A0>
+    └ <pymysql.connections.Connection object at 0x000002444D06B670>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002444C711BD0>
+    │    │                └ <pymysql.connections.Connection object at 0x000002444D06B670>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000002444D06B670>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002444C7123B0>
+    └ <pymysql.connections.MySQLResult object at 0x000002444D06BF10>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002444D06BF10>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002444C710160>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002444D0C06A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002444D0C06A0>
+    │   └ <function raise_mysql_exception at 0x000002444C5D7520>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect integer value: 'adsD' for column 'Password' at row 1"
+          │          └ 1366
+          └ <class 'pymysql.err.DataError'>
+
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+[SQL: INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s, %(Account)s, %(Password)s, %(Permissions)s)]
+[parameters: {'AdminID': 2024010512105267, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-01-05 12:26:20.119 | ERROR    | utils.loggings:exception:40 - (pymysql.err.DataError) (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+[SQL: INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s, %(Account)s, %(Password)s, %(Permissions)s)]
+[parameters: {'AdminID': 2024010512261208, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x0000023F9BFC00D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023F9C346350>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000023F9EBAC520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'AdminID': 2024010512261208, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+    │      │       └ 'INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s...
+    │      └ <function Cursor.execute at 0x0000023F9C533010>
+    └ <pymysql.cursors.Cursor object at 0x0000023F9EBADC30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512261208, '系统管理员',...
+             │    └ <function Cursor._query at 0x0000023F9C533490>
+             └ <pymysql.cursors.Cursor object at 0x0000023F9EBADC30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512261208, '系统管理员',...
+    │    └ <function Connection.query at 0x0000023F9C54E4D0>
+    └ <pymysql.connections.Connection object at 0x0000023F9EBAC610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x0000023F9C54EB00>
+    │    │                └ <pymysql.connections.Connection object at 0x0000023F9EBAC610>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x0000023F9EBAC610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x0000023F9C54F2E0>
+    └ <pymysql.connections.MySQLResult object at 0x0000023F9EBAD150>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x0000023F9EBAD150>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000023F9C54D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000023F9EBAD0F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000023F9EBAD0F0>
+    │   └ <function raise_mysql_exception at 0x0000023F9C414F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect integer value: 'adsD' for column 'Password' at row 1"
+          │          └ 1366
+          └ <class 'pymysql.err.DataError'>
+
+pymysql.err.DataError: (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000023F9884A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33864)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000023F9884A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33864)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 33864)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 33864)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000023F9EAE7C40>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33864)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000023F988500D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023F9EAE7C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54769)
+    │    │               └ <socket.socket fd=936, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000023F98850280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023F9EAE7C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54769)
+    │    │              └ <socket.socket fd=936, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000023F988503A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023F9EAE7C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000023F9EAE7C40>
+    │    │                   │        └ ('127.0.0.1', 54769)
+    │    │                   └ <socket.socket fd=936, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023F9EAE7C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000023F9A5B89D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023F9EB13010>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000023F9A3FDA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023F9EB13010>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000023F9EB13010>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000023F9EAE6650>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000023F9EAE7C40>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000023F9EB13010>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000023F9EB797E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000023F9EB19540>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023F9EB7B490>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=936>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000023F9EAE6650>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000023F9EB7B490>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=936>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000023F9AE681F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000023F9AE636D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000023F9AE63640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'administrators.administrators'
+           │    │           │    │              └ <Rule '/administrators' (OPTIONS, GET, PUT, DELETE, POST, HEAD) -> administrators.administrators>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000023F9C3671C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000023F9AE63910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\urls.py", line 20, in administrators
+    return AdministratorsOtherResource.administrators_post()
+           │                           └ <classmethod(<function AdministratorsOtherResource.administrators_post at 0x0000023F9EA42E60>)>
+           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 30, in administrators_post
+    res = AdministratorsService.administrators_post(**kwargs)
+          │                     │                     └ {'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+          │                     └ <classmethod(<function AdministratorsService.administrators_post at 0x0000023F9EA42EF0>)>
+          └ <class 'service.administratorsService.AdministratorsService'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\service\administratorsService.py", line 30, in administrators_post
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x0000023F9C2CF490>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x0000023F9AE9B4C0>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x0000023F9C2E64D0>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x0000023F9AE9B4C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x0000023F9C244DC0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023F9EB91980>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023F9EB91980>
+                └ <function SessionTransaction.commit at 0x0000023F9C244D30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x0000023F9C244CA0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023F9EB91980>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023F9EB91980>
+                └ <function SessionTransaction._prepare_impl at 0x0000023F9C244B80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x0000023F9C247880>
+    │    └ <sqlalchemy.orm.session.Session object at 0x0000023F9EB138B0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000023F9EB91980>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x0000023F9C247A30>
+    └ <sqlalchemy.orm.session.Session object at 0x0000023F9EB138B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000023F9EBCBD40>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1366, "Incorrect integer value: \'adsD\' for column \'Password\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x0000023F9C22DC60>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x0000023F9EBAC460>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x0000023F9EBAC460>
+    │   └ <function SaveUpdateAll.execute at 0x0000023F9C22E560>
+    └ SaveUpdateAll(Mapper[Administrators(administrators)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x0000023F9C218AF0>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+    └ <function _emit_insert_statements at 0x0000023F9C219510>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 1043, in _emit_insert_statements
+    result = connection.execute(
+             │          └ <function Connection.execute at 0x0000023F9BF14C10>
+             └ <sqlalchemy.engine.base.Connection object at 0x0000023F9EBAC520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x0000023F9EBACBE0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x0000023F9BF14EE0>
+           └ <sqlalchemy.engine.base.Connection object at 0x0000023F9EBAC520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x0000023F9BF15090>
+          └ <sqlalchemy.engine.base.Connection object at 0x0000023F9EBAC520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x0000023F9BF15120>
+           └ <sqlalchemy.engine.base.Connection object at 0x0000023F9EBAC520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x0000023F9BF15360>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000023F9EBAC520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ DataError(1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+          │                    │              └ (<class 'pymysql.err.DataError'>, DataError(1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1"), <traceba...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ DataError('(pymysql.err.DataError) (1366, "Incorrect integer value: \'adsD\' for column \'Password\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x0000023F9BFC00D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000023F9C346350>
+    └ <sqlalchemy.engine.base.Connection object at 0x0000023F9EBAC520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'AdminID': 2024010512261208, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}
+    │      │       └ 'INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s...
+    │      └ <function Cursor.execute at 0x0000023F9C533010>
+    └ <pymysql.cursors.Cursor object at 0x0000023F9EBADC30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512261208, '系统管理员',...
+             │    └ <function Cursor._query at 0x0000023F9C533490>
+             └ <pymysql.cursors.Cursor object at 0x0000023F9EBADC30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (2024010512261208, '系统管理员',...
+    │    └ <function Connection.query at 0x0000023F9C54E4D0>
+    └ <pymysql.connections.Connection object at 0x0000023F9EBAC610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x0000023F9C54EB00>
+    │    │                └ <pymysql.connections.Connection object at 0x0000023F9EBAC610>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x0000023F9EBAC610>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x0000023F9C54F2E0>
+    └ <pymysql.connections.MySQLResult object at 0x0000023F9EBAD150>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x0000023F9EBAD150>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x0000023F9C54D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000023F9EBAD0F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000023F9EBAD0F0>
+    │   └ <function raise_mysql_exception at 0x0000023F9C414F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect integer value: 'adsD' for column 'Password' at row 1"
+          │          └ 1366
+          └ <class 'pymysql.err.DataError'>
+
+sqlalchemy.exc.DataError: (pymysql.err.DataError) (1366, "Incorrect integer value: 'adsD' for column 'Password' at row 1")
+[SQL: INSERT INTO administrators (`AdminID`, `AdminType`, `Account`, `Password`, `Permissions`) VALUES (%(AdminID)s, %(AdminType)s, %(Account)s, %(Password)s, %(Permissions)s)]
+[parameters: {'AdminID': 2024010512261208, 'AdminType': '系统管理员', 'Account': '123456', 'Password': 'adsD', 'Permissions': '2'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2024-01-05 12:31:31.480 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000247A3E2A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 10956)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000247A3E2A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 10956)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 10956)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 10956)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000247AA0D3CA0>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 10956)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x00000247A3E300D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000247AA0D3CA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 53661)
+    │    │               └ <socket.socket fd=1220, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x00000247A3E30280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000247AA0D3CA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 53661)
+    │    │              └ <socket.socket fd=1220, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x00000247A3E303A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000247AA0D3CA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000247AA0D3CA0>
+    │    │                   │        └ ('127.0.0.1', 53661)
+    │    │                   └ <socket.socket fd=1220, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000247AA0D3CA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000247A5B989D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000247AA0FF040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000247A59DDA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000247AA0FF040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000247AA0FF040>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000247AA0D26B0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000247AA0D3CA0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000247AA0FF040>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000247AA1677F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000247AA109150>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000247AA1669E0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1220>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000247AA0D26B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000247AA1669E0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1220>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x00000247A64481F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000247A64436D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000247A6443640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'administrators.administrators'
+           │    │           │    │              └ <Rule '/administrators' (POST, HEAD, GET, PUT, OPTIONS, DELETE) -> administrators.administrators>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000247A79471C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000247A6443910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\urls.py", line 18, in administrators
+    return AdministratorsOtherResource.administrators_query()
+           │                           └ <classmethod(<function AdministratorsOtherResource.administrators_query at 0x00000247AA0339A0>)>
+           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 45, in administrators_query
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x00000247A7B69360>
+             └ <flask_restful.reqparse.RequestParser object at 0x00000247AA0FF460>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000247AA0FF460>
+                   │   │     └ <Request 'http://127.0.0.1:5000/administrators' [GET]>
+                   │   └ <function Argument.parse at 0x00000247A7B691B0>
+                   └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x00000247A7B69120>
+    └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'AdminType': '管理员类型数据类型不匹配'}
+    │             └ <function abort at 0x00000247A7B38EE0>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x00000247A6266950>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000247A78E2D40>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.

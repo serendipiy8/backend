@@ -21,9 +21,6 @@ class TheatersService(TheatersController):
         adminid = kwargs.get('AdminID')
 
         try:
-            existing_user = db.session.query(cls).filter_by(TheaterName=theatername).first()
-            if existing_user:
-                return {'code': RET.DATAEXIST, 'message': error_map_EN[RET.DATAEXIST], 'error': "剧院已存在"}
 
             id = int(GenerateID.create_random_id())
             new_user = cls(TheaterID=id, TheaterName=theatername, Address=address,Capacity=capacity,AdminID=adminid)
@@ -92,14 +89,15 @@ class TheatersService(TheatersController):
         capacity = kwargs.get('Capacity')
 
         try:
-            existing_theater = db.session.query(cls).filter_by(TheaterID=theaterid).first()
-            if existing_theater==None:
-                return {'code': RET.NODATA, 'message': error_map_EN[RET.NODATA], 'error': "数据不存在"}
 
+            existing_show = db.session.query(cls).filter_by(TheaterID=theaterid).first()
+            if existing_show is None:
+                return {'code': RET.NODATA, 'message': error_map_EN[RET.NODATA], 'error': "修改演出不存在"}
 
-            existing_theater.TheaterName=theatername
-            existing_theater.Address=address
-            existing_theater.Capacity=capacity
+            for attr_name in ['TheaterName', 'Address', 'Capacity']:
+                attr_value = kwargs.get(attr_name)
+                if attr_value is not None:
+                    setattr(existing_show, attr_name, attr_value)
 
             db.session.commit()
 
@@ -110,18 +108,18 @@ class TheatersService(TheatersController):
                 cls.Address,
                 cls.Capacity,
                 cls.AdminID,
-            ).filter(cls.TheaterID==theaterid).first()
+            ).filter(cls.TheaterID ==theaterid).first()
 
             user_info = dict(user_info._asdict())
 
             db.session.close()
 
             back_dict = {
-                    'TheaterID':user_info["TheaterID"],
-                    'TheaterName': user_info["TheaterName"],
-                    'Address': user_info["Address"],
-                    'Capacity': user_info["Capacity"],
-                    'AdminID': user_info["AdminID"],
+                "TheaterID": user_info['TheaterID'],
+                "TheaterName": user_info['TheaterName'],
+                "Address": user_info['Address'],
+                "Capacity": user_info['Capacity'],
+                "AdminID": user_info['AdminID'],
             }
 
             return {'code': RET.OK, 'message': error_map_EN[RET.OK], "data": back_dict}

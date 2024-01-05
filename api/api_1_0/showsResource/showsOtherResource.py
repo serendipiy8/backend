@@ -13,8 +13,15 @@ class ShowsOtherResource(Resource):
 	@classmethod
 	def adminpost(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('TheaterID', type=str, location='form', required=True, help='剧院ID数字类型不匹配')
+		parser.add_argument('ShowName', type=str, location='form', required=True, help='演出名字数字类型不匹配')
+		parser.add_argument('Description', type=str, location='form', required=True, help='演出描述类型不匹配')
+		parser.add_argument('ShowDate', type=str, location='form', required=True, help='演出日期类型不匹配')
+		parser.add_argument('Duration', type=str, location='form', required=True, help='演出时长类型不匹配')
+		parser.add_argument('AdminID', type=str, location='form', required=True, help='管理员ID数据类型不匹配')
+		parser.add_argument('Image', type=str, location='form', required=True, help='图片URL数据类型不匹配')
+		parser.add_argument('Category', type=str, location='form', required=True, help='演出类别数据类型不匹配')
+		parser.add_argument('City', type=str, location='form', required=True, help='演出城市数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -36,8 +43,7 @@ class ShowsOtherResource(Resource):
 	@classmethod
 	def queryShowID(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('ShowID', type=str, location='form', required=True, help='演出ID数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -59,8 +65,7 @@ class ShowsOtherResource(Resource):
 	@classmethod
 	def queryShowName(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('ShowName', type=str, location='form', required=True, help='演出数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -80,10 +85,9 @@ class ShowsOtherResource(Resource):
 			return jsonify(code=res['code'], message=res['message'], error=res['error'])
 
 	@classmethod
-	def queryITheaterID(cls):
+	def queryTheaterID(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('TheaterID', type=str, location='form', required=True, help='剧院ID数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -94,7 +98,7 @@ class ShowsOtherResource(Resource):
 			loggings.exception(1, e)
 			return jsonify(code=RET.PARAMERR, message="参数类型不正确或缺失", error="参数类型不正确或缺失")
 
-		res = ShowsService.queryITheaterID(**kwargs)
+		res = ShowsService.queryTheaterID(**kwargs)
 
 		if res['code'] == RET.OK:
 			return jsonify(code=res['code'], message=res['message'], data=res['data'])
@@ -105,8 +109,16 @@ class ShowsOtherResource(Resource):
 	@classmethod
 	def adminadvise(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('ShowID', type=str, location='form', required=True, help='剧院ID数字类型不匹配')
+		parser.add_argument('TheaterID', type=str, location='form', required=True, help='剧院ID数字类型不匹配')
+		parser.add_argument('ShowName', type=str, location='form', required=True, help='演出名字数字类型不匹配')
+		parser.add_argument('Description', type=str, location='form', required=True, help='演出描述类型不匹配')
+		parser.add_argument('ShowDate', type=str, location='form', required=True, help='演出日期类型不匹配')
+		parser.add_argument('Duration', type=str, location='form', required=True, help='演出时长类型不匹配')
+		parser.add_argument('AdminID', type=str, location='form', required=True, help='管理员ID数据类型不匹配')
+		parser.add_argument('Image', type=str, location='form', required=True, help='图片URL数据类型不匹配')
+		parser.add_argument('Category', type=str, location='form', required=True, help='演出类别数据类型不匹配')
+		parser.add_argument('City', type=str, location='form', required=True, help='演出城市数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -128,8 +140,7 @@ class ShowsOtherResource(Resource):
 	@classmethod
 	def admindelete(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('account', type=str, location='form', required=True, help='账户数据类型不匹配')
-		parser.add_argument('password', type=str, location='form', required=True, help='密码类型不匹配')
+		parser.add_argument('ShowID', type=str, location='form', required=True, help='演出ID数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象

@@ -25,7 +25,7 @@ def queryShowName():
 
 @shows_blueprint.route('/shows/queryITheaterID', methods=['GET'], endpoint='queryITheaterID')
 def queryITheaterID():
-    return ShowsOtherResource.queryITheaterID()
+    return ShowsOtherResource.queryTheaterID()
 
 @shows_blueprint.route('/shows/adminadvise', methods=['PUT'], endpoint='adminadvise')
 def adminadvise():

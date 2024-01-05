@@ -1,0 +1,1402 @@
+2024-01-04 21:19:49.944 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+[SQL: UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s, `Duration`=%(Duration)s, `AdminID`=%(AdminID)s, `Image`=%(Image)s, `Category`=%(Category)s, `City`=%(City)s WHERE shows.`ShowID` = %(shows_ShowID)s]
+[parameters: {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Image': None, 'Category': '音乐', 'City': '南京', 'shows_ShowID': 2024010420325378}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001BC140EC0D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001BC14476350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001BC16CFB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Imag...
+    │      │       └ 'UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s,...
+    │      └ <function Cursor.execute at 0x000001BC14663010>
+    └ <pymysql.cursors.Cursor object at 0x000001BC16CF8580>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+             │    └ <function Cursor._query at 0x000001BC14663490>
+             └ <pymysql.cursors.Cursor object at 0x000001BC16CF8580>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+    │    └ <function Connection.query at 0x000001BC1467E4D0>
+    └ <pymysql.connections.Connection object at 0x000001BC16CC7A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001BC1467EB00>
+    │    │                └ <pymysql.connections.Connection object at 0x000001BC16CC7A90>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001BC16CC7A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001BC1467F2E0>
+    └ <pymysql.connections.MySQLResult object at 0x000001BC16CC7340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001BC16CC7340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001BC1467D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001BC16C46B60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001BC16C46B60>
+    │   └ <function raise_mysql_exception at 0x000001BC14544F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect date value: 'awd' for column 'ShowDate' at row 1"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001BC1097A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 12848)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001BC1097A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 12848)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 12848)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 12848)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001BC16C15F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 12848)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001BC109800D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001BC16C15F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 64281)
+    │    │               └ <socket.socket fd=980, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001BC10980280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001BC16C15F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 64281)
+    │    │              └ <socket.socket fd=980, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001BC109803A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001BC16C15F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001BC16C15F30>
+    │    │                   │        └ ('127.0.0.1', 64281)
+    │    │                   └ <socket.socket fd=980, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001BC16C15F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001BC126E89D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001BC16C463B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001BC1252DA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001BC16C463B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001BC16C463B0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001BC16C15960>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001BC16C15F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001BC16C463B0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001BC16CAD6C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001BC16C56110>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001BC16CAF910>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=980>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001BC16C15960>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001BC16CAF910>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=980>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001BC12F981F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001BC12F936D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001BC12F93640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'shows.adminadvise'
+           │    │           │    │              └ <Rule '/shows/adminadvise' (PUT, OPTIONS) -> shows.adminadvise>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001BC144971C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001BC12F93910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\urls.py", line 32, in adminadvise
+    return ShowsOtherResource.adminadvise()
+           │                  └ <classmethod(<function ShowsOtherResource.adminadvise at 0x000001BC16A685E0>)>
+           └ <class 'api_1_0.showsResource.showsOtherResource.ShowsOtherResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\showsOtherResource.py", line 132, in adminadvise
+    res = ShowsService.adminadvise(**kwargs)
+          │            │             └ {'ShowID': '2024010420325378', 'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '1...
+          │            └ <classmethod(<function ShowsService.adminadvise at 0x000001BC16A53490>)>
+          └ <class 'service.showsService.ShowsService'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\service\showsService.py", line 259, in adminadvise
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x000001BC143FF490>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001BC12FCB4C0>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x000001BC144162A0>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001BC12FCB4C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x000001BC14374DC0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001BC16D30240>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001BC16D30240>
+                └ <function SessionTransaction.commit at 0x000001BC14374D30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x000001BC14374CA0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001BC16D30240>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001BC16D30240>
+                └ <function SessionTransaction._prepare_impl at 0x000001BC14374B80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x000001BC14377880>
+    │    └ <sqlalchemy.orm.session.Session object at 0x000001BC16CF9690>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001BC16D30240>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x000001BC14377A30>
+    └ <sqlalchemy.orm.session.Session object at 0x000001BC16CF9690>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x000001BC16D30880>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1292, "Incorrect date value: \'awd\' for column \'ShowDate\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x000001BC1435DC60>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001BC16CF9780>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000001BC16CF9780>
+    │   └ <function SaveUpdateAll.execute at 0x000001BC1435E560>
+    └ SaveUpdateAll(Mapper[Shows(shows)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x000001BC14348AF0>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+    └ <function _emit_update_statements at 0x000001BC14349480>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 909, in _emit_update_statements
+    c = connection.execute(
+        │          └ <function Connection.execute at 0x000001BC14044C10>
+        └ <sqlalchemy.engine.base.Connection object at 0x000001BC16CFB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Update object at 0x000001BC16CFBD60>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001BC14044EE0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001BC16CFB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001BC14045090>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001BC16CFB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001BC14045120>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001BC16CFB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001BC14045360>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001BC16CFB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1292, "Incorrect date value: \'awd\' for column \'ShowDate\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001BC140EC0D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000001BC14476350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001BC16CFB820>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Imag...
+    │      │       └ 'UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s,...
+    │      └ <function Cursor.execute at 0x000001BC14663010>
+    └ <pymysql.cursors.Cursor object at 0x000001BC16CF8580>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+             │    └ <function Cursor._query at 0x000001BC14663490>
+             └ <pymysql.cursors.Cursor object at 0x000001BC16CF8580>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+    │    └ <function Connection.query at 0x000001BC1467E4D0>
+    └ <pymysql.connections.Connection object at 0x000001BC16CC7A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000001BC1467EB00>
+    │    │                └ <pymysql.connections.Connection object at 0x000001BC16CC7A90>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000001BC16CC7A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000001BC1467F2E0>
+    └ <pymysql.connections.MySQLResult object at 0x000001BC16CC7340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000001BC16CC7340>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001BC1467D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x000001BC16C46B60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000001BC16C46B60>
+    │   └ <function raise_mysql_exception at 0x000001BC14544F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect date value: 'awd' for column 'ShowDate' at row 1"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+[SQL: UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s, `Duration`=%(Duration)s, `AdminID`=%(AdminID)s, `Image`=%(Image)s, `Category`=%(Category)s, `City`=%(City)s WHERE shows.`ShowID` = %(shows_ShowID)s]
+[parameters: {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Image': None, 'Category': '音乐', 'City': '南京', 'shows_ShowID': 2024010420325378}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-01-04 21:23:28.928 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+[SQL: UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s, `Duration`=%(Duration)s, `AdminID`=%(AdminID)s, `Image`=%(Image)s, `Category`=%(Category)s, `City`=%(City)s WHERE shows.`ShowID` = %(shows_ShowID)s]
+[parameters: {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Image': None, 'Category': '音乐', 'City': '南京', 'shows_ShowID': 2024010420325378}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002B502D9C0D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002B503126350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002B5059839A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Imag...
+    │      │       └ 'UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s,...
+    │      └ <function Cursor.execute at 0x000002B503313010>
+    └ <pymysql.cursors.Cursor object at 0x000002B5059BB400>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+             │    └ <function Cursor._query at 0x000002B503313490>
+             └ <pymysql.cursors.Cursor object at 0x000002B5059BB400>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+    │    └ <function Connection.query at 0x000002B50332E4D0>
+    └ <pymysql.connections.Connection object at 0x000002B505983A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002B50332EB00>
+    │    │                └ <pymysql.connections.Connection object at 0x000002B505983A90>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000002B505983A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002B50332F2E0>
+    └ <pymysql.connections.MySQLResult object at 0x000002B505906C20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002B505906C20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002B50332D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002B505983FA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002B505983FA0>
+    │   └ <function raise_mysql_exception at 0x000002B5031F4F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect date value: 'awd' for column 'ShowDate' at row 1"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002B57F62A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 26168)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002B57F62A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 26168)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 26168)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 26168)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002B5058D1F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 26168)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002B57F6300D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002B5058D1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 64327)
+    │    │               └ <socket.socket fd=1120, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000002B57F630280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002B5058D1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 64327)
+    │    │              └ <socket.socket fd=1120, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000002B57F6303A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002B5058D1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002B5058D1F30>
+    │    │                   │        └ ('127.0.0.1', 64327)
+    │    │                   └ <socket.socket fd=1120, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002B5058D1F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002B57FF889D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002B505906350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002B57FDCDA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002B505906350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002B505906350>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002B5058D1960>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002B5058D1F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002B505906350>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002B505968940>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002B505914580>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002B50596A320>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1120>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002B5058D1960>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002B50596A320>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1120>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000002B501C581F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002B501C536D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002B501C53640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'shows.adminadvise'
+           │    │           │    │              └ <Rule '/shows/adminadvise' (PUT, OPTIONS) -> shows.adminadvise>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002B5031431C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002B501C53910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\urls.py", line 32, in adminadvise
+    return ShowsOtherResource.adminadvise()
+           │                  └ <classmethod(<function ShowsOtherResource.adminadvise at 0x000002B5057285E0>)>
+           └ <class 'api_1_0.showsResource.showsOtherResource.ShowsOtherResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\showsOtherResource.py", line 132, in adminadvise
+    res = ShowsService.adminadvise(**kwargs)
+          │            │             └ {'ShowID': '2024010420325378', 'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '1...
+          │            └ <classmethod(<function ShowsService.adminadvise at 0x000002B505713490>)>
+          └ <class 'service.showsService.ShowsService'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\service\showsService.py", line 259, in adminadvise
+    db.session.commit()
+    │  │       └ <function scoped_session.commit at 0x000002B5030AF490>
+    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000002B501C8B4C0>
+    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/project_1?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\scoping.py", line 598, in commit
+    return self._proxied.commit()
+           │    └ <property object at 0x000002B5030C6200>
+           └ <sqlalchemy.orm.scoping.scoped_session object at 0x000002B501C8B4C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+    │     └ <function SessionTransaction.commit at 0x000002B503024DC0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002B505493D00>
+
+  File "<string>", line 2, in commit
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {'_to_root': True}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002B505493D00>
+                └ <function SessionTransaction.commit at 0x000002B503024D30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1256, in commit
+    self._prepare_impl()
+    │    └ <function SessionTransaction._prepare_impl at 0x000002B503024CA0>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002B505493D00>
+
+  File "<string>", line 2, in _prepare_impl
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ ()
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002B505493D00>
+                └ <function SessionTransaction._prepare_impl at 0x000002B503024B80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1231, in _prepare_impl
+    self.session.flush()
+    │    │       └ <function Session.flush at 0x000002B503027880>
+    │    └ <sqlalchemy.orm.session.Session object at 0x000002B505906B00>
+    └ <sqlalchemy.orm.session.SessionTransaction object at 0x000002B505493D00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4312, in flush
+    self._flush(objects)
+    │    │      └ None
+    │    └ <function Session._flush at 0x000002B503027A30>
+    └ <sqlalchemy.orm.session.Session object at 0x000002B505906B00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4447, in _flush
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x000002B5059D3040>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1292, "Incorrect date value: \'awd\' for column \'ShowDate\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 4408, in _flush
+    flush_context.execute()
+    │             └ <function UOWTransaction.execute at 0x000002B50300DC60>
+    └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000002B5059B9510>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+    │   │       └ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x000002B5059B9510>
+    │   └ <function SaveUpdateAll.execute at 0x000002B50300E560>
+    └ SaveUpdateAll(Mapper[Shows(shows)])
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+    │    │         │               └ <function save_obj at 0x000002B502FF8AF0>
+    │    │         └ <module 'sqlalchemy.orm.persistence' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages...
+    │    └ <module 'sqlalchemy.util.preloaded' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\...
+    └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+    └ <function _emit_update_statements at 0x000002B502FF9480>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\persistence.py", line 909, in _emit_update_statements
+    c = connection.execute(
+        │          └ <function Connection.execute at 0x000002B502CF4C10>
+        └ <sqlalchemy.engine.base.Connection object at 0x000002B5059839A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Update object at 0x000002B5059B97E0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000002B502CF4EE0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002B5059839A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000002B502CF5090>
+          └ <sqlalchemy.engine.base.Connection object at 0x000002B5059839A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000002B502CF5120>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002B5059839A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000002B502CF5360>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002B5059839A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1292, "Incorrect date value: \'awd\' for column \'ShowDate\' at row 1")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002B502D9C0D0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002B503126350>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002B5059839A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Imag...
+    │      │       └ 'UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s,...
+    │      └ <function Cursor.execute at 0x000002B503313010>
+    └ <pymysql.cursors.Cursor object at 0x000002B5059BB400>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+             │    └ <function Cursor._query at 0x000002B503313490>
+             └ <pymysql.cursors.Cursor object at 0x000002B5059BB400>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "UPDATE shows SET `TheaterID`='234', `ShowName`='凤凰传奇', `Description`='be', `ShowDate`='awd', `Duration`='180', `AdminID`='42...
+    │    └ <function Connection.query at 0x000002B50332E4D0>
+    └ <pymysql.connections.Connection object at 0x000002B505983A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002B50332EB00>
+    │    │                └ <pymysql.connections.Connection object at 0x000002B505983A90>
+    │    └ 1
+    └ <pymysql.connections.Connection object at 0x000002B505983A90>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002B50332F2E0>
+    └ <pymysql.connections.MySQLResult object at 0x000002B505906C20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002B505906C20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002B50332D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002B505983FA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002B505983FA0>
+    │   └ <function raise_mysql_exception at 0x000002B5031F4F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Incorrect date value: 'awd' for column 'ShowDate' at row 1"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Incorrect date value: 'awd' for column 'ShowDate' at row 1")
+[SQL: UPDATE shows SET `TheaterID`=%(TheaterID)s, `ShowName`=%(ShowName)s, `Description`=%(Description)s, `ShowDate`=%(ShowDate)s, `Duration`=%(Duration)s, `AdminID`=%(AdminID)s, `Image`=%(Image)s, `Category`=%(Category)s, `City`=%(City)s WHERE shows.`ShowID` = %(shows_ShowID)s]
+[parameters: {'TheaterID': '234', 'ShowName': '凤凰传奇', 'Description': 'be', 'ShowDate': 'awd', 'Duration': '180', 'AdminID': '42344', 'Image': None, 'Category': '音乐', 'City': '南京', 'shows_ShowID': 2024010420325378}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-01-04 21:39:10.583 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000188A04DA950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000188A04DA680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x00000188A04E00D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 63037)
+    │    │               └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x00000188A04E0280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 63037)
+    │    │              └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x00000188A04E03A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+    │    │                   │        └ ('127.0.0.1', 63037)
+    │    │                   └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000188A22289D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000188A67862C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000188A206DA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000188A67862C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000188A67862C0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000188A6751960>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000188A67862C0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000188A67E93F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000188A6794BA0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000188A67E8430>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1148>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000188A6751960>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000188A67E8430>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1148>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x00000188A2AD81F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000188A2AD36D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000188A2AD3640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'shows.adminadvise'
+           │    │           │    │              └ <Rule '/shows/adminadvise' (PUT, OPTIONS) -> shows.adminadvise>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000188A3FE71C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000188A2AD3910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\urls.py", line 32, in adminadvise
+    return ShowsOtherResource.adminadvise()
+           │                  └ <classmethod(<function ShowsOtherResource.adminadvise at 0x00000188A65B85E0>)>
+           └ <class 'api_1_0.showsResource.showsOtherResource.ShowsOtherResource'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\showsOtherResource.py", line 125, in adminadvise
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x00000188A4209360>
+             └ <flask_restful.reqparse.RequestParser object at 0x00000188A67867D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+    │              │   │     │    │    └ False
+    │              │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000188A67867D0>
+    │              │   │     └ <Request 'http://127.0.0.1:5000/shows/adminadvise' [PUT]>
+    │              │   └ <function Argument.parse at 0x00000188A42091B0>
+    │              └ Argument('Image', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), acti...
+    └ '42344'
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x00000188A4209120>
+    └ Argument('Image', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), acti...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'Image': '图片URL数据类型不匹配'}
+    │             └ <function abort at 0x00000188A41D8EE0>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x00000188A28F6950>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000188A3F82D40>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-04 21:41:17.278 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000188A04DA950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000188A04DA680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 31172)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x00000188A04E00D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 63072)
+    │    │               └ <socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x00000188A04E0280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 63072)
+    │    │              └ <socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x00000188A04E03A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+    │    │                   │        └ ('127.0.0.1', 63072)
+    │    │                   └ <socket.socket fd=1272, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000188A22289D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000188A6786920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000188A206DA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000188A6786920>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000188A6786920>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000188A6751960>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000188A6751F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000188A6786920>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000188A69D0790>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000188A68EE3B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000188A69D0310>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1272>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000188A6751960>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000188A69D0310>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1272>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x00000188A2AD81F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000188A2AD36D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000188A2AD3640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'shows.adminadvise'
+           │    │           │    │              └ <Rule '/shows/adminadvise' (PUT, OPTIONS) -> shows.adminadvise>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000188A3FE71C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000188A2AD3910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\urls.py", line 32, in adminadvise
+    return ShowsOtherResource.adminadvise()
+           │                  └ <classmethod(<function ShowsOtherResource.adminadvise at 0x00000188A65B85E0>)>
+           └ <class 'api_1_0.showsResource.showsOtherResource.ShowsOtherResource'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\showsOtherResource.py", line 125, in adminadvise
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x00000188A4209360>
+             └ <flask_restful.reqparse.RequestParser object at 0x00000188A681B850>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+    │              │   │     │    │    └ False
+    │              │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000188A681B850>
+    │              │   │     └ <Request 'http://127.0.0.1:5000/shows/adminadvise' [PUT]>
+    │              │   └ <function Argument.parse at 0x00000188A42091B0>
+    │              └ Argument('Image', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), acti...
+    └ '42344'
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x00000188A4209120>
+    └ Argument('Image', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), acti...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'Image': '图片URL数据类型不匹配'}
+    │             └ <function abort at 0x00000188A41D8EE0>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x00000188A28F6950>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000188A3F82D40>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-04 21:41:36.706 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000029A0A34A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 10168)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000029A0A34A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 10168)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 10168)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 10168)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000029A10625F30>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 10168)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000029A0A3500D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029A10625F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 63073)
+    │    │               └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x0000029A0A350280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029A10625F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 63073)
+    │    │              └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x0000029A0A3503A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029A10625F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000029A10625F30>
+    │    │                   │        └ ('127.0.0.1', 63073)
+    │    │                   └ <socket.socket fd=1148, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029A10625F30>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000029A0C0E89D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029A10656590>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000029A0BF2DA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029A10656590>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000029A10656590>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000029A10625960>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029A10625F30>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029A10656590>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000029A106BC8B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000029A10665540>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029A106BD2D0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1148>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000029A10625960>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029A106BD2D0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1148>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x0000029A0C9981F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000029A0C9936D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000029A0C993640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'shows.adminadvise'
+           │    │           │    │              └ <Rule '/shows/adminadvise' (OPTIONS, PUT) -> shows.adminadvise>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000029A0DE931C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000029A0C993910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\urls.py", line 32, in adminadvise
+    return ShowsOtherResource.adminadvise()
+           │                  └ <classmethod(<function ShowsOtherResource.adminadvise at 0x0000029A104785E0>)>
+           └ <class 'api_1_0.showsResource.showsOtherResource.ShowsOtherResource'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\showsResource\showsOtherResource.py", line 125, in adminadvise
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x0000029A0E0B9360>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000029A106567D0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+    │              │   │     │    │    └ False
+    │              │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000029A106567D0>
+    │              │   │     └ <Request 'http://127.0.0.1:5000/shows/adminadvise' [PUT]>
+    │              │   └ <function Argument.parse at 0x0000029A0E0B91B0>
+    │              └ Argument('Image', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), acti...
+    └ '42344'
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x0000029A0E0B9120>
+    └ Argument('Image', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), acti...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'Image': '图片URL数据类型不匹配'}
+    │             └ <function abort at 0x0000029A0E088EE0>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x0000029A0C7B6950>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x0000029A0DE32D40>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-05 10:02:50.793 | ERROR    | utils.loggings:exception:40 - int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001AB1E96A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33312)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001AB1E96A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33312)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 33312)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 33312)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001AB24C47C40>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33312)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001AB1E9700D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001AB24C47C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 63256)
+    │    │               └ <socket.socket fd=796, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001AB1E970280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001AB24C47C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 63256)
+    │    │              └ <socket.socket fd=796, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001AB1E9703A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001AB24C47C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001AB24C47C40>
+    │    │                   │        └ ('127.0.0.1', 63256)
+    │    │                   └ <socket.socket fd=796, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000001AB24C47C40>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001AB207189D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001AB24C73100>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001AB2055DA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001AB24C73100>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001AB24C73100>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001AB24C46650>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001AB24C47C40>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001AB24C73100>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001AB24CD9990>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000001AB24C78EB0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001AB24CDA7A0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=796>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000001AB24C46650>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001AB24CDA7A0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=796>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001AB20FC81F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001AB20FC36D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001AB20FC3640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'administrators.administrators'
+           │    │           │    │              └ <Rule '/administrators' (HEAD, GET, PUT, DELETE, OPTIONS, POST) -> administrators.administrators>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001AB224C71C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001AB20FC3910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\urls.py", line 20, in administrators
+    return AdministratorsOtherResource.administrators_post()
+           │                           └ <classmethod(<function AdministratorsOtherResource.administrators_post at 0x000001AB24BA2E60>)>
+           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 30, in administrators_post
+    res = AdministratorsService.administrators_post(**kwargs)
+          │                     │                     └ {'AdminType': '系统管理员', 'Account': '123456', 'Password': 'yyyyy', 'Permissions': '2'}
+          │                     └ <classmethod(<function AdministratorsService.administrators_post at 0x000001AB24BA2EF0>)>
+          └ <class 'service.administratorsService.AdministratorsService'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\service\administratorsService.py", line 26, in administrators_post
+    id = int(GenerateID.create_custom_id())
+             │          └ <staticmethod(<function GenerateID.create_custom_id at 0x000001AB24A83250>)>
+             └ <class 'utils.generate_id.GenerateID'>
+
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'

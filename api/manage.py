@@ -24,14 +24,14 @@ manager.add_command("runserver", Server(use_debugger=True))
 @app.before_request
 def user_validation():
     print(request.endpoint)  # 方便跟踪调试
-    
     if not request.endpoint: # 如果请求点为空
         return jsonify(code=RET.URLNOTFOUND, message="url not found", error="url not found")
         
 @app.before_request
+@app.before_request
 def user_require_token():
     # 不需要token验证的请求点列表
-    permission = ['apiversion.Apiversion', 'adminfunctions.Adminfunctions', 'shows.Shows', 'refunds.Refunds', 'orders.Orders', 'administrators.Administrators', 'ticketprices.Ticketprices', 'theaters.Theaters', 'users.Users','users.login','users.register','users.information','ticketprices','theaters.theaters']
+    permission = ['apiversion.Apiversion', 'adminfunctions.Adminfunctions', 'shows.Shows', 'refunds.Refunds','ticketprices.Ticketprices', 'orders.Orders', 'administrators.Administrators',  'theaters.Theaters', 'users.Users','users.login','users.register','users.information','ticketprices.ticketprices','ticketprices.TicketpricesQuery','theaters.theaters','shows.adminpost','shows.queryShowName','shows.adminadvise','shows.admindelete','administrators.administrators','orders.orders','orders.queryUser','refunds.refunds','refunds.refundsOrder','adminfunctions.adminfunctions','shows.queryITheaterID']
 
     # 如果不是请求上述列表中的接口，需要验证token
     if request.endpoint not in permission:

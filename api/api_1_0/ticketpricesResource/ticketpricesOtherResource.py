@@ -11,9 +11,9 @@ from utils.response_code import RET
 class TicketpricesOtherResource(Resource):
 
 	@classmethod
-	def ticketprices_query(cls):
+	def ticketpricesQuery(cls):
 		parser=reqparse.RequestParser()
-		parser.add_argument('TicketID', type=str, location='form', required=True, help='票ID数据类型不匹配')
+		parser.add_argument('ShowID', type=str, location='form', required=True, help='票ID数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -24,7 +24,7 @@ class TicketpricesOtherResource(Resource):
 			loggings.exception(1, e)
 			return jsonify(code=RET.PARAMERR, message="参数类型不正确或缺失", error="参数类型不正确或缺失")
 
-		res = TicketpricesService.ticketprices_query(**kwargs)
+		res = TicketpricesService.ticketpricesQuery(**kwargs)
 
 		if res['code'] == RET.OK:
 			return jsonify(code=res['code'], message=res['message'], data=res['data'])
@@ -62,13 +62,12 @@ class TicketpricesOtherResource(Resource):
 	@classmethod
 	def ticketprices_put(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('UserID', type=str, location='form', required=True, help='用户id数据类型不匹配')
-		parser.add_argument('RealName', type=str, location='form', required=True, help='用户名数据类型不匹配')
-		parser.add_argument('Gender', type=str, location='form', required=True, help='性别数据类型不匹配')
-		parser.add_argument('IDcard', type=str, location='form', required=True, help='身份证号数据类型不匹配')
-		parser.add_argument('Address', type=str, location='form', required=True, help='地址数据类型不匹配')
-		parser.add_argument('Account', type=str, location='form', required=True, help='电话数据类型不匹配')
-		parser.add_argument('Email', type=str, location='form', required=True, help='邮件数据类型不匹配')
+		parser.add_argument('TicketID', type=str, location='form', required=True, help='票id数据类型不匹配')
+		parser.add_argument('ShowID', type=str, location='form', required=True, help='演出ID数据类型不匹配')
+		parser.add_argument('Price', type=str, location='form', required=True, help='价格类型不匹配')
+		parser.add_argument('Category', type=str, location='form', required=True, help='类别类型不匹配')
+		parser.add_argument('TotalQuantity', type=str, location='form', required=True, help='总数量类型不匹配')
+		parser.add_argument('RemainingQuantity', type=str, location='form', required=True, help='剩余数量类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
@@ -91,13 +90,7 @@ class TicketpricesOtherResource(Resource):
 	@classmethod
 	def ticketprices_del(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('UserID', type=str, location='form', required=True, help='用户id数据类型不匹配')
-		parser.add_argument('RealName', type=str, location='form', required=True, help='用户名数据类型不匹配')
-		parser.add_argument('Gender', type=str, location='form', required=True, help='性别数据类型不匹配')
-		parser.add_argument('IDcard', type=str, location='form', required=True, help='身份证号数据类型不匹配')
-		parser.add_argument('Address', type=str, location='form', required=True, help='地址数据类型不匹配')
-		parser.add_argument('Account', type=str, location='form', required=True, help='电话数据类型不匹配')
-		parser.add_argument('Email', type=str, location='form', required=True, help='邮件数据类型不匹配')
+		parser.add_argument('TicketID', type=str, location='form', required=True, help='票id数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象
