@@ -1,7 +1,7 @@
 <template>
     <div class="chooser-component">
         <ul class="chooser-list">
-            <li :class="{active:nowIndex === index}" v-for="(item,index) in timerDate" :key="index" @click="timerHandle(item,index)">
+            <li :class="{active:nowIndex === index}" v-for="(item,index) in timerData" :key="index" @click="timerHandle(item,index)">
                 {{ item.value }}
             </li>
         </ul>
@@ -13,22 +13,20 @@ export default {
     data(){
         return{
             nowIndex:0,
-            timerDate:[
-                {
-                    value:'2021-06-01',
-                    id:1
-                },
-                {
-                    value:'2021-07-01',
-                    id:2
-                },
-                {
-                    value:'2021-08-01',
-                    id:3
-                },
-            ]
         }
-
+    },
+    props:{
+        timerData:{
+            type:Array,
+            default:function(){
+                return [
+                    {
+                        value:"test",
+                        id:0
+                    }
+                ]
+            }
+        }
     },
     methods:{
             timerHandle(item,index){

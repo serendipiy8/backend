@@ -31,22 +31,22 @@ export default {
         },
         inputHandle() {
             var fix;
-            if (typeof this.counter == 'string') {
+            if (typeof this.counter === 'string') {
                 fix = Number(this.counter.replace(/\D/g, ""));
             } else {
                 fix = 1;
             }
-
+            this.counter = fix;
             // 额外逻辑
             if (this.counter < 1)
                 this.counter = 1;
             if (this.counter > this.maxCounter)
                 this.counter = this.maxCounter;
-                this.counter = fix;
+
         }
     },
     created: async function () {
-        const response = await axios.get('http://127.0.0.1:5000/Ticketprices');
+        const response = await axios.get('http://39.106.37.28:5000/Ticketprices');
         this.maxCounter = response.data?.data?.[0].RemainingQuantity;// 假设响应的数据就是你需要的最大计数器值
         if (this.maxCounter !== undefined) {
             console.log(this.maxCounter);

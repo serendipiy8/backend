@@ -51,6 +51,14 @@ const routes = [
       meta: {
         requireAuth: true // 标记需要登录
       }
+    },
+    {
+      path: 'ticket',
+      name: 'Ticket',
+      component: () => import("../views/main/Product/ticket.vue"),
+      meta: {
+        requireAuth: true // 标记需要登录
+      }
     }],
   },
   {

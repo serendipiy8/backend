@@ -1,16 +1,15 @@
 <template>
     <div>
-      <HeaderNav></HeaderNav>
-      个人信息
+      <el-pagination layout="prev, pager, next ,jumper" :total="50" :size-change="handleSizechange">
+
+      </el-pagination>
     </div>
   </template>
   
   <script>
   
-  import HeaderNav from '@/components/HeaderNav.vue';
   export default {
     components: {
-      HeaderNav
     },
     data() {
       return {}

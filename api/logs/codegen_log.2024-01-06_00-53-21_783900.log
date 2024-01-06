@@ -1,0 +1,1298 @@
+2024-01-05 23:22:00.043 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000018C3AD3A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33928)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000018C3AD3A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33928)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 33928)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 33928)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000018C41016500>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 33928)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000018C3AD400D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018C41016500>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 54580)
+    │    │               └ <socket.socket fd=976, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000018C3AD40280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018C41016500>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 54580)
+    │    │              └ <socket.socket fd=976, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000018C3AD403A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018C41016500>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000018C41016500>
+    │    │                   │        └ ('127.0.0.1', 54580)
+    │    │                   └ <socket.socket fd=976, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018C41016500>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000018C3CAB89D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000018C4103E3E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000018C3C8FDA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000018C4103E3E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000018C4103E3E0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000018C410159F0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018C41016500>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000018C4103E3E0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000018C41095C60>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000018C41031D20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000018C41096200>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=976>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000018C410159F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000018C41096200>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=976>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000018C3D3681F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000018C3D3636D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000018C3D363640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'ticketprices.TicketpricesQuery'
+           │    │           │    │              └ <Rule '/TicketpricesQuery' (GET, OPTIONS, HEAD) -> ticketprices.TicketpricesQuery>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000018C3E8671C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000018C3D363910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\ticketpricesResource\urls.py", line 25, in TicketpricesQuery
+    return TicketpricesOtherResource.ticketpricesQuery()
+           │                         └ <classmethod(<function TicketpricesOtherResource.ticketpricesQuery at 0x0000018C40F8D120>)>
+           └ <class 'api_1_0.ticketpricesResource.ticketpricesOtherResource.TicketpricesOtherResource'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\ticketpricesResource\ticketpricesOtherResource.py", line 20, in ticketpricesQuery
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x0000018C3EA89360>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000018C4103E830>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000018C4103E830>
+                   │   │     └ <Request 'http://127.0.0.1:5000/TicketpricesQuery' [GET]>
+                   │   └ <function Argument.parse at 0x0000018C3EA891B0>
+                   └ Argument('ShowID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x0000018C3EA89120>
+    └ Argument('ShowID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'ShowID': '票ID数据类型不匹配'}
+    │             └ <function abort at 0x0000018C3EA58EE0>
+    └ <module 'flask_restful' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\flask_restf...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x0000018C3D186950>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x0000018C3E802D40>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-06 00:21:15.806 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x000001762FF57370>
+    │                        └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+    └ <sqlalchemy.engine.base.Connection object at 0x0000017632B833A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x000001762F2185E0>
+           │    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+           │                └ <classmethod(<function _ConnectionFairy._checkout at 0x000001762F219EA0>)>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+            │                 └ <classmethod(<function _ConnectionRecord.checkout at 0x000001762F219000>)>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 716, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x000001762F240B80>
+          └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 169, in _do_get
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000017632D22C40>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 167, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x000001762F2183A0>
+           └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 678, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017632A90460>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 902, in __connect
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000017632C00E80>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017632A90460>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x00000176303A7250>
+    │    │                               └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017632A90460>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 637, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x000001762FFD7520>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017630386350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │    │            │        └ ()
+           │    │            └ <class 'pymysql.connections.Connection'>
+           │    └ <module 'pymysql' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\__init__...
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017630386350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 352, in __init__
+    self.connect()
+    │    └ <function Connection.connect at 0x000001763058E830>
+    └ <pymysql.connections.Connection object at 0x0000017632B83520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+    │    └ <function Connection._request_authentication at 0x000001763058ECB0>
+    └ <pymysql.connections.Connection object at 0x0000017632B83520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 933, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  │     │                          │     └ <pymysql.protocol.MysqlPacket object at 0x0000017632B83A00>
+                  │     │                          └ <pymysql.connections.Connection object at 0x0000017632B83520>
+                  │     └ <function caching_sha2_password_auth at 0x0000017630571090>
+                  └ <module 'pymysql._auth' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\_a...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 266, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          │          │     └ b'\x11\xac\x02/\x9bA$\xa2\x01\xf7r%\xe9\x1a\x8d\xd9b\x88\xe2z.\x9aS\'R\xd3v\xa0x\xeb&V\x162eOw\xf3\xdc`d\xd3O\xe6v]9f\n\x1bw\...
+          │          └ <pymysql.connections.Connection object at 0x0000017632B83520>
+          └ <function _roundtrip at 0x0000017630570DC0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 120, in _roundtrip
+    pkt = conn._read_packet()
+          │    └ <function Connection._read_packet at 0x000001763058E950>
+          └ <pymysql.connections.Connection object at 0x0000017632B83520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001763058D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000017632C24070>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000017632C24070>
+    │   └ <function raise_mysql_exception at 0x0000017630454F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Access denied for user 'root'@'localhost' (using password: YES)"
+          │          └ 1045
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001762C85A950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 29604)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001762C85A680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 29604)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 29604)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 29604)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000017632B56560>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 29604)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001762C8600D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017632B56560>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 50707)
+    │    │               └ <socket.socket fd=812, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x000001762C860280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017632B56560>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 50707)
+    │    │              └ <socket.socket fd=812, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x000001762C8603A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017632B56560>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000017632B56560>
+    │    │                   │        └ ('127.0.0.1', 50707)
+    │    │                   └ <socket.socket fd=812, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017632B56560>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001762E5F89D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017632B823E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001762E43DA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017632B823E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000017632B823E0>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000017632B55A20>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000017632B56560>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017632B823E0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000017632BD7520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000017632B71000>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000017632BD6B00>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=812>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000017632B55A20>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000017632BD6B00>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=812>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x000001762EEA81F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001762EEA36D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001762EEA3640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'ticketprices.ticketprices'
+           │    │           │    │              └ <Rule '/ticketprices' (OPTIONS, POST, PUT, HEAD, DEL, GET) -> ticketprices.ticketprices>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000176303A71C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001762EEA3910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\ticketpricesResource\urls.py", line 23, in ticketprices
+    return TicketpricesResource.get()
+           │                    └ <classmethod(<function TicketpricesResource.get at 0x0000017632A9B5B0>)>
+           └ <class 'api_1_0.ticketpricesResource.ticketpricesResource.TicketpricesResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\ticketpricesResource\ticketpricesResource.py", line 43, in get
+    res = TicketpricesController.get(**kwargs)
+          │                      │     └ {}
+          │                      └ <classmethod(<function TicketpricesController.get at 0x0000017632A9B7F0>)>
+          └ <class 'controller.ticketpricesController.TicketpricesController'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\controller\ticketpricesController.py", line 74, in get
+    count = ticketprices_info.count()
+            │                 └ <function Query.count at 0x0000017630218AF0>
+            └ <flask_sqlalchemy.query.Query object at 0x0000017632B82BF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 3132, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+    │    │                 └ <sqlalchemy.sql.functions.count at 0x17632b82c20; count>
+    │    └ <function Query._legacy_from_self at 0x0000017630208160>
+    └ <flask_sqlalchemy.query.Query object at 0x0000017632B82BF0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2825, in scalar
+    ret = self.one()
+          │    └ <function Query.one at 0x0000017630218310>
+          └ <flask_sqlalchemy.query.Query object at 0x0000017632B832B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2798, in one
+    return self._iter().one()  # type: ignore
+           │    └ <function Query._iter at 0x00000176302184C0>
+           └ <flask_sqlalchemy.query.Query object at 0x0000017632B832B0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+            │                  │    │      │      │    │       └ <function Session.execute at 0x0000017630285E10>
+            │                  │    │      │      │    └ <sqlalchemy.orm.session.Session object at 0x0000017632B82AD0>
+            │                  │    │      │      └ <flask_sqlalchemy.query.Query object at 0x0000017632B832B0>
+            │                  │    │      └ ~_T
+            │                  │    └ <class 'sqlalchemy.engine.result.Result'>
+            │                  └ ~_T
+            └ typing.Union
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x0000017630285D80>
+           └ <sqlalchemy.orm.session.Session object at 0x0000017632B82AD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           │    │                    └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+           │    └ <function Session._connection_for_bind at 0x0000017630285CF0>
+           └ <sqlalchemy.orm.session.Session object at 0x0000017632B82AD0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           │     │                    │       └ None
+           │     │                    └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+           │     └ <function SessionTransaction._connection_for_bind at 0x0000017630284A60>
+           └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001763294FB00>
+
+  File "<string>", line 2, in _connection_for_bind
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ (Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8), None)
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x000001763294FB00>
+                └ <function SessionTransaction._connection_for_bind at 0x0000017630284940>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+           │    └ <function Engine.connect at 0x000001762FF572E0>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+           │    │               └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+           │    └ <class 'sqlalchemy.engine.base.Connection'>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    │          └ <classmethod(<function Connection._handle_dbapi_exception_noconnection at 0x000001762FF553F0>)>
+    └ <class 'sqlalchemy.engine.base.Connection'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2430, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: Y...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1045, "Access denied for user \'root\'@\'localhost\' (using password: YES)")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x000001762FF57370>
+    │                        └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+    └ <sqlalchemy.engine.base.Connection object at 0x0000017632B833A0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x000001762F2185E0>
+           │    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+           │                └ <classmethod(<function _ConnectionFairy._checkout at 0x000001762F219EA0>)>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+            │                 └ <classmethod(<function _ConnectionRecord.checkout at 0x000001762F219000>)>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 716, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x000001762F240B80>
+          └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 169, in _do_get
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000017632D22C40>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 167, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x000001762F2183A0>
+           └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 678, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017632A90460>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 902, in __connect
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000017632C00E80>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017632A90460>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x00000176303A7250>
+    │    │                               └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017630445D80>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017632A90460>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 637, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x000001762FFD7520>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017630386350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │    │            │        └ ()
+           │    │            └ <class 'pymysql.connections.Connection'>
+           │    └ <module 'pymysql' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\__init__...
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017630386350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 352, in __init__
+    self.connect()
+    │    └ <function Connection.connect at 0x000001763058E830>
+    └ <pymysql.connections.Connection object at 0x0000017632B83520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+    │    └ <function Connection._request_authentication at 0x000001763058ECB0>
+    └ <pymysql.connections.Connection object at 0x0000017632B83520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 933, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  │     │                          │     └ <pymysql.protocol.MysqlPacket object at 0x0000017632B83A00>
+                  │     │                          └ <pymysql.connections.Connection object at 0x0000017632B83520>
+                  │     └ <function caching_sha2_password_auth at 0x0000017630571090>
+                  └ <module 'pymysql._auth' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\_a...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 266, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          │          │     └ b'\x11\xac\x02/\x9bA$\xa2\x01\xf7r%\xe9\x1a\x8d\xd9b\x88\xe2z.\x9aS\'R\xd3v\xa0x\xeb&V\x162eOw\xf3\xdc`d\xd3O\xe6v]9f\n\x1bw\...
+          │          └ <pymysql.connections.Connection object at 0x0000017632B83520>
+          └ <function _roundtrip at 0x0000017630570DC0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 120, in _roundtrip
+    pkt = conn._read_packet()
+          │    └ <function Connection._read_packet at 0x000001763058E950>
+          └ <pymysql.connections.Connection object at 0x0000017632B83520>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001763058D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x0000017632C24070>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x0000017632C24070>
+    │   └ <function raise_mysql_exception at 0x0000017630454F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Access denied for user 'root'@'localhost' (using password: YES)"
+          │          └ 1045
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-01-06 00:25:04.488 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x0000017570AE7370>
+    │                        └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+    └ <sqlalchemy.engine.base.Connection object at 0x00000175737137F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x000001756FDA85E0>
+           │    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+           │                └ <classmethod(<function _ConnectionFairy._checkout at 0x000001756FDA9EA0>)>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+            │                 └ <classmethod(<function _ConnectionRecord.checkout at 0x000001756FDA9000>)>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 716, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x000001756FDD0B80>
+          └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 169, in _do_get
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x00000175738BB540>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 167, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x000001756FDA83A0>
+           └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 678, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017573665840>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 902, in __connect
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000017573795700>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017573665840>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x0000017570F37250>
+    │    │                               └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017573665840>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 637, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x0000017570B67520>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017570F16350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │    │            │        └ ()
+           │    │            └ <class 'pymysql.connections.Connection'>
+           │    └ <module 'pymysql' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\__init__...
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017570F16350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 352, in __init__
+    self.connect()
+    │    └ <function Connection.connect at 0x000001757111E830>
+    └ <pymysql.connections.Connection object at 0x00000175737138E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+    │    └ <function Connection._request_authentication at 0x000001757111ECB0>
+    └ <pymysql.connections.Connection object at 0x00000175737138E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 933, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  │     │                          │     └ <pymysql.protocol.MysqlPacket object at 0x0000017573713E20>
+                  │     │                          └ <pymysql.connections.Connection object at 0x00000175737138E0>
+                  │     └ <function caching_sha2_password_auth at 0x0000017571101090>
+                  └ <module 'pymysql._auth' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\_a...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 266, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          │          │     └ b'e\x16/\xe5\x18\xd0\xdb}\xd5\xb2\xa2\x8dBJX\xa6\xd6\xfe\xc9L\xd7\xf1\xff1\rD\xe2~9{\xf3\xe4H\x02\x95\xa4}\x00"\xf2j\x9cUBuo?...
+          │          └ <pymysql.connections.Connection object at 0x00000175737138E0>
+          └ <function _roundtrip at 0x0000017571100DC0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 120, in _roundtrip
+    pkt = conn._read_packet()
+          │    └ <function Connection._read_packet at 0x000001757111E950>
+          └ <pymysql.connections.Connection object at 0x00000175737138E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001757111D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x00000175737B0040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x00000175737B0040>
+    │   └ <function raise_mysql_exception at 0x0000017570FE4F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Access denied for user 'root'@'localhost' (using password: YES)"
+          │          └ 1045
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 973, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000001756D3FA950>
+    └ <Thread(Thread-1 (serve_forever), started daemon 32480)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000001756D3FA680>
+    └ <Thread(Thread-1 (serve_forever), started daemon 32480)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1 (serve_forever), started daemon 32480)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1 (serve_forever), started daemon 32480)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000175736E65C0>>
+    └ <Thread(Thread-1 (serve_forever), started daemon 32480)>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000001756D4000D0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000175736E65C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 58124)
+    │    │               └ <socket.socket fd=1088, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000001756D400280>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000175736E65C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 58124)
+    │    │              └ <socket.socket fd=1088, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000001756D4003A0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000175736E65C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000175736E65C0>
+    │    │                   │        └ ('127.0.0.1', 58124)
+    │    │                   └ <socket.socket fd=1088, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000175736E65C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000001756F1889D0>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017573712500>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 432, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001756EFCDA20>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017573712500>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\http\server.py", line 420, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000017573712500>>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000175736E5A80>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000175736E65C0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000017573712500>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000017573767130>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000017573706260>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000017573765A20>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1088>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000175736E5A80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000017573765A20>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1088>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000001756FA381F0>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000001756FA336D0>
+               └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000001756FA33640>
+         └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'ticketprices.ticketprices'
+           │    │           │    │              └ <Rule '/ticketprices' (DEL, PUT, POST, HEAD, OPTIONS, GET) -> ticketprices.ticketprices>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000017570F371C0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000001756FA33910>
+           └ <Flask 'app'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\ticketpricesResource\urls.py", line 23, in ticketprices
+    return TicketpricesOtherResource.ticketprices_query()
+           │                         └ <classmethod(<function TicketpricesOtherResource.ticketprices_query at 0x0000017573656050>)>
+           └ <class 'api_1_0.ticketpricesResource.ticketpricesOtherResource.TicketpricesOtherResource'>
+
+  File "C:\Users\Lenovo\Desktop\github_git\backend\api\api_1_0\ticketpricesResource\ticketpricesOtherResource.py", line 49, in ticketprices_query
+    res = TicketpricesService.ticketprices_query(**kwargs)
+          │                   │                    └ {'TicketID': '2024010523176981'}
+          │                   └ <classmethod(<function TicketpricesService.ticketprices_query at 0x0000017573655630>)>
+          └ <class 'service.ticketpricesService.TicketpricesService'>
+
+> File "C:\Users\Lenovo\Desktop\github_git\backend\api\service\ticketpricesService.py", line 208, in ticketprices_query
+    existing_user = db.session.query(cls).filter_by(TicketID=ticketid).first()
+                    │  │       │     │                       └ '2024010523176981'
+                    │  │       │     └ <class 'service.ticketpricesService.TicketpricesService'>
+                    │  │       └ <function scoped_session.query at 0x0000017570EA3E20>
+                    │  └ <sqlalchemy.orm.scoping.scoped_session object at 0x000001756FA6B4C0>
+                    └ <SQLAlchemy mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           │    └ <function Query.limit at 0x0000017570D9B880>
+           └ <flask_sqlalchemy.query.Query object at 0x00000175737131C0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+            │                  │    │      │      │    │       └ <function Session.execute at 0x0000017570E15E10>
+            │                  │    │      │      │    └ <sqlalchemy.orm.session.Session object at 0x0000017573712B00>
+            │                  │    │      │      └ <flask_sqlalchemy.query.Query object at 0x0000017573712E90>
+            │                  │    │      └ ~_T
+            │                  │    └ <class 'sqlalchemy.engine.result.Result'>
+            │                  └ ~_T
+            └ typing.Union
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x0000017570E15D80>
+           └ <sqlalchemy.orm.session.Session object at 0x0000017573712B00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2180, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           │    │                    └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+           │    └ <function Session._connection_for_bind at 0x0000017570E15CF0>
+           └ <sqlalchemy.orm.session.Session object at 0x0000017573712B00>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 2047, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           │     │                    │       └ None
+           │     │                    └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+           │     └ <function SessionTransaction._connection_for_bind at 0x0000017570E14A60>
+           └ <sqlalchemy.orm.session.SessionTransaction object at 0x00000175734DF5C0>
+
+  File "<string>", line 2, in _connection_for_bind
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ (Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8), None)
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x00000175734DF5C0>
+                └ <function SessionTransaction._connection_for_bind at 0x0000017570E14940>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\orm\session.py", line 1143, in _connection_for_bind
+    conn = bind.connect()
+           │    └ <function Engine.connect at 0x0000017570AE72E0>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3268, in connect
+    return self._connection_cls(self)
+           │    │               └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+           │    └ <class 'sqlalchemy.engine.base.Connection'>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+    │          └ <classmethod(<function Connection._handle_dbapi_exception_noconnection at 0x0000017570AE53F0>)>
+    └ <class 'sqlalchemy.engine.base.Connection'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 2430, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: Y...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1045, "Access denied for user \'root\'@\'localhost\' (using password: YES)")')
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x0000017570AE7370>
+    │                        └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+    └ <sqlalchemy.engine.base.Connection object at 0x00000175737137F0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\base.py", line 3292, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x000001756FDA85E0>
+           │    └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+           └ Engine(mysql+pymysql://root:***@127.0.0.1:3306/ticketsys?charset=utf8)
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 452, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+           │                └ <classmethod(<function _ConnectionFairy._checkout at 0x000001756FDA9EA0>)>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 1269, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+            │                 └ <classmethod(<function _ConnectionRecord.checkout at 0x000001756FDA9000>)>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 716, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x000001756FDD0B80>
+          └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 169, in _do_get
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x00000175738BB540>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\impl.py", line 167, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x000001756FDA83A0>
+           └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 393, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 678, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017573665840>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 902, in __connect
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\sqlalchem...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000017573795700>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\pool\base.py", line 898, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017573665840>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x0000017570F37250>
+    │    │                               └ <sqlalchemy.pool.impl.QueuePool object at 0x0000017570FD5D80>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000017573665840>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\create.py", line 637, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x0000017570B67520>
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017570F16350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': '127.0.0.1', 'database': 'ticketsys', 'user': 'root', 'password': '20030205', 'port': 3306, 'charset': 'utf8', 'clie...
+           │    │            │        └ ()
+           │    │            └ <class 'pymysql.connections.Connection'>
+           │    └ <module 'pymysql' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\__init__...
+           └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x0000017570F16350>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 352, in __init__
+    self.connect()
+    │    └ <function Connection.connect at 0x000001757111E830>
+    └ <pymysql.connections.Connection object at 0x00000175737138E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 636, in connect
+    self._request_authentication()
+    │    └ <function Connection._request_authentication at 0x000001757111ECB0>
+    └ <pymysql.connections.Connection object at 0x00000175737138E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 933, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+                  │     │                          │     └ <pymysql.protocol.MysqlPacket object at 0x0000017573713E20>
+                  │     │                          └ <pymysql.connections.Connection object at 0x00000175737138E0>
+                  │     └ <function caching_sha2_password_auth at 0x0000017571101090>
+                  └ <module 'pymysql._auth' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\_a...
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 266, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+          │          │     └ b'e\x16/\xe5\x18\xd0\xdb}\xd5\xb2\xa2\x8dBJX\xa6\xd6\xfe\xc9L\xd7\xf1\xff1\rD\xe2~9{\xf3\xe4H\x02\x95\xa4}\x00"\xf2j\x9cUBuo?...
+          │          └ <pymysql.connections.Connection object at 0x00000175737138E0>
+          └ <function _roundtrip at 0x0000017571100DC0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\_auth.py", line 120, in _roundtrip
+    pkt = conn._read_packet()
+          │    └ <function Connection._read_packet at 0x000001757111E950>
+          └ <pymysql.connections.Connection object at 0x00000175737138E0>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000001757111D120>
+    └ <pymysql.protocol.MysqlPacket object at 0x00000175737B0040>
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x00000175737B0040>
+    │   └ <function raise_mysql_exception at 0x0000017570FE4F70>
+    └ <module 'pymysql.err' from 'C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pymysql\\err....
+
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Access denied for user 'root'@'localhost' (using password: YES)"
+          │          └ 1045
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-01-07 03:14:58.346 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x00000265FFC74670>
+    └ <Thread(Thread-1, started daemon 30420)>
+
+  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x00000265FFC743A0>
+    └ <Thread(Thread-1, started daemon 30420)>
+
+  File "D:\Python\Python39\lib\threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 30420)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1, started daemon 30420)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000265A36D8FD0>>
+    └ <Thread(Thread-1, started daemon 30420)>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x00000265A0BB7AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000265A36D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 50668)
+    │    │               └ <socket.socket fd=1076, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x00000265A0BB7CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000265A36D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 50668)
+    │    │              └ <socket.socket fd=1076, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x00000265A0BB7DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000265A36D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000265A36D8FD0>
+    │    │                   │        └ ('127.0.0.1', 50668)
+    │    │                   └ <socket.socket fd=1076, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000265A36D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x00000265A0DF2550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000265A3716D00>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000265A0CE2160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000265A3716D00>
+
+  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000265A3716D00>>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000265A36D86A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000265A36D8FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000265A3716D00>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000265A3734D30>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x00000265A372EEB0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000265A3734E50>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1076>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000265A36D86A0>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000265A3734E50>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1076>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x00000265A131B790>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x00000265A1318CA0>
+               └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x00000265A1318C10>
+         └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'orders.queryUser'
+           │    │           │    │              └ <Rule '/orders/queryUser' (OPTIONS, GET, HEAD) -> orders.queryUser>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000265A1F588B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x00000265A1318EE0>
+           └ <Flask 'app'>
+
+  File "E:\code\backend\api\api_1_0\ordersResource\urls.py", line 27, in queryUser
+    return  OrdersOtherResource.queryUser()
+            │                   └ <classmethod object at 0x00000265A35E73D0>
+            └ <class 'api_1_0.ordersResource.ordersOtherResource.OrdersOtherResource'>
+
+> File "E:\code\backend\api\api_1_0\ordersResource\ordersOtherResource.py", line 68, in queryUser
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x00000265A31784C0>
+             └ <flask_restful.reqparse.RequestParser object at 0x00000265A373F220>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000265A373F220>
+                   │   │     └ <Request 'http://127.0.0.1:5000/orders/queryUser?UserID=0' [GET]>
+                   │   └ <function Argument.parse at 0x00000265A3178310>
+                   └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the post body'
+    │    └ <function Argument.handle_validation_error at 0x00000265A3178280>
+    └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'UserID': '用户ID数据类型不匹配'}
+    │             └ <function abort at 0x00000265A312BD30>
+    └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x00000265A117C670>
+
+  File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x00000265A0B63970>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.

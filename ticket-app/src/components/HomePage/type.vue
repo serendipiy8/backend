@@ -21,40 +21,32 @@ export default {
         return {
             flag: false,
             currentIndex: 0,
-            selecterData: [
-                {
-                    value: "内场前排",
-                    id: 1
-                },
-                {
-                    value: "内场后排",
-                    id: 2
-                },
-                {
-                    value: "看台前排",
-                    id: 3
-                },
-                {
-                    value: "看台后排",
-                    id: 4
-                },
-                {
-                    value: "山顶位置",
-                    id: 5
-                }
-            ]
         }
+    },
+    props: {
+        selecterData: {
+            type: Array,
+            default: function () {
+                return [
+                    {
+                        value: "test",
+                        id: 0
+                    }
+                ]
+            }
+        },
     },
     methods: {
         showListHandle() {
             this.flag = !this.flag;
         },
         selectHandle(data, index) {
-            console.log(data, index);
+            console.log(data.value, index);
             this.currentIndex = index;
             this.flag = false;
+            this.$emit("type", item);
         }
-    }
+    },
 }
 </script>
 
