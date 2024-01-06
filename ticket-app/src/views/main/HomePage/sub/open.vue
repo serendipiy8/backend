@@ -15,7 +15,9 @@
             </div>
             <div class="sales-board-form">
                 <div class="sales-board-line-left">票档：</div>
-                <div class="sales-board-line-right">加减操作</div>
+                <div class="sales-board-line-right">
+                    <Type></Type>
+                </div>
             </div>
             <div class="sales-board-form">
                 <div class="sales-board-line-left">购买数量：</div>
@@ -44,6 +46,7 @@
 
 <script>
 import Counter from '@/components/HomePage/counter.vue'
+import Type from'@/components/HomePage/type.vue'
 
 export default {
     name: 'Open',
@@ -53,7 +56,8 @@ export default {
         }
     },
     components: {
-        Counter
+        Counter,
+        Type
     },
 }
 </script>

@@ -37,9 +37,6 @@ export default {
                 fix = 1;
             }
 
-            // 将 fix 的值赋给 this.counter
-
-
             // 额外逻辑
             if (this.counter < 1)
                 this.counter = 1;
