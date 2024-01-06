@@ -1,8 +1,8 @@
 <template>
     <div class="chooser-component">
-        <ul>
-            <li v-for="(item,index) in timerDate" :key="index">
-                {{ item.value  }}
+        <ul class="chooser-list">
+            <li :class="{active:nowIndex === index}" v-for="(item,index) in timerDate" :key="index" @click="timerHandle(item,index)">
+                {{ item.value }}
             </li>
         </ul>
     </div>
@@ -12,6 +12,7 @@
 export default {
     data(){
         return{
+            nowIndex:0,
             timerDate:[
                 {
                     value:'2021-06-01',
@@ -27,7 +28,15 @@ export default {
                 },
             ]
         }
-    }
+
+    },
+    methods:{
+            timerHandle(item,index){
+                this.nowIndex = index;
+                this.$emit('timer',item);
+            }
+        
+        }
 };
 </script>
 
@@ -50,7 +59,7 @@ export default {
     cursor: pointer;
 }
 
-chooser-list li.active {
+.chooser-list li.active {
     border-color: #4fc08d;
     background: #4fc08d;
     color: #fff;
