@@ -1,0 +1,20 @@
+version: "3"
+services:
+   api:
+     stdin_open: true
+     tty: true
+     build: .
+     image: python3.10-flask-api.course.ncepu.edu.cn:default-venv
+     container_name: api_container
+     restart: always
+     volumes:
+       - /project/api/:/my_project/my_api/
+     ports:
+       - "5000:5000"
+     command:
+       - /bin/bash
+       - -c
+       - |
+          cd /my_project/my_api
+          gunicorn -c deploy/gunicorn.conf manage:app -D
+          /bin/bash
