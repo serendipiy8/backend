@@ -10,14 +10,13 @@ import sys
 
 
 def start():
-    cmd = 'source /deploy/app/venv/bin/activate;' \
-          'cd /deploy/your project;' \
+    cmd = 'cd /my_project/my_api/;' \
           'gunicorn -c deploy/gunicorn.conf manage:app -D'
     os.system(cmd)
 
 
 def stop():
-    cmd = "ps -ef | grep 'api/bin/gunicorn' | grep -v grep | awk '{print $2}' | xargs kill -9"
+    cmd = "ps -ef | grep 'gunicorn' | grep -v grep | awk '{print $2}' | xargs kill -9"
     os.system(cmd)
 
 
