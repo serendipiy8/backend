@@ -1,12 +1,12 @@
 <template>
     <div class="selection-component">
         <div class="selection-show" @click="showListHandle">
-            <span>选择票档</span>
+            <span>{{ selecterData[currentIndex].value }}</span>
             <div class="arrow"></div>
         </div>
         <div class="selection-list" v-show="flag">
             <ul>
-                <li v-for="(item, index) in selecterData" :key="index" @click="selectHandle(item)">
+                <li v-for="(item, index) in selecterData" :key="index" @click="selectHandle(item, index)">
                     {{ item.value }}
                 </li>
             </ul>
@@ -20,6 +20,7 @@ export default {
     data() {
         return {
             flag: false,
+            currentIndex: 0,
             selecterData: [
                 {
                     value: "内场前排",
@@ -48,8 +49,10 @@ export default {
         showListHandle() {
             this.flag = !this.flag;
         },
-        selectHandle(data) {
-            console.log(data);
+        selectHandle(data, index) {
+            console.log(data, index);
+            this.currentIndex = index;
+            this.flag = false;
         }
     }
 }
