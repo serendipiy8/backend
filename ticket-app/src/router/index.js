@@ -20,7 +20,29 @@ const routes = [
       component: () => import("../views/main/Concert.vue"),
       meta: {
         requireAuth: true // 标记需要登录
-      }
+      },
+      children:[
+        {
+          path:"open",
+          name:"Open",
+          component:()=>import("../views/main/HomePage/sub/open.vue"),
+        },
+        {
+          path:"golife",
+          name:"Golife",
+          component:()=>import("../views/main/HomePage/sub/golife.vue"),
+        },
+        {
+          path:"logo",
+          name:"Logo",
+          component:()=>import("../views/main/HomePage/sub/logo.vue"),
+        },
+        {
+          path:"heigh",
+          name:"Heigh",
+          component:()=>import("../views/main/HomePage/sub/heigh.vue"),
+        },
+      ]
     },
     {
       path: 'information',

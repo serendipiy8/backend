@@ -6,7 +6,7 @@
                 <h2>{{ item.title }}</h2>
                 <p>{{ item.desc }}</p>
                 <div class="index-board-button">
-                    <a herf="#" class="button">查看详情</a>
+                    <router-link :to="'/concert/'+item.flag" class="button">查看详情</router-link>
                 </div>
             </div>
         </div>
@@ -20,18 +20,18 @@ export default {
         return {
             buyData: [
                 {
-                    title: "演唱会",
-                    desc: "演唱会描述",
+                    title: "音乐会",
+                    desc: "音乐会描述",
                     flag: "open",
                 },
                 {
-                    title: "音乐会",
-                    desc: "音乐会描述",
+                    title: "演唱会",
+                    desc: "演唱会描述",
                     flag: "logo",
                 },
                 {
-                    title: "二次元",
-                    desc: "二次元描述",
+                    title: "歌剧话剧",
+                    desc: "歌剧话剧描述",
                     flag: "golife",
                 },
                 {
@@ -77,7 +77,8 @@ export default {
 }
 
 .index-board-golife .index-board-item-inner {
-    background: url(../../../assets/concert3.png) no-repeat;
+    background: url(https://img.alicdn.com/bao/uploaded/https://img.alicdn.com/imgextra/i3/2251059038/O1CN01QCVZD22GdSYBYkOYd_!!2251059038.jpg_q60.jpg_.webp) no-repeat;
+    background-size: 100px 140px;
 }
 
 .index-board-heigh .index-board-item-inner {
