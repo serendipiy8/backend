@@ -7,6 +7,7 @@
       </div>
       <div class="index-right">
         <HomeSwiper></HomeSwiper>
+        <HomeShowList></HomeShowList>
       </div>
     </div>
   </div>
@@ -17,12 +18,14 @@
 import HeaderNav from '@/components/HeaderNav.vue';
 import HomeNav from './HomeNav.vue';
 import HomeSwiper from './HomeSwiper.vue';
+import HomeShowList from './HomeShowList.vue';
 
 export default {
   components: {
     HeaderNav,
     HomeNav,
-    HomeSwiper
+    HomeSwiper,
+    HomeShowList
   },
   data() {
     return {

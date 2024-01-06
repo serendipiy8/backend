@@ -136,10 +136,6 @@ export default {
 </script>
   
 <style scoped lang="less">
-
-
-
-
 .index-left-block {
     margin: 15px;
     background: #fff;
@@ -199,59 +195,9 @@ export default {
     padding-left: 120px;
 }
 
-/* .index-board-open .index-board-item-inner {
-    background: url(../../../assets/01.png) no-repeat;
-}
-
-.index-board-logo .index-board-item-inner {
-    background: url(../../../assets/02.png) no-repeat;
-}
-
-.index-board-golife .index-board-item-inner {
-    background: url(../../../assets/03.png) no-repeat;
-}
-
-.index-board-heigh .index-board-item-inner {
-    background: url(../../../assets/04.png) no-repeat;
-}
-
-.index-board-item h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #000;
-}
-
-.line-last {
-    margin-right: 0;
-}
-
-.index-board-button {
-    margin-top: 20px;
-}
-
-.lastest-news {
-    min-height: 350px;
-} */
 
 .hot-tag {
     background: red;
     color: #fff;
 }
-
-/* .new-item {
-    display: inline-block;
-    width: 230px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.button {
-    background: #4fc08d;
-    color: #fff;
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-} */
 </style>    
