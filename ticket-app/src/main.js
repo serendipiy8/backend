@@ -9,7 +9,7 @@ import './router/permission'
 import "./utils/init"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css'
-
+import axios from 'axios';
 
 
 const app = createApp(App)
