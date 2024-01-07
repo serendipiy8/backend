@@ -2,3 +2,4 @@
 
 
 ticket-app/database/ticketsystem.sql
+*.log
