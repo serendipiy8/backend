@@ -1,6 +1,6 @@
 <template>
     <div>
-        订单管理
+        售票管理
     </div>
 </template>
   
@@ -8,7 +8,6 @@
 
 export default {
     components: {
-    
     },
     data() {
         return {}

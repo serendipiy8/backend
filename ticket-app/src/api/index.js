@@ -16,6 +16,9 @@ const api = {
     adminLogin(params) {
         return axios.post(base.baseUrl + base.adminLogin, params)
     },
+    selectRefund(params) {
+        return axios.get(base.baseUrl + base.selectRefund, {params})
+    },
 }
 
 export default api

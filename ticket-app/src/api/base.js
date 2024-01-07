@@ -12,6 +12,7 @@ const base = {
     // selectOrder: "/orders/queryUser",
     selectOrder: "/Orders",
     adminLogin: "/administrators",
+    selectRefund:"/Refunds"
 }
 
 

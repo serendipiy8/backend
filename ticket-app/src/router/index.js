@@ -73,17 +73,22 @@ const routes = [
     children: [{
       path: 'adminticket',
       name: 'AdminTicket',
-      component: () => import("../views/main/admin/AdminTicket.vue")
+      component: () => import("../views/main/admin/ticket/AdminTicket.vue")
     },
     {
       path: 'theater',
       name: 'Theater',
-      component: () => import("../views/main/admin/Theater.vue")
+      component: () => import("../views/main/admin/theater/Theater.vue")
     },
     {
       path: 'adminrefund',
       name: 'AdminRefund',
-      component: () => import("../views/main/admin/AdminRefund.vue")
+      component: () => import("../views/main/admin/refund/AdminRefund.vue")
+    },
+    {
+      path: 'adminorder',
+      name: 'AdminOrder',
+      component: () => import("../views/main/admin/order/AdminOrder.vue")
     },
     ]
   },
