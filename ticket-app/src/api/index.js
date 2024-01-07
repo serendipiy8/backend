@@ -12,7 +12,10 @@ const api = {
     },
     selectOrder(params) {
         return axios.get(base.baseUrl + base.selectOrder, {params})
-    }
+    },
+    adminLogin(params) {
+        return axios.post(base.baseUrl + base.adminLogin, params)
+    },
 }
 
 export default api

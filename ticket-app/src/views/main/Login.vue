@@ -145,10 +145,13 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           if (this.activeTab === "login") {
-            console.log(this.loginForm)
             api.login(this.loginForm).then(res => {
               console.log(res.data)
               if (res.data.code === "2000") {
+                this.$message({
+                  message: "登录成功",
+                  type: "success"
+                })
                 this.setUser(res.data)
                 localStorage.setItem(
                   "ticket",
@@ -184,7 +187,7 @@ export default {
                 }
                 this.$notify(notification)
                 this.$router.push('/')
-              }else{
+              } else {
                 const notification = {
                   title: "注册失败",
                   message: h(

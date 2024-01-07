@@ -11,6 +11,7 @@ const base = {
     login: "/users/login",
     // selectOrder: "/orders/queryUser",
     selectOrder: "/Orders",
+    adminLogin: "/administrators",
 }
 
 

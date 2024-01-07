@@ -1,7 +1,8 @@
 <template>
-    <div>
-      <adminHeaderNav></adminHeaderNav>
-      管理主页
+    <div><adminHeaderNav></adminHeaderNav>
+    <router-view>
+        
+    </router-view>
     </div>
   </template>
   

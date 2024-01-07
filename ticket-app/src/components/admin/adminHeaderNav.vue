@@ -1,12 +1,10 @@
 <template>
-    <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect"
-         router>
-        <el-menu-item index="/admin">售票管理</el-menu-item>
-        <el-menu-item index="/concert">剧院管理</el-menu-item>
-        <el-menu-item index="/ticket">订单管理</el-menu-item>
+    <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect" router>
+        <el-menu-item index="/admin/adminticket">售票管理</el-menu-item>
+        <el-menu-item index="/admin/theater">剧院管理</el-menu-item>
+        <el-menu-item index="/admin/adminrefund">订单管理</el-menu-item>
         <div class="flex-grow" />
-        <el-menu-item index="login">登录</el-menu-item>
-        <el-menu-item index="login">注册</el-menu-item>
+        <el-menu-item index="/adlogin">登录</el-menu-item>
         <el-sub-menu index="3">
             <template #title>管理员中心</template>
             <el-menu-item index="/information">管理员信息</el-menu-item>
@@ -30,7 +28,7 @@ export default {
         ...mapMutations("users", ["setAuthentication"]),
         logoutHandle() {
             this.$store.dispatch('logout');
-            this.$router.push("/login")
+            // this.$router.push("/login")
         }
     },
 };
