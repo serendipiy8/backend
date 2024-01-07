@@ -19,6 +19,12 @@ const api = {
     selectRefund(params) {
         return axios.get(base.baseUrl + base.selectRefund, {params})
     },
+    selectTheater(params) {
+        return axios.get(base.baseUrl + base.selectTheater, {params})
+    },
+    deleteTheater(params) {
+        return axios.delete(base.baseUrl + base.deleteTheater, {params})
+    },
 }
 
 export default api

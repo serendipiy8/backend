@@ -1,5 +1,5 @@
 <template>
-    <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect" router>
+    <el-menu :default-active="activeIndex2" class="el-menu" mode="horizontal" @select="handleSelect" router>
         <el-menu-item index="/admin/adminticket">售票管理</el-menu-item>
         <el-menu-item index="/admin/theater">剧院管理</el-menu-item>
         <el-menu-item index="/admin/adminrefund">退票管理</el-menu-item>
@@ -16,22 +16,32 @@
 </template>
   
 <script>
+import { ref } from 'vue'
+
+const activeIndex2 = ref('1')
 export default {
     data() {
         return {
-            activeIndex: "1",
+
         };
     },
     methods: {
         handleSelect(key, keyPath) {
+            sessionStorage.setItem("activeIndex2", key);
             console.log(key, keyPath);
         },
         logoutHandle() {
-            this.$store.dispatch('logout');
-            // this.$router.push("/login")
+            this.setAdmin({})
+            localStorage.removeItem("adminticket");
+            this.$router.push("/admin")
+        },
+        mounted() {
+            if (sessionStorage.getItem("activeIndex2"))
+                this.activeIndex = sessionStorage.getItem("activeIndex2");
         }
-    },
-};
+    }
+}
+
 </script>
   
 <style>

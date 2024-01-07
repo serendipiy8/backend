@@ -1,14 +1,18 @@
 <template>
-    <div>
-        剧院管理
+    <div class="order">
+        <TheaterList></TheaterList>
+        <TheaterPagination></TheaterPagination>
     </div>
 </template>
   
 <script>
+import TheaterPagination from './TheaterPagination.vue';
+import TheaterList from './TheaterList.vue';
 
 export default {
     components: {
-    
+        TheaterPagination,
+        TheaterList
     },
     data() {
         return {}
@@ -16,4 +20,10 @@ export default {
 }
 </script>
   
-<style></style>
+<style>
+.order {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+</style>

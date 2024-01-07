@@ -17,15 +17,15 @@ export default {
     return {
       currentPage: 1,
       Form: {
-        UserID: "",
+        TheaterID: "",
       },
       count: 0,
       total: 1,
     }
   },
   computed: {
-    ...mapGetters('login', ['getUserID']),
-    ...mapState('login', ['user']),
+    // ...mapGetters('login', ['getUserID']),
+    // ...mapState('login', ['user']),
   },
   methods: {
     handleSizechange() {
@@ -37,7 +37,7 @@ export default {
   },
   mounted() {
     // this.Form.UserID = this.getUserID;
-    this.$api.selectRefund(this.Form).then(res => {
+    this.$api.selectTheater(this.Form).then(res => {
       console.log(res.data)
       if (res.data.code == 2000) {
         this.total = res.data.totalPage * 10

@@ -1,11 +1,16 @@
 <template>
     <el-table :data="tableData">
-        <el-table-column label="订单ID" width="200" prop="OrderID"></el-table-column>
-        <el-table-column label="退票ID" width="200" prop="RefundID"></el-table-column>
-        <el-table-column label="退票原因" width="200" prop="RefundReason"></el-table-column>
-        <el-table-column label="退票时间" width="200" prop="RefundTime"></el-table-column>
-        <el-table-column label="账号ID" width="200" prop="UserID"></el-table-column>
-        <el-table-column label="处理状态" width="200" prop="TicketStatus"></el-table-column>
+        <el-table-column label="订单ID" width="200" prop="TheaterID"></el-table-column>
+        <el-table-column label="退票ID" width="200" prop="TheaterName"></el-table-column>
+        <el-table-column label="退票原因" width="200" prop="Address"></el-table-column>
+        <el-table-column label="退票时间" width="200" prop="Capacity"></el-table-column>
+        <el-table-column label="账号ID" width="200" prop="AdminID"></el-table-column>
+        <el-table-column label="Operations">
+            <template #default="scope">
+                <el-button size="small" @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+                <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
+            </template>
+        </el-table-column>
     </el-table>
 </template>
   
@@ -13,6 +18,7 @@
 import eventBus from "@/utils/eventBus.js";
 import { onMounted, onBeforeUnmount } from 'vue';
 import { mapState, mapGetters } from 'vuex';
+import { ElMessage, ElMessageBox } from 'element-plus'
 export default {
     data() {
         return {
@@ -24,6 +30,9 @@ export default {
             currentPage: 1,
             totalCount: 0,
             totalPage: 1,
+            deleteTheater:{
+                TheaterID: "",
+            }
         }
     },
     computed: {
@@ -36,7 +45,7 @@ export default {
         console.log(this.Form)
         const changePageHandler = this.changePageHandler;
         eventBus.on("changePage", changePageHandler);
-        this.$api.selectRefund(this.Form).then(res => {
+        this.$api.selectTheater(this.Form).then(res => {
             console.log(res.data)
             if (res.data.code == 2000) {
                 this.tableData = res.data.data,
@@ -55,16 +64,63 @@ export default {
             this.fetchData();  // 更新当前页码
         },
         fetchData() {
-            console.log("UserID from Vuex:", this.getUserID);
             // 更新请求参数
             this.Form.Page = this.currentPage;
-            console.log(this.Form);
-            this.$api.selectRefund(this.Form).then(res => {
-                console.log(res.data);
+            this.$api.selectTheater(this.Form).then(res => {
                 if (res.data.code == 2000) {
                     this.tableData = res.data.data;
                 }
             });
+        },
+        handleEdit(index, row) {
+            console.log(index, row);
+            this.$router.push({
+                path: "/admin/theater/edit",
+                query: {
+                    TheaterID: row.TheaterID,
+                    TheaterName: row.TheaterName,
+                    Address: row.Address,
+                    Capacity: row.Capacity,
+                    AdminID: row.AdminID,
+                }
+            })
+        },
+        handleDelete(index, row) {
+            this.deleteTheater.TheaterID = row.TheaterID;
+            console.log(this.deleteTheater);
+            ElMessageBox.confirm('proxy will permanently delete the file. Continue?', 'Warning',
+                {
+                    confirmButtonText: 'OK',
+                    cancelButtonText: 'Cancel',
+                    type: 'warning',
+                })
+                .then(() => {
+                    this.$api.deleteTheater(this.deleteTheater).then(res => {
+                        console.log(res.data);
+                        if (res.data.code == 2000) {
+                            this.$message({
+                                message: "删除成功",
+                                type: "success"
+                            })
+                            this.fetchData()
+                        } else {
+                            this.$message({
+                                message: "删除失败",
+                                type: "error"
+                            })
+                        }
+                    })
+                    ElMessage({
+                        type: 'success',
+                        message: 'Delete completed',
+                    })
+                })
+                .catch(() => {
+                    ElMessage({
+                        type: 'info',
+                        message: 'Delete canceled',
+                    })
+                })
         },
     },
     // computed: {

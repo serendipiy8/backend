@@ -1,11 +1,6 @@
 <template>
-    <el-menu :default-active="activeIndex" 
-    class="el-menu" mode="horizontal" 
-    @select="handleSelect"
-        background-color="#545c64" 
-        text-color="#fff" 
-        active-text-color="#ffd04b"
-        router>
+    <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" @select="handleSelect"
+        background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" router>
         <el-menu-item index="/">首页</el-menu-item>
         <el-menu-item index="/concert">演出</el-menu-item>
         <el-menu-item index="/ticket">票务</el-menu-item>
@@ -22,6 +17,8 @@
   
 <script>
 import { mapMutations } from "vuex"
+import { ref } from 'vue'
+
 export default {
     data() {
         return {
@@ -29,15 +26,24 @@ export default {
         };
     },
     methods: {
-        handleSelect(key, keyPath) {
-            console.log(key, keyPath);
-        },
         ...mapMutations("users", ["setAuthentication"]),
+        handleSelect(key, keyPath) {
+            sessionStorage.setItem("activeIndex", key);
+            console.log(key, keyPath);
+
+        },
+
         logoutHandle() {
+            this.setUser({})
+            localStorage.removeItem("ticket");
             this.$store.dispatch('logout');
             this.$router.push("/login")
         }
     },
+    mounted() {
+        if (sessionStorage.getItem("activeIndex"))
+            this.activeIndex = sessionStorage.getItem("activeIndex");
+    }
 };
 </script>
   

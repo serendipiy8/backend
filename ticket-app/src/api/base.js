@@ -11,8 +11,10 @@ const base = {
     login: "/users/login",
     // selectOrder: "/orders/queryUser",
     selectOrder: "/Orders",
-    adminLogin: "/administrators",
-    selectRefund:"/Refunds"
+    adminLogin: "/administrators/login",
+    selectRefund:"/Refunds",
+    selectTheater:"/Theaters",
+    deleteTheater:"/theaters"
 }
 
 

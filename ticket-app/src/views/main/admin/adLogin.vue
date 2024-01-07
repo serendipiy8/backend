@@ -3,15 +3,15 @@
         <el-card class="box-card">
             <template #header>
                 <div class="card-header">
-                    <span>欢迎</span>
+                    <span>欢迎管理员</span>
                 </div>
             </template>
             <el-form :model="loginForm" status-icon :rules="rules" ref="loginForm">
-                <el-form-item label="用户名" label-width="80px" prop="username">
+                <el-form-item label="管理员账号" label-width="100px" prop="username">
                     <el-input type="text" v-model="loginForm.Account">
                     </el-input>
                 </el-form-item>
-                <el-form-item label="密码" label-width="80px" prop="password">
+                <el-form-item label="密码" label-width="100px" prop="password">
                     <el-input type="password" v-model="loginForm.Password">
                     </el-input>
                 </el-form-item>
@@ -44,8 +44,6 @@ export default {
             loginForm: {
                 Account: "",
                 Password: "",
-                AdminType:"",
-                Permissions:""
             },
             rules: {
                 Password: [
@@ -57,6 +55,7 @@ export default {
         }
     },
     methods: {
+        ...mapMutations("adminlogin", ["setAdmin"]),
         submitForm(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
@@ -68,7 +67,13 @@ export default {
                                 message: "登录成功",
                                 type: "success"
                             })
-                            this.$store.dispatch('login', res.data.data)
+                            this.setAdmin(res.data)
+                            localStorage.setItem(
+                                "adminticket",
+                                JSON.stringify(res.data)
+                            )
+                            this.$store.dispatch('adminlogin');
+                            // this.$store.dispatch('login', res.data.data)
                             this.$router.push("/admin")
                         } else {
                             console.log(res.data)
@@ -93,11 +98,11 @@ export default {
   
 <style>
 .login {
-    width: 500px;
+    width: 550px;
     margin: 0 auto;
 
     .box-card {
-        width: 500px auto;
+        width: 550px auto;
         margin: 100px auto;
     }
 
