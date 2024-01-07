@@ -25,6 +25,9 @@ const api = {
     deleteTheater(params) {
         return axios.delete(base.baseUrl + base.deleteTheater, {params})
     },
+    searchTheater(params) {
+        return axios.get(base.baseUrl + base.searchTheater, {params})
+    },
 }
 
 export default api

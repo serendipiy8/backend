@@ -30,7 +30,7 @@ export default {
             currentPage: 1,
             totalCount: 0,
             totalPage: 1,
-            deleteTheater:{
+            deleteTheater: {
                 TheaterID: "",
             }
         }
@@ -44,7 +44,9 @@ export default {
         // this.Form.UserID = this.getUserID;
         console.log(this.Form)
         const changePageHandler = this.changePageHandler;
+        const searchTheaterHandler = this.searchTheaterHandler;
         eventBus.on("changePage", changePageHandler);
+        eventBus.on("searchData", searchTheaterHandler);
         this.$api.selectTheater(this.Form).then(res => {
             console.log(res.data)
             if (res.data.code == 2000) {
@@ -55,6 +57,7 @@ export default {
         })
         onBeforeUnmount(() => {
             eventBus.off("changePage", changePageHandler);
+            eventBus.off("searchData", searchTheaterHandler);
         });
     },
     methods: {
@@ -122,14 +125,17 @@ export default {
                     })
                 })
         },
-    },
-    // computed: {
-    //     paginatedData() {
-    //         const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    //         const endIndex = startIndex + this.itemsPerPage;
-    //         return this.tableData.slice(startIndex, endIndex);
-    //     }
-    // },
+        searchTheaterHandler(data) {
+            if (Array.isArray(data)) {
+                this.tableData = data;
+            } else {
+                console.log(132);
+                data = [data];
+                this.tableData = data;
+                console.log(data);
+            }
+        },
+    }
 }
 </script>
 <style>
