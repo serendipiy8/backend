@@ -10,6 +10,7 @@ import "./utils/init"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css'
 import api from './api'
+import  "./utils/eventBus"
 
 
 const app = createApp(App)

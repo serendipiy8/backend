@@ -41,6 +41,7 @@ export default {
     data() {
         return {
             username: this.$store.state.login.user.data.username,
+            userid: this.$store.state.login.user.data.UserID,
             selectedTimer: null,
             selectedQuantity: 1,
             selectedType: null,
@@ -51,10 +52,9 @@ export default {
             console.log(this.selecterData);
             // 处理确认购票逻辑
             this.$emit('confirm', {
-                username: this.username,
                 selectedTimer: this.timerData[0].value,
                 selectedType: this.selecterData[0].value,
-                UserID: String(666666),
+                UserID: this.userid,
                 TicketID: String(32434),
                 // timerData: ticketInfo.timerData,
                 PurchaseTime: new Date().toLocaleString(),

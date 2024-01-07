@@ -10,29 +10,70 @@
 </template>
   
 <script>
+import eventBus from "@/utils/eventBus.js";
+import { onMounted, onBeforeUnmount } from 'vue';
+import { mapState, mapGetters } from 'vuex';
 export default {
     data() {
         return {
             tableData: [],
             Form: {
-                UserID: "0",
+                UserID: "666666",
+                Page: 1,
             },
-            count: 0,
-            page: 1,
+            currentPage: 1,
+            totalCount: 0,
+            totalPage: 1,
         }
     },
+    computed: {
+        ...mapGetters('login', ['getUserID']),
+        ...mapState('login', ['user']),
+    },
     mounted() {
+        console.log("UserID from Vuex:", this.getUserID);
+        this.Form.UserID = this.getUserID;
         console.log(this.Form)
-        this.$api.selectOrder(this.From).then(res => {
+        const changePageHandler = this.changePageHandler;
+        eventBus.on("changePage", changePageHandler);
+        this.$api.selectOrder(this.Form).then(res => {
             console.log(res.data)
             if (res.data.code == 2000) {
-                this.tableData = res.data.data
-                this.count = res.data.totalCount
-                this.page = res.data.totalPage
-                console.log(this.page)
+                this.tableData = res.data.data,
+                    this.totalCount = res.data.totalCount;
+                this.totalPage = res.data.totalPage;
             }
         })
+        onBeforeUnmount(() => {
+            eventBus.off("changePage", changePageHandler);
+        });
     },
+    methods: {
+        changePageHandler(val) {
+            console.log(val);
+            this.currentPage = val;
+            this.fetchData();  // 更新当前页码
+        },
+        fetchData() {
+            console.log("UserID from Vuex:", this.getUserID);
+            // 更新请求参数
+            this.Form.Page = this.currentPage;
+            console.log(this.Form);
+            this.$api.selectOrder(this.Form).then(res => {
+                console.log(res.data);
+                if (res.data.code == 2000) {
+                    this.tableData = res.data.data;
+                }
+            });
+        },
+    },
+    // computed: {
+    //     paginatedData() {
+    //         const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    //         const endIndex = startIndex + this.itemsPerPage;
+    //         return this.tableData.slice(startIndex, endIndex);
+    //     }
+    // },
 }
 </script>
 <style>

@@ -107,7 +107,7 @@ export default {
             selectedQuantity: 1,
             selectedType: null,
             postData: {
-                UserID: String(666666),
+                UserID: this.$store.state.login.user.data.UserID,
                 TicketID: String(32434),
                 // timerData: ticketInfo.timerData,
                 PurchaseTime: new Date().toLocaleString(),

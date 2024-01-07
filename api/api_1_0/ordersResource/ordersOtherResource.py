@@ -61,7 +61,7 @@ class OrdersOtherResource(Resource):
 	@classmethod
 	def queryUser(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('UserID', type=str, location='form', required=True, help='订单ID数据类型不匹配')
+		parser.add_argument('UserID', type=str, location='args', required=True, help='订单ID数据类型不匹配')
 
 		try:
 				# 获取请求中参数并转换为字典对象
