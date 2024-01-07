@@ -28,6 +28,9 @@ const api = {
     searchTheater(params) {
         return axios.get(base.baseUrl + base.searchTheater, {params})
     },
+    refundOrder(params) {
+        return axios.post(base.baseUrl + base.refundOrder, params)
+    },
 }
 
 export default api

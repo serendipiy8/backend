@@ -1,24 +1,24 @@
-2024-01-07 22:22:05.486 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-08 02:45:58.208 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
 Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
     self._bootstrap_inner()
-    │    └ <function Thread._bootstrap_inner at 0x000001D2B96A4670>
-    └ <Thread(Thread-1, started daemon 33068)>
+    │    └ <function Thread._bootstrap_inner at 0x00000161D0824670>
+    └ <Thread(Thread-1, started daemon 33228)>
 
   File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
     self.run()
-    │    └ <function Thread.run at 0x000001D2B96A43A0>
-    └ <Thread(Thread-1, started daemon 33068)>
+    │    └ <function Thread.run at 0x00000161D08243A0>
+    └ <Thread(Thread-1, started daemon 33228)>
 
   File "D:\Python\Python39\lib\threading.py", line 917, in run
     self._target(*self._args, **self._kwargs)
     │    │        │    │        │    └ {}
-    │    │        │    │        └ <Thread(Thread-1, started daemon 33068)>
+    │    │        │    │        └ <Thread(Thread-1, started daemon 33228)>
     │    │        │    └ ()
-    │    │        └ <Thread(Thread-1, started daemon 33068)>
-    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001D2DBD08FD0>>
-    └ <Thread(Thread-1, started daemon 33068)>
+    │    │        └ <Thread(Thread-1, started daemon 33228)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000161F2E78FD0>>
+    └ <Thread(Thread-1, started daemon 33228)>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
     super().serve_forever(poll_interval=poll_interval)
@@ -26,128 +26,128 @@ Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
     self._handle_request_noblock()
-    │    └ <function BaseServer._handle_request_noblock at 0x000001D2D91D8AF0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D2DBD08FD0>
+    │    └ <function BaseServer._handle_request_noblock at 0x00000161F0356AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000161F2E78FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
     self.process_request(request, client_address)
-    │    │               │        └ ('127.0.0.1', 62932)
-    │    │               └ <socket.socket fd=368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
-    │    └ <function BaseServer.process_request at 0x000001D2D91D8CA0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D2DBD08FD0>
+    │    │               │        └ ('127.0.0.1', 62603)
+    │    │               └ <socket.socket fd=348, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x00000161F0356CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000161F2E78FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
     self.finish_request(request, client_address)
-    │    │              │        └ ('127.0.0.1', 62932)
-    │    │              └ <socket.socket fd=368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
-    │    └ <function BaseServer.finish_request at 0x000001D2D91D8DC0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D2DBD08FD0>
+    │    │              │        └ ('127.0.0.1', 62603)
+    │    │              └ <socket.socket fd=348, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x00000161F0356DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000161F2E78FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
     self.RequestHandlerClass(request, client_address, self)
-    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001D2DBD08FD0>
-    │    │                   │        └ ('127.0.0.1', 62932)
-    │    │                   └ <socket.socket fd=368, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000161F2E78FD0>
+    │    │                   │        └ ('127.0.0.1', 62603)
+    │    │                   └ <socket.socket fd=348, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
     │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D2DBD08FD0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x00000161F2E78FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
     self.handle()
-    │    └ <function WSGIRequestHandler.handle at 0x000001D2D9414550>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001D2DBD46CD0>
+    │    └ <function WSGIRequestHandler.handle at 0x00000161F0592550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000161F2EB6CA0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
     super().handle()
 
   File "D:\Python\Python39\lib\http\server.py", line 425, in handle
     self.handle_one_request()
-    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001D2D9303160>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001D2DBD46CD0>
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000161F0482160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000161F2EB6CA0>
 
   File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
     method()
-    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001D2DBD46CD0>>
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000161F2EB6CA0>>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
     execute(self.server.app)
-    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001D2DBD086A0>
-    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001D2DBD08FD0>
-    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001D2DBD46CD0>
-    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001D2DBD64B80>
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000161F2E786A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000161F2E78FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000161F2EB6CA0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000161F2F07EE0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
     for data in application_iter:
-                └ <generator object DebuggedApplication.debug_application at 0x000001D2DBD62E40>
+                └ <generator object DebuggedApplication.debug_application at 0x00000161F2ED2EB0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
     app_iter = self.app(environ, start_response)
-               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001D2DBD64AF0>
-               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=368>, 'wsgi.errors': <_io.TextIOWr...
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000161F2ED4820>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=348>, 'wsgi.errors': <_io.TextIOWr...
                │    └ <Flask 'app'>
-               └ <werkzeug.debug.DebuggedApplication object at 0x000001D2DBD086A0>
+               └ <werkzeug.debug.DebuggedApplication object at 0x00000161F2E786A0>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
     return self.wsgi_app(environ, start_response)
-           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001D2DBD64AF0>
-           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=368>, 'wsgi.errors': <_io.TextIOWr...
-           │    └ <function Flask.wsgi_app at 0x000001D2D994B790>
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000161F2ED4820>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=348>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x00000161F0ABB790>
            └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-               │    └ <function Flask.full_dispatch_request at 0x000001D2D9948CA0>
+               │    └ <function Flask.full_dispatch_request at 0x00000161F0AB8CA0>
                └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
-         │    └ <function Flask.dispatch_request at 0x000001D2D9948C10>
+         │    └ <function Flask.dispatch_request at 0x00000161F0AB8C10>
          └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            │    │           │    │              │    │            └ {}
-           │    │           │    │              │    └ 'administrators.administrators'
-           │    │           │    │              └ <Rule '/administrators' (OPTIONS, POST, HEAD, DELETE, PUT, GET) -> administrators.administrators>
-           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001D2DA5888B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           │    │              │    └ 'refunds.refunds'
+           │    │           │    │              └ <Rule '/refunds' (OPTIONS, GET, POST, PUT, HEAD) -> refunds.refunds>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000161F16F88B0>, 'apiversion.Apiversion': <function View.as_view...
            │    │           └ <Flask 'app'>
-           │    └ <function Flask.ensure_sync at 0x000001D2D9948EE0>
+           │    └ <function Flask.ensure_sync at 0x00000161F0AB8EE0>
            └ <Flask 'app'>
 
-  File "E:\code\backend\api\api_1_0\administratorsResource\urls.py", line 20, in administrators
-    return AdministratorsOtherResource.administrators_post()
-           │                           └ <classmethod object at 0x000001D2DBC498B0>
-           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+  File "E:\code\backend\api\api_1_0\refundsResource\urls.py", line 19, in refunds
+    return RefundsOtherResource.refunds_post()
+           │                    └ <classmethod object at 0x00000161F2D616D0>
+           └ <class 'api_1_0.refundsResource.refundsOtherResource.RefundsOtherResource'>
 
-> File "E:\code\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 23, in administrators_post
+> File "E:\code\backend\api\api_1_0\refundsResource\refundsOtherResource.py", line 26, in refunds_post
     kwargs = parser.parse_args()
-             │      └ <function RequestParser.parse_args at 0x000001D2DB7A84C0>
-             └ <flask_restful.reqparse.RequestParser object at 0x000001D2DBD741F0>
+             │      └ <function RequestParser.parse_args at 0x00000161F29174C0>
+             └ <flask_restful.reqparse.RequestParser object at 0x00000161F2F79A90>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
     value, found = arg.parse(req, self.bundle_errors)
                    │   │     │    │    └ False
-                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000001D2DBD741F0>
-                   │   │     └ <Request 'http://127.0.0.1:5000/administrators' [POST]>
-                   │   └ <function Argument.parse at 0x000001D2DB7A8310>
-                   └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ...
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000161F2F79A90>
+                   │   │     └ <Request 'http://127.0.0.1:5000/refunds' [POST]>
+                   │   └ <function Argument.parse at 0x00000161F2917310>
+                   └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
     self.handle_validation_error(ValueError(error_msg), bundle_errors)
     │    │                                  │           └ False
     │    │                                  └ 'Missing required parameter in the post body'
-    │    └ <function Argument.handle_validation_error at 0x000001D2DB7A8280>
-    └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ...
+    │    └ <function Argument.handle_validation_error at 0x00000161F2917280>
+    └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
     flask_restful.abort(400, message=msg)
-    │             │                  └ {'AdminType': '管理员类型数据类型不匹配'}
-    │             └ <function abort at 0x000001D2DB75BD30>
+    │             │                  └ {'UserID': '用户ID数据类型不匹配'}
+    │             └ <function abort at 0x00000161F28CBD30>
     └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
     original_flask_abort(http_status_code)
     │                    └ 400
-    └ <function abort at 0x000001D2D97AC670>
+    └ <function abort at 0x00000161F091B670>
 
   File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
     current_app.aborter(code, *args, **kwargs)
@@ -162,30 +162,30 @@ Traceback (most recent call last):
           │    │       │      └ ()
           │    │       └ 400
           │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
-          └ <werkzeug.exceptions.Aborter object at 0x000001D2D9184970>
+          └ <werkzeug.exceptions.Aborter object at 0x00000161F0303970>
 
 werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2024-01-07 22:22:28.599 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-08 02:46:25.790 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
 Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
     self._bootstrap_inner()
-    │    └ <function Thread._bootstrap_inner at 0x00000187B1854670>
-    └ <Thread(Thread-1, started daemon 19388)>
+    │    └ <function Thread._bootstrap_inner at 0x0000029ED08F4670>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
     self.run()
-    │    └ <function Thread.run at 0x00000187B18543A0>
-    └ <Thread(Thread-1, started daemon 19388)>
+    │    └ <function Thread.run at 0x0000029ED08F43A0>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 917, in run
     self._target(*self._args, **self._kwargs)
     │    │        │    │        │    └ {}
-    │    │        │    │        └ <Thread(Thread-1, started daemon 19388)>
+    │    │        │    │        └ <Thread(Thread-1, started daemon 29964)>
     │    │        │    └ ()
-    │    │        └ <Thread(Thread-1, started daemon 19388)>
-    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000187D3EA8FD0>>
-    └ <Thread(Thread-1, started daemon 19388)>
+    │    │        └ <Thread(Thread-1, started daemon 29964)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
     super().serve_forever(poll_interval=poll_interval)
@@ -193,128 +193,128 @@ Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
     self._handle_request_noblock()
-    │    └ <function BaseServer._handle_request_noblock at 0x00000187D1387AF0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000187D3EA8FD0>
+    │    └ <function BaseServer._handle_request_noblock at 0x0000029EF0427AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
     self.process_request(request, client_address)
-    │    │               │        └ ('127.0.0.1', 62973)
-    │    │               └ <socket.socket fd=1008, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
-    │    └ <function BaseServer.process_request at 0x00000187D1387CA0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000187D3EA8FD0>
+    │    │               │        └ ('127.0.0.1', 62633)
+    │    │               └ <socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000029EF0427CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
     self.finish_request(request, client_address)
-    │    │              │        └ ('127.0.0.1', 62973)
-    │    │              └ <socket.socket fd=1008, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
-    │    └ <function BaseServer.finish_request at 0x00000187D1387DC0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000187D3EA8FD0>
+    │    │              │        └ ('127.0.0.1', 62633)
+    │    │              └ <socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000029EF0427DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
     self.RequestHandlerClass(request, client_address, self)
-    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000187D3EA8FD0>
-    │    │                   │        └ ('127.0.0.1', 62973)
-    │    │                   └ <socket.socket fd=1008, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │    │                   │        └ ('127.0.0.1', 62633)
+    │    │                   └ <socket.socket fd=888, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
     │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000187D3EA8FD0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
     self.handle()
-    │    └ <function WSGIRequestHandler.handle at 0x00000187D15C4550>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000187D3EE6CD0>
+    │    └ <function WSGIRequestHandler.handle at 0x0000029EF0662550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB6D0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
     super().handle()
 
   File "D:\Python\Python39\lib\http\server.py", line 425, in handle
     self.handle_one_request()
-    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000187D14B2160>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000187D3EE6CD0>
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000029EF0552160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB6D0>
 
   File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
     method()
-    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000187D3EE6CD0>>
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB6D0>>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
     execute(self.server.app)
-    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000187D3EA86A0>
-    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000187D3EA8FD0>
-    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000187D3EE6CD0>
-    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000187D3F04EE0>
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB6D0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000029EF3046EE0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
     for data in application_iter:
-                └ <generator object DebuggedApplication.debug_application at 0x00000187D3F02E40>
+                └ <generator object DebuggedApplication.debug_application at 0x0000029EF2FA2E40>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
     app_iter = self.app(environ, start_response)
-               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000187D3F04E50>
-               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1008>, 'wsgi.errors': <_io.TextIOW...
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF3046F70>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=888>, 'wsgi.errors': <_io.TextIOWr...
                │    └ <Flask 'app'>
-               └ <werkzeug.debug.DebuggedApplication object at 0x00000187D3EA86A0>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
     return self.wsgi_app(environ, start_response)
-           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000187D3F04E50>
-           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1008>, 'wsgi.errors': <_io.TextIOW...
-           │    └ <function Flask.wsgi_app at 0x00000187D1AEB790>
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF3046F70>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=888>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000029EF0B8A790>
            └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-               │    └ <function Flask.full_dispatch_request at 0x00000187D1AE8CA0>
+               │    └ <function Flask.full_dispatch_request at 0x0000029EF0B88CA0>
                └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
-         │    └ <function Flask.dispatch_request at 0x00000187D1AE8C10>
+         │    └ <function Flask.dispatch_request at 0x0000029EF0B88C10>
          └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            │    │           │    │              │    │            └ {}
-           │    │           │    │              │    └ 'administrators.administrators'
-           │    │           │    │              └ <Rule '/administrators' (DELETE, GET, PUT, HEAD, POST, OPTIONS) -> administrators.administrators>
-           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000187D27288B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           │    │              │    └ 'refunds.refunds'
+           │    │           │    │              └ <Rule '/refunds' (HEAD, PUT, OPTIONS, POST, GET) -> refunds.refunds>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000029EF17C88B0>, 'apiversion.Apiversion': <function View.as_view...
            │    │           └ <Flask 'app'>
-           │    └ <function Flask.ensure_sync at 0x00000187D1AE8EE0>
+           │    └ <function Flask.ensure_sync at 0x0000029EF0B88EE0>
            └ <Flask 'app'>
 
-  File "E:\code\backend\api\api_1_0\administratorsResource\urls.py", line 20, in administrators
-    return AdministratorsOtherResource.administrators_post()
-           │                           └ <classmethod object at 0x00000187D3DE98B0>
-           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+  File "E:\code\backend\api\api_1_0\refundsResource\urls.py", line 19, in refunds
+    return RefundsOtherResource.refunds_post()
+           │                    └ <classmethod object at 0x0000029EF2E326D0>
+           └ <class 'api_1_0.refundsResource.refundsOtherResource.RefundsOtherResource'>
 
-> File "E:\code\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 23, in administrators_post
+> File "E:\code\backend\api\api_1_0\refundsResource\refundsOtherResource.py", line 26, in refunds_post
     kwargs = parser.parse_args()
-             │      └ <function RequestParser.parse_args at 0x00000187D39474C0>
-             └ <flask_restful.reqparse.RequestParser object at 0x00000187D3F0C1F0>
+             │      └ <function RequestParser.parse_args at 0x0000029EF29E74C0>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000029EF2FF9DC0>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
     value, found = arg.parse(req, self.bundle_errors)
                    │   │     │    │    └ False
-                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000187D3F0C1F0>
-                   │   │     └ <Request 'http://127.0.0.1:5000/administrators' [POST]>
-                   │   └ <function Argument.parse at 0x00000187D3947310>
-                   └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), ...
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000029EF2FF9DC0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/refunds' [POST]>
+                   │   └ <function Argument.parse at 0x0000029EF29E7310>
+                   └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
     self.handle_validation_error(ValueError(error_msg), bundle_errors)
     │    │                                  │           └ False
     │    │                                  └ 'Missing required parameter in the query string'
-    │    └ <function Argument.handle_validation_error at 0x00000187D3947280>
-    └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), ...
+    │    └ <function Argument.handle_validation_error at 0x0000029EF29E7280>
+    └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
     flask_restful.abort(400, message=msg)
-    │             │                  └ {'AdminType': '管理员类型数据类型不匹配'}
-    │             └ <function abort at 0x00000187D38FBD30>
+    │             │                  └ {'UserID': '用户ID数据类型不匹配'}
+    │             └ <function abort at 0x0000029EF299BD30>
     └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
     original_flask_abort(http_status_code)
     │                    └ 400
-    └ <function abort at 0x00000187D194D670>
+    └ <function abort at 0x0000029EF09EB670>
 
   File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
     current_app.aborter(code, *args, **kwargs)
@@ -329,30 +329,30 @@ Traceback (most recent call last):
           │    │       │      └ ()
           │    │       └ 400
           │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
-          └ <werkzeug.exceptions.Aborter object at 0x00000187D1333970>
+          └ <werkzeug.exceptions.Aborter object at 0x0000029EF03D3970>
 
 werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2024-01-07 22:23:13.070 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-08 02:47:14.010 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
 Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
     self._bootstrap_inner()
-    │    └ <function Thread._bootstrap_inner at 0x000001C9B1B94670>
-    └ <Thread(Thread-1, started daemon 38384)>
+    │    └ <function Thread._bootstrap_inner at 0x0000029ED08F4670>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
     self.run()
-    │    └ <function Thread.run at 0x000001C9B1B943A0>
-    └ <Thread(Thread-1, started daemon 38384)>
+    │    └ <function Thread.run at 0x0000029ED08F43A0>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 917, in run
     self._target(*self._args, **self._kwargs)
     │    │        │    │        │    └ {}
-    │    │        │    │        └ <Thread(Thread-1, started daemon 38384)>
+    │    │        │    │        └ <Thread(Thread-1, started daemon 29964)>
     │    │        │    └ ()
-    │    │        └ <Thread(Thread-1, started daemon 38384)>
-    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000001C9D41E8FD0>>
-    └ <Thread(Thread-1, started daemon 38384)>
+    │    │        └ <Thread(Thread-1, started daemon 29964)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
     super().serve_forever(poll_interval=poll_interval)
@@ -360,128 +360,128 @@ Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
     self._handle_request_noblock()
-    │    └ <function BaseServer._handle_request_noblock at 0x000001C9D16C7AF0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001C9D41E8FD0>
+    │    └ <function BaseServer._handle_request_noblock at 0x0000029EF0427AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
     self.process_request(request, client_address)
-    │    │               │        └ ('127.0.0.1', 63027)
-    │    │               └ <socket.socket fd=392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
-    │    └ <function BaseServer.process_request at 0x000001C9D16C7CA0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001C9D41E8FD0>
+    │    │               │        └ ('127.0.0.1', 62688)
+    │    │               └ <socket.socket fd=1104, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x0000029EF0427CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
     self.finish_request(request, client_address)
-    │    │              │        └ ('127.0.0.1', 63027)
-    │    │              └ <socket.socket fd=392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
-    │    └ <function BaseServer.finish_request at 0x000001C9D16C7DC0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001C9D41E8FD0>
+    │    │              │        └ ('127.0.0.1', 62688)
+    │    │              └ <socket.socket fd=1104, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x0000029EF0427DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
     self.RequestHandlerClass(request, client_address, self)
-    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000001C9D41E8FD0>
-    │    │                   │        └ ('127.0.0.1', 63027)
-    │    │                   └ <socket.socket fd=392, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │    │                   │        └ ('127.0.0.1', 62688)
+    │    │                   └ <socket.socket fd=1104, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
     │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x000001C9D41E8FD0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
     self.handle()
-    │    └ <function WSGIRequestHandler.handle at 0x000001C9D1902550>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001C9D4226BB0>
+    │    └ <function WSGIRequestHandler.handle at 0x0000029EF0662550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB5B0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
     super().handle()
 
   File "D:\Python\Python39\lib\http\server.py", line 425, in handle
     self.handle_one_request()
-    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000001C9D17F2160>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x000001C9D4226BB0>
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000029EF0552160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB5B0>
 
   File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
     method()
-    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000001C9D4226BB0>>
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB5B0>>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
     execute(self.server.app)
-    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000001C9D41E86A0>
-    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000001C9D41E8FD0>
-    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000001C9D4226BB0>
-    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001C9D4244B80>
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2FFB5B0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000029EF30C7D30>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
     for data in application_iter:
-                └ <generator object DebuggedApplication.debug_application at 0x000001C9D4242E40>
+                └ <generator object DebuggedApplication.debug_application at 0x0000029EF2FA2E40>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
     app_iter = self.app(environ, start_response)
-               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001C9D4244C10>
-               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=392>, 'wsgi.errors': <_io.TextIOWr...
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF319A790>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1104>, 'wsgi.errors': <_io.TextIOW...
                │    └ <Flask 'app'>
-               └ <werkzeug.debug.DebuggedApplication object at 0x000001C9D41E86A0>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
     return self.wsgi_app(environ, start_response)
-           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001C9D4244C10>
-           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=392>, 'wsgi.errors': <_io.TextIOWr...
-           │    └ <function Flask.wsgi_app at 0x000001C9D1E2B790>
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF319A790>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1104>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x0000029EF0B8A790>
            └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-               │    └ <function Flask.full_dispatch_request at 0x000001C9D1E28CA0>
+               │    └ <function Flask.full_dispatch_request at 0x0000029EF0B88CA0>
                └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
-         │    └ <function Flask.dispatch_request at 0x000001C9D1E28C10>
+         │    └ <function Flask.dispatch_request at 0x0000029EF0B88C10>
          └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            │    │           │    │              │    │            └ {}
-           │    │           │    │              │    └ 'administrators.administrators'
-           │    │           │    │              └ <Rule '/administrators' (HEAD, DELETE, GET, OPTIONS, POST, PUT) -> administrators.administrators>
-           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000001C9D2A688B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           │    │              │    └ 'refunds.refunds'
+           │    │           │    │              └ <Rule '/refunds' (HEAD, PUT, OPTIONS, POST, GET) -> refunds.refunds>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000029EF17C88B0>, 'apiversion.Apiversion': <function View.as_view...
            │    │           └ <Flask 'app'>
-           │    └ <function Flask.ensure_sync at 0x000001C9D1E28EE0>
+           │    └ <function Flask.ensure_sync at 0x0000029EF0B88EE0>
            └ <Flask 'app'>
 
-  File "E:\code\backend\api\api_1_0\administratorsResource\urls.py", line 20, in administrators
-    return AdministratorsOtherResource.administrators_post()
-           │                           └ <classmethod object at 0x000001C9D41298B0>
-           └ <class 'api_1_0.administratorsResource.administratorsOtherResource.AdministratorsOtherResource'>
+  File "E:\code\backend\api\api_1_0\refundsResource\urls.py", line 19, in refunds
+    return RefundsOtherResource.refunds_post()
+           │                    └ <classmethod object at 0x0000029EF2E326D0>
+           └ <class 'api_1_0.refundsResource.refundsOtherResource.RefundsOtherResource'>
 
-> File "E:\code\backend\api\api_1_0\administratorsResource\administratorsOtherResource.py", line 23, in administrators_post
+> File "E:\code\backend\api\api_1_0\refundsResource\refundsOtherResource.py", line 26, in refunds_post
     kwargs = parser.parse_args()
-             │      └ <function RequestParser.parse_args at 0x000001C9D3C884C0>
-             └ <flask_restful.reqparse.RequestParser object at 0x000001C9D42501F0>
+             │      └ <function RequestParser.parse_args at 0x0000029EF29E74C0>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000029EF31DA6D0>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
     value, found = arg.parse(req, self.bundle_errors)
                    │   │     │    │    └ False
-                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x000001C9D42501F0>
-                   │   │     └ <Request 'http://127.0.0.1:5000/administrators' [POST]>
-                   │   └ <function Argument.parse at 0x000001C9D3C88310>
-                   └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), ...
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000029EF31DA6D0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/refunds' [POST]>
+                   │   └ <function Argument.parse at 0x0000029EF29E7310>
+                   └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
     self.handle_validation_error(ValueError(error_msg), bundle_errors)
     │    │                                  │           └ False
     │    │                                  └ 'Missing required parameter in the query string'
-    │    └ <function Argument.handle_validation_error at 0x000001C9D3C88280>
-    └ Argument('AdminType', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), ...
+    │    └ <function Argument.handle_validation_error at 0x0000029EF29E7280>
+    └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
     flask_restful.abort(400, message=msg)
-    │             │                  └ {'AdminType': '管理员类型数据类型不匹配'}
-    │             └ <function abort at 0x000001C9D3C3BD30>
+    │             │                  └ {'UserID': '用户ID数据类型不匹配'}
+    │             └ <function abort at 0x0000029EF299BD30>
     └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
     original_flask_abort(http_status_code)
     │                    └ 400
-    └ <function abort at 0x000001C9D1C8B670>
+    └ <function abort at 0x0000029EF09EB670>
 
   File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
     current_app.aborter(code, *args, **kwargs)
@@ -496,30 +496,30 @@ Traceback (most recent call last):
           │    │       │      └ ()
           │    │       └ 400
           │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
-          └ <werkzeug.exceptions.Aborter object at 0x000001C9D1673970>
+          └ <werkzeug.exceptions.Aborter object at 0x0000029EF03D3970>
 
 werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2024-01-08 00:30:23.944 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-08 02:47:54.225 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
 Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
     self._bootstrap_inner()
-    │    └ <function Thread._bootstrap_inner at 0x00000217C7E24670>
-    └ <Thread(Thread-1, started daemon 38380)>
+    │    └ <function Thread._bootstrap_inner at 0x0000029ED08F4670>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
     self.run()
-    │    └ <function Thread.run at 0x00000217C7E243A0>
-    └ <Thread(Thread-1, started daemon 38380)>
+    │    └ <function Thread.run at 0x0000029ED08F43A0>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 917, in run
     self._target(*self._args, **self._kwargs)
     │    │        │    │        │    └ {}
-    │    │        │    │        └ <Thread(Thread-1, started daemon 38380)>
+    │    │        │    │        └ <Thread(Thread-1, started daemon 29964)>
     │    │        │    └ ()
-    │    │        └ <Thread(Thread-1, started daemon 38380)>
-    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x00000217EA478FD0>>
-    └ <Thread(Thread-1, started daemon 38380)>
+    │    │        └ <Thread(Thread-1, started daemon 29964)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
     super().serve_forever(poll_interval=poll_interval)
@@ -527,128 +527,128 @@ Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
     self._handle_request_noblock()
-    │    └ <function BaseServer._handle_request_noblock at 0x00000217E7957AF0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000217EA478FD0>
+    │    └ <function BaseServer._handle_request_noblock at 0x0000029EF0427AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
     self.process_request(request, client_address)
-    │    │               │        └ ('127.0.0.1', 54489)
-    │    │               └ <socket.socket fd=916, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
-    │    └ <function BaseServer.process_request at 0x00000217E7957CA0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000217EA478FD0>
+    │    │               │        └ ('127.0.0.1', 62736)
+    │    │               └ <socket.socket fd=1104, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x0000029EF0427CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
     self.finish_request(request, client_address)
-    │    │              │        └ ('127.0.0.1', 54489)
-    │    │              └ <socket.socket fd=916, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
-    │    └ <function BaseServer.finish_request at 0x00000217E7957DC0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000217EA478FD0>
+    │    │              │        └ ('127.0.0.1', 62736)
+    │    │              └ <socket.socket fd=1104, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x0000029EF0427DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
     self.RequestHandlerClass(request, client_address, self)
-    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x00000217EA478FD0>
-    │    │                   │        └ ('127.0.0.1', 54489)
-    │    │                   └ <socket.socket fd=916, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │    │                   │        └ ('127.0.0.1', 62736)
+    │    │                   └ <socket.socket fd=1104, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
     │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x00000217EA478FD0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
     self.handle()
-    │    └ <function WSGIRequestHandler.handle at 0x00000217E7B94550>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000217EA526B20>
+    │    └ <function WSGIRequestHandler.handle at 0x0000029EF0662550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2A82DF0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
     super().handle()
 
   File "D:\Python\Python39\lib\http\server.py", line 425, in handle
     self.handle_one_request()
-    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x00000217E7A82160>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x00000217EA526B20>
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000029EF0552160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2A82DF0>
 
   File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
     method()
-    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x00000217EA526B20>>
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2A82DF0>>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
     execute(self.server.app)
-    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000217EA4786A0>
-    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x00000217EA478FD0>
-    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x00000217EA526B20>
-    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000217EA56DE50>
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF2A82DF0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000029EF306B3A0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
     for data in application_iter:
-                └ <generator object DebuggedApplication.debug_application at 0x00000217EA4D2EB0>
+                └ <generator object DebuggedApplication.debug_application at 0x0000029EF3172120>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
     app_iter = self.app(environ, start_response)
-               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000217EA56DF70>
-               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=916>, 'wsgi.errors': <_io.TextIOWr...
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF306B9D0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1104>, 'wsgi.errors': <_io.TextIOW...
                │    └ <Flask 'app'>
-               └ <werkzeug.debug.DebuggedApplication object at 0x00000217EA4786A0>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
     return self.wsgi_app(environ, start_response)
-           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000217EA56DF70>
-           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=916>, 'wsgi.errors': <_io.TextIOWr...
-           │    └ <function Flask.wsgi_app at 0x00000217E80BB790>
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF306B9D0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1104>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x0000029EF0B8A790>
            └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-               │    └ <function Flask.full_dispatch_request at 0x00000217E80B8CA0>
+               │    └ <function Flask.full_dispatch_request at 0x0000029EF0B88CA0>
                └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
-         │    └ <function Flask.dispatch_request at 0x00000217E80B8C10>
+         │    └ <function Flask.dispatch_request at 0x0000029EF0B88C10>
          └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            │    │           │    │              │    │            └ {}
-           │    │           │    │              │    └ 'theaters.theaters'
-           │    │           │    │              └ <Rule '/theaters' (PUT, HEAD, OPTIONS, POST, DELETE, GET) -> theaters.theaters>
-           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x00000217E8CF88B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           │    │              │    └ 'refunds.refunds'
+           │    │           │    │              └ <Rule '/refunds' (HEAD, PUT, OPTIONS, POST, GET) -> refunds.refunds>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000029EF17C88B0>, 'apiversion.Apiversion': <function View.as_view...
            │    │           └ <Flask 'app'>
-           │    └ <function Flask.ensure_sync at 0x00000217E80B8EE0>
+           │    └ <function Flask.ensure_sync at 0x0000029EF0B88EE0>
            └ <Flask 'app'>
 
-  File "E:\code\backend\api\api_1_0\theatersResource\urls.py", line 21, in theaters
-    return TheatersOtherResource.theaters_delete()
-           │                     └ <classmethod object at 0x00000217EA3F8670>
-           └ <class 'api_1_0.theatersResource.theatersOtherResource.TheatersOtherResource'>
+  File "E:\code\backend\api\api_1_0\refundsResource\urls.py", line 19, in refunds
+    return RefundsOtherResource.refunds_post()
+           │                    └ <classmethod object at 0x0000029EF2E326D0>
+           └ <class 'api_1_0.refundsResource.refundsOtherResource.RefundsOtherResource'>
 
-> File "E:\code\backend\api\api_1_0\theatersResource\theatersOtherResource.py", line 96, in theaters_delete
+> File "E:\code\backend\api\api_1_0\refundsResource\refundsOtherResource.py", line 26, in refunds_post
     kwargs = parser.parse_args()
-             │      └ <function RequestParser.parse_args at 0x00000217E9F184C0>
-             └ <flask_restful.reqparse.RequestParser object at 0x00000217EA591DF0>
+             │      └ <function RequestParser.parse_args at 0x0000029EF29E74C0>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000029EF31D7580>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
     value, found = arg.parse(req, self.bundle_errors)
                    │   │     │    │    └ False
-                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x00000217EA591DF0>
-                   │   │     └ <Request 'http://127.0.0.1:5000/theaters' [DELETE]>
-                   │   └ <function Argument.parse at 0x00000217E9F18310>
-                   └ Argument('TheaterID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), ...
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000029EF31D7580>
+                   │   │     └ <Request 'http://127.0.0.1:5000/refunds' [POST]>
+                   │   └ <function Argument.parse at 0x0000029EF29E7310>
+                   └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
     self.handle_validation_error(ValueError(error_msg), bundle_errors)
     │    │                                  │           └ False
     │    │                                  └ 'Missing required parameter in the query string'
-    │    └ <function Argument.handle_validation_error at 0x00000217E9F18280>
-    └ Argument('TheaterID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), ...
+    │    └ <function Argument.handle_validation_error at 0x0000029EF29E7280>
+    └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
     flask_restful.abort(400, message=msg)
-    │             │                  └ {'TheaterID': '剧院ID数据类型不匹配'}
-    │             └ <function abort at 0x00000217E9ECBD30>
+    │             │                  └ {'UserID': '用户ID数据类型不匹配'}
+    │             └ <function abort at 0x0000029EF299BD30>
     └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
     original_flask_abort(http_status_code)
     │                    └ 400
-    └ <function abort at 0x00000217E7F1C670>
+    └ <function abort at 0x0000029EF09EB670>
 
   File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
     current_app.aborter(code, *args, **kwargs)
@@ -663,30 +663,30 @@ Traceback (most recent call last):
           │    │       │      └ ()
           │    │       └ 400
           │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
-          └ <werkzeug.exceptions.Aborter object at 0x00000217E7903970>
+          └ <werkzeug.exceptions.Aborter object at 0x0000029EF03D3970>
 
 werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2024-01-08 00:34:26.719 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-08 02:48:59.257 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
 Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
     self._bootstrap_inner()
-    │    └ <function Thread._bootstrap_inner at 0x0000026CE9884670>
-    └ <Thread(Thread-1, started daemon 15604)>
+    │    └ <function Thread._bootstrap_inner at 0x0000029ED08F4670>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
     self.run()
-    │    └ <function Thread.run at 0x0000026CE98843A0>
-    └ <Thread(Thread-1, started daemon 15604)>
+    │    └ <function Thread.run at 0x0000029ED08F43A0>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\threading.py", line 917, in run
     self._target(*self._args, **self._kwargs)
     │    │        │    │        │    └ {}
-    │    │        │    │        └ <Thread(Thread-1, started daemon 15604)>
+    │    │        │    │        └ <Thread(Thread-1, started daemon 29964)>
     │    │        │    └ ()
-    │    │        └ <Thread(Thread-1, started daemon 15604)>
-    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000026C8BED8FD0>>
-    └ <Thread(Thread-1, started daemon 15604)>
+    │    │        └ <Thread(Thread-1, started daemon 29964)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>>
+    └ <Thread(Thread-1, started daemon 29964)>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
     super().serve_forever(poll_interval=poll_interval)
@@ -694,128 +694,295 @@ Traceback (most recent call last):
 
   File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
     self._handle_request_noblock()
-    │    └ <function BaseServer._handle_request_noblock at 0x0000026C893B7AF0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000026C8BED8FD0>
+    │    └ <function BaseServer._handle_request_noblock at 0x0000029EF0427AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
     self.process_request(request, client_address)
-    │    │               │        └ ('127.0.0.1', 54716)
-    │    │               └ <socket.socket fd=1072, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
-    │    └ <function BaseServer.process_request at 0x0000026C893B7CA0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000026C8BED8FD0>
+    │    │               │        └ ('127.0.0.1', 62802)
+    │    │               └ <socket.socket fd=1068, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x0000029EF0427CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
     self.finish_request(request, client_address)
-    │    │              │        └ ('127.0.0.1', 54716)
-    │    │              └ <socket.socket fd=1072, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
-    │    └ <function BaseServer.finish_request at 0x0000026C893B7DC0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000026C8BED8FD0>
+    │    │              │        └ ('127.0.0.1', 62802)
+    │    │              └ <socket.socket fd=1068, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x0000029EF0427DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
     self.RequestHandlerClass(request, client_address, self)
-    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000026C8BED8FD0>
-    │    │                   │        └ ('127.0.0.1', 54716)
-    │    │                   └ <socket.socket fd=1072, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │    │                   │        └ ('127.0.0.1', 62802)
+    │    │                   └ <socket.socket fd=1068, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
     │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000026C8BED8FD0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
 
   File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
     self.handle()
-    │    └ <function WSGIRequestHandler.handle at 0x0000026C895F4550>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026C8BF421C0>
+    │    └ <function WSGIRequestHandler.handle at 0x0000029EF0662550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF31D9B80>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
     super().handle()
 
   File "D:\Python\Python39\lib\http\server.py", line 425, in handle
     self.handle_one_request()
-    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000026C894E2160>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026C8BF421C0>
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000029EF0552160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF31D9B80>
 
   File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
     method()
-    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000026C8BF421C0>>
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF31D9B80>>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
     execute(self.server.app)
-    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000026C8BED86A0>
-    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000026C8BED8FD0>
-    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000026C8BF421C0>
-    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000026C8BFCDCA0>
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000029EF2F48FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000029EF31D9B80>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000029EF319A820>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
     for data in application_iter:
-                └ <generator object DebuggedApplication.debug_application at 0x0000026C8BF32E40>
+                └ <generator object DebuggedApplication.debug_application at 0x0000029EF31489E0>
 
   File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
     app_iter = self.app(environ, start_response)
-               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026C8BFCDEE0>
-               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1072>, 'wsgi.errors': <_io.TextIOW...
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF319AEE0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1068>, 'wsgi.errors': <_io.TextIOW...
                │    └ <Flask 'app'>
-               └ <werkzeug.debug.DebuggedApplication object at 0x0000026C8BED86A0>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000029EF2F486A0>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
     return self.wsgi_app(environ, start_response)
-           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000026C8BFCDEE0>
-           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1072>, 'wsgi.errors': <_io.TextIOW...
-           │    └ <function Flask.wsgi_app at 0x0000026C89B1B790>
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000029EF319AEE0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1068>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x0000029EF0B8A790>
            └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
-               │    └ <function Flask.full_dispatch_request at 0x0000026C89B18CA0>
+               │    └ <function Flask.full_dispatch_request at 0x0000029EF0B88CA0>
                └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
     rv = self.dispatch_request()
-         │    └ <function Flask.dispatch_request at 0x0000026C89B18C10>
+         │    └ <function Flask.dispatch_request at 0x0000029EF0B88C10>
          └ <Flask 'app'>
 
   File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
            │    │           │    │              │    │            └ {}
-           │    │           │    │              │    └ 'theaters.theaters'
-           │    │           │    │              └ <Rule '/theaters' (POST, HEAD, GET, OPTIONS, DELETE, PUT) -> theaters.theaters>
-           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000026C8A7588B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           │    │              │    └ 'refunds.refunds'
+           │    │           │    │              └ <Rule '/refunds' (HEAD, PUT, OPTIONS, POST, GET) -> refunds.refunds>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000029EF17C88B0>, 'apiversion.Apiversion': <function View.as_view...
            │    │           └ <Flask 'app'>
-           │    └ <function Flask.ensure_sync at 0x0000026C89B18EE0>
+           │    └ <function Flask.ensure_sync at 0x0000029EF0B88EE0>
            └ <Flask 'app'>
 
-  File "E:\code\backend\api\api_1_0\theatersResource\urls.py", line 21, in theaters
-    return TheatersOtherResource.theaters_delete()
-           │                     └ <classmethod object at 0x0000026C8BE58670>
-           └ <class 'api_1_0.theatersResource.theatersOtherResource.TheatersOtherResource'>
+  File "E:\code\backend\api\api_1_0\refundsResource\urls.py", line 19, in refunds
+    return RefundsOtherResource.refunds_post()
+           │                    └ <classmethod object at 0x0000029EF2E326D0>
+           └ <class 'api_1_0.refundsResource.refundsOtherResource.RefundsOtherResource'>
 
-> File "E:\code\backend\api\api_1_0\theatersResource\theatersOtherResource.py", line 96, in theaters_delete
+> File "E:\code\backend\api\api_1_0\refundsResource\refundsOtherResource.py", line 26, in refunds_post
     kwargs = parser.parse_args()
-             │      └ <function RequestParser.parse_args at 0x0000026C8B9784C0>
-             └ <flask_restful.reqparse.RequestParser object at 0x0000026C8BFA7C70>
+             │      └ <function RequestParser.parse_args at 0x0000029EF29E74C0>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000029EF31C51C0>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
     value, found = arg.parse(req, self.bundle_errors)
                    │   │     │    │    └ False
-                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000026C8BFA7C70>
-                   │   │     └ <Request 'http://127.0.0.1:5000/theaters?TheaterID=2024010522520642' [DELETE]>
-                   │   └ <function Argument.parse at 0x0000026C8B978310>
-                   └ Argument('TheaterID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ...
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000029EF31C51C0>
+                   │   │     └ <Request 'http://127.0.0.1:5000/refunds' [POST]>
+                   │   └ <function Argument.parse at 0x0000029EF29E7310>
+                   └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
+    self.handle_validation_error(ValueError(error_msg), bundle_errors)
+    │    │                                  │           └ False
+    │    │                                  └ 'Missing required parameter in the query string'
+    │    └ <function Argument.handle_validation_error at 0x0000029EF29E7280>
+    └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=args, type="<class 'str'>", choices=(), act...
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
+    flask_restful.abort(400, message=msg)
+    │             │                  └ {'UserID': '用户ID数据类型不匹配'}
+    │             └ <function abort at 0x0000029EF299BD30>
+    └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+    │                    └ 400
+    └ <function abort at 0x0000029EF09EB670>
+
+  File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+    │                   │      │       └ {}
+    │                   │      └ ()
+    │                   └ 400
+    └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+          │    │       │      │       └ {}
+          │    │       │      └ ()
+          │    │       └ 400
+          │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
+          └ <werkzeug.exceptions.Aborter object at 0x0000029EF03D3970>
+
+werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-08 02:51:07.335 | ERROR    | utils.loggings:exception:40 - 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x0000025AC3A84670>
+    └ <Thread(Thread-1, started daemon 21052)>
+
+  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x0000025AC3A843A0>
+    └ <Thread(Thread-1, started daemon 21052)>
+
+  File "D:\Python\Python39\lib\threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 21052)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1, started daemon 21052)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000025AE60D8FD0>>
+    └ <Thread(Thread-1, started daemon 21052)>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x0000025AE35B7AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025AE60D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 62930)
+    │    │               └ <socket.socket fd=984, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.process_request at 0x0000025AE35B7CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025AE60D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 62930)
+    │    │              └ <socket.socket fd=984, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <function BaseServer.finish_request at 0x0000025AE35B7DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025AE60D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000025AE60D8FD0>
+    │    │                   │        └ ('127.0.0.1', 62930)
+    │    │                   └ <socket.socket fd=984, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=(...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025AE60D8FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x0000025AE37F3550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000025AE6223220>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000025AE36E2160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000025AE6223220>
+
+  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000025AE6223220>>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x0000025AE60D86A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000025AE60D8FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000025AE6223220>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000025AE624BCA0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x0000025AE6167EB0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000025AE624BF70>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=984>, 'wsgi.errors': <_io.TextIOWr...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x0000025AE60D86A0>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000025AE624BF70>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=984>, 'wsgi.errors': <_io.TextIOWr...
+           │    └ <function Flask.wsgi_app at 0x0000025AE3D1B790>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x0000025AE3D18CA0>
+               └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x0000025AE3D18C10>
+         └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {}
+           │    │           │    │              │    └ 'refunds.refunds'
+           │    │           │    │              └ <Rule '/refunds' (OPTIONS, GET, POST, PUT, HEAD) -> refunds.refunds>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000025AE49588B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x0000025AE3D18EE0>
+           └ <Flask 'app'>
+
+  File "E:\code\backend\api\api_1_0\refundsResource\urls.py", line 19, in refunds
+    return RefundsOtherResource.refunds_post()
+           │                    └ <classmethod object at 0x0000025AE5FC26D0>
+           └ <class 'api_1_0.refundsResource.refundsOtherResource.RefundsOtherResource'>
+
+> File "E:\code\backend\api\api_1_0\refundsResource\refundsOtherResource.py", line 26, in refunds_post
+    kwargs = parser.parse_args()
+             │      └ <function RequestParser.parse_args at 0x0000025AE5B784C0>
+             └ <flask_restful.reqparse.RequestParser object at 0x0000025AE624F610>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 328, in parse_args
+    value, found = arg.parse(req, self.bundle_errors)
+                   │   │     │    │    └ False
+                   │   │     │    └ <flask_restful.reqparse.RequestParser object at 0x0000025AE624F610>
+                   │   │     └ <Request 'http://127.0.0.1:5000/refunds' [POST]>
+                   │   └ <function Argument.parse at 0x0000025AE5B78310>
+                   └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 246, in parse
     self.handle_validation_error(ValueError(error_msg), bundle_errors)
     │    │                                  │           └ False
     │    │                                  └ 'Missing required parameter in the post body'
-    │    └ <function Argument.handle_validation_error at 0x0000026C8B978280>
-    └ Argument('TheaterID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), ...
+    │    └ <function Argument.handle_validation_error at 0x0000025AE5B78280>
+    └ Argument('UserID', default=None, dest=None, required=True, ignore=False, location=form, type="<class 'str'>", choices=(), act...
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\reqparse.py", line 173, in handle_validation_error
     flask_restful.abort(400, message=msg)
-    │             │                  └ {'TheaterID': '剧院ID数据类型不匹配'}
-    │             └ <function abort at 0x0000026C8A95BD30>
+    │             │                  └ {'UserID': '用户ID数据类型不匹配'}
+    │             └ <function abort at 0x0000025AE4B5BD30>
     └ <module 'flask_restful' from 'D:\\Python\\Python39\\lib\\site-packages\\flask_restful\\__init__.py'>
 
   File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 32, in abort
     original_flask_abort(http_status_code)
     │                    └ 400
-    └ <function abort at 0x0000026C8997C670>
+    └ <function abort at 0x0000025AE3B7C670>
 
   File "D:\Python\Python39\lib\site-packages\flask\helpers.py", line 277, in abort
     current_app.aborter(code, *args, **kwargs)
@@ -830,164 +997,6 @@ Traceback (most recent call last):
           │    │       │      └ ()
           │    │       └ 400
           │    └ {400: <class 'werkzeug.exceptions.BadRequest'>, 401: <class 'werkzeug.exceptions.Unauthorized'>, 403: <class 'werkzeug.except...
-          └ <werkzeug.exceptions.Aborter object at 0x0000026C89363970>
+          └ <werkzeug.exceptions.Aborter object at 0x0000025AE3564970>
 
 werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
-2024-01-08 00:35:23.731 | ERROR    | utils.loggings:exception:40 - 'NoneType' object has no attribute '__table__'
-Traceback (most recent call last):
-
-  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
-    self._bootstrap_inner()
-    │    └ <function Thread._bootstrap_inner at 0x0000018546BD4670>
-    └ <Thread(Thread-1, started daemon 4056)>
-
-  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
-    self.run()
-    │    └ <function Thread.run at 0x0000018546BD43A0>
-    └ <Thread(Thread-1, started daemon 4056)>
-
-  File "D:\Python\Python39\lib\threading.py", line 917, in run
-    self._target(*self._args, **self._kwargs)
-    │    │        │    │        │    └ {}
-    │    │        │    │        └ <Thread(Thread-1, started daemon 4056)>
-    │    │        │    └ ()
-    │    │        └ <Thread(Thread-1, started daemon 4056)>
-    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x0000018569228FD0>>
-    └ <Thread(Thread-1, started daemon 4056)>
-
-  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
-    super().serve_forever(poll_interval=poll_interval)
-                                        └ 0.5
-
-  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
-    self._handle_request_noblock()
-    │    └ <function BaseServer._handle_request_noblock at 0x0000018566707AF0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018569228FD0>
-
-  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
-    self.process_request(request, client_address)
-    │    │               │        └ ('127.0.0.1', 54851)
-    │    │               └ <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
-    │    └ <function BaseServer.process_request at 0x0000018566707CA0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018569228FD0>
-
-  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
-    self.finish_request(request, client_address)
-    │    │              │        └ ('127.0.0.1', 54851)
-    │    │              └ <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
-    │    └ <function BaseServer.finish_request at 0x0000018566707DC0>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018569228FD0>
-
-  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
-    self.RequestHandlerClass(request, client_address, self)
-    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x0000018569228FD0>
-    │    │                   │        └ ('127.0.0.1', 54851)
-    │    │                   └ <socket.socket fd=1092, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
-    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
-    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018569228FD0>
-
-  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
-    self.handle()
-    │    └ <function WSGIRequestHandler.handle at 0x0000018566943550>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000018569266E20>
-
-  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
-    super().handle()
-
-  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
-    self.handle_one_request()
-    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x0000018566833160>
-    └ <werkzeug.serving.WSGIRequestHandler object at 0x0000018569266E20>
-
-  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
-    method()
-    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x0000018569266E20>>
-
-  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
-    execute(self.server.app)
-    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x00000185692286A0>
-    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x0000018569228FD0>
-    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x0000018569266E20>
-    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000018569359C10>
-
-  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
-    for data in application_iter:
-                └ <generator object DebuggedApplication.debug_application at 0x0000018569282E40>
-
-  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
-    app_iter = self.app(environ, start_response)
-               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000185693595E0>
-               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1092>, 'wsgi.errors': <_io.TextIOW...
-               │    └ <Flask 'app'>
-               └ <werkzeug.debug.DebuggedApplication object at 0x00000185692286A0>
-
-  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
-    return self.wsgi_app(environ, start_response)
-           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000185693595E0>
-           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1092>, 'wsgi.errors': <_io.TextIOW...
-           │    └ <function Flask.wsgi_app at 0x0000018566E6B790>
-           └ <Flask 'app'>
-
-  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-               │    └ <function Flask.full_dispatch_request at 0x0000018566E68CA0>
-               └ <Flask 'app'>
-
-  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-         │    └ <function Flask.dispatch_request at 0x0000018566E68C10>
-         └ <Flask 'app'>
-
-  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-           │    │           │    │              │    │            └ {}
-           │    │           │    │              │    └ 'orders.Orders'
-           │    │           │    │              └ <Rule '/Orders' (DELETE, HEAD, PUT, OPTIONS, POST, GET) -> orders.Orders>
-           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x0000018567AA88B0>, 'apiversion.Apiversion': <function View.as_view...
-           │    │           └ <Flask 'app'>
-           │    └ <function Flask.ensure_sync at 0x0000018566E68EE0>
-           └ <Flask 'app'>
-
-  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
-    resp = resource(*args, **kwargs)
-           │         │       └ {}
-           │         └ ()
-           └ <function View.as_view.<locals>.view at 0x0000018569136670>
-
-  File "D:\Python\Python39\lib\site-packages\flask\views.py", line 109, in view
-    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
-           │                       │    │                   └ {}
-           │                       │    └ <function Resource.dispatch_request at 0x0000018568C9B5E0>
-           │                       └ <api_1_0.ordersResource.ordersResource.OrdersResource object at 0x0000018569385DF0>
-           └ <Flask 'app'>
-
-  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
-    resp = meth(*args, **kwargs)
-           │     │       └ {}
-           │     └ ()
-           └ <bound method OrdersResource.get of <class 'api_1_0.ordersResource.ordersResource.OrdersResource'>>
-
-  File "E:\code\backend\api\api_1_0\ordersResource\ordersResource.py", line 43, in get
-    res = OrdersController.get(**kwargs)
-          │                │     └ {'Page': '4'}
-          │                └ <classmethod object at 0x00000185691375B0>
-          └ <class 'controller.ordersController.OrdersController'>
-
-> File "E:\code\backend\api\controller\ordersController.py", line 78, in get
-    results = commons.query_to_dict(orders_info)
-              │       │             └ [<OrdersController 2024010702307128>, <OrdersController 2024010702312569>, <OrdersController 2024010702326481>, <OrdersContro...
-              │       └ <function query_to_dict at 0x0000018568CC8D30>
-              └ <module 'utils.commons' from 'E:\\code\\backend\\api\\utils\\commons.py'>
-
-  File "E:\code\backend\api\utils\commons.py", line 55, in query_to_dict
-    dit = dict((g[0], g[1]) for g in gen)
-                                     └ <generator object model_to_dict at 0x00000185692F2900>
-
-  File "E:\code\backend\api\utils\commons.py", line 55, in <genexpr>
-    dit = dict((g[0], g[1]) for g in gen)
-
-  File "E:\code\backend\api\utils\commons.py", line 88, in model_to_dict
-    for col in model.__table__.columns:
-               └ None
-
-AttributeError: 'NoneType' object has no attribute '__table__'

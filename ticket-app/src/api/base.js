@@ -15,7 +15,8 @@ const base = {
     selectRefund:"/Refunds",
     selectTheater:"/Theaters",
     deleteTheater:"/theaters",
-    searchTheater:"/theaters"
+    searchTheater:"/theaters",
+    refundOrder:"/refunds",
 }
 
 
