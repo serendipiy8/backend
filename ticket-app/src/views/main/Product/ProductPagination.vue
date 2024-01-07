@@ -1,22 +1,30 @@
 <template>
-    <div>
-      <el-pagination layout="prev, pager, next ,jumper" :total="50" :size-change="handleSizechange">
+  <div>
+    <el-pagination layout="prev, pager, next ,jumper" :total="100" @size-change="handleSizechange"
+      @current-change="handleCurrentChange" :current-page.sync="currentPage">
 
-      </el-pagination>
-    </div>
-  </template>
+    </el-pagination>
+  </div>
+</template>
   
-  <script>
-  
-  export default {
-    components: {
+<script>
+
+export default {
+  components: {
+  },
+  data() {
+    return {
+      currentPage: 1
+    }
+  },
+  methods: {
+    handleSizechange() {
     },
-    data() {
-      return {}
-    },
+    handleCurrentChange(val) {
+      console.log(val)
+    }
   }
-  </script>
+}
+</script>
   
-  <style>
-  
-  </style>
+<style></style>

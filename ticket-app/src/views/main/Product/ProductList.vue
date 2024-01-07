@@ -13,14 +13,23 @@
 export default {
     data() {
         return {
-            tableData: []
+            tableData: [],
+            Form: {
+                UserID: "0",
+            },
+            count: 0,
+            page: 1,
         }
     },
     mounted() {
-        this.$api.selectOrder().then(res => {
+        console.log(this.Form)
+        this.$api.selectOrder(this.From).then(res => {
             console.log(res.data)
-            if(res.data.code == 2000){
+            if (res.data.code == 2000) {
                 this.tableData = res.data.data
+                this.count = res.data.totalCount
+                this.page = res.data.totalPage
+                console.log(this.page)
             }
         })
     },
