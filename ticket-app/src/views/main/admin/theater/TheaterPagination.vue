@@ -27,16 +27,12 @@ export default {
     // ...mapGetters('login', ['getUserID']),
     // ...mapState('login', ['user']),
   },
-  methods: {
-    handleSizechange() {
-    },
-    handleCurrentChange(val) {
-      // console.log(val)
-      eventBus.emit('changePage', val)
-    },
-  },
   mounted() {
     // this.Form.UserID = this.getUserID;
+    const onAddSuccessHandler = this.onAddSuccessHandler;
+    const deleteSuccessHandler = this.deleteSuccessHandler;
+    eventBus.on("onAddSuccess", onAddSuccessHandler);
+    eventBus.on("deleteSuccess", deleteSuccessHandler);
     this.$api.selectTheater(this.Form).then(res => {
       console.log(res.data)
       if (res.data.code == 2000) {
@@ -44,7 +40,33 @@ export default {
         this.count = res.data.totalCount
       }
     })
-  }
+  },
+  methods: {
+    handleSizechange() {
+    },
+    handleCurrentChange(val) {
+      // console.log(val)
+      eventBus.emit('changePage', val)
+    },
+    onAddSuccessHandler() {
+      this.$api.selectTheater(this.Form).then(res => {
+        console.log(res.data)
+        if (res.data.code == 2000) {
+          this.total = res.data.totalPage * 10
+          this.count = res.data.totalCount
+        }
+      })
+    },
+    deleteSuccessHandler() {
+      this.$api.selectTheater(this.Form).then(res => {
+        console.log(res.data)
+        if (res.data.code == 2000) {
+          this.total = res.data.totalPage * 10
+          this.count = res.data.totalCount
+        }
+      })
+    }
+  },
 }
 </script>
   

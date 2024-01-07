@@ -31,6 +31,12 @@ const api = {
     refundOrder(params) {
         return axios.post(base.baseUrl + base.refundOrder, params)
     },
+    addTheater(params) {
+        return axios.post(base.baseUrl + base.addTheater, params)
+    },
+    editorTheator(params) {
+        return axios.put(base.baseUrl + base.editorTheator, params)
+    },
 }
 
 export default api

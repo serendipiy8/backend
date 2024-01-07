@@ -90,6 +90,14 @@ const routes = [
       name: 'AdminOrder',
       component: () => import("../views/main/admin/order/AdminOrder.vue")
     },
+    {
+      path: 'adminmanager',
+      name: 'AdminManager',
+      component: () => import("../views/main/admin/manage/AdminManage.vue"),
+      meta: {
+        requireP: true // 标记需要级别
+      }
+    },
     ]
   },
   {

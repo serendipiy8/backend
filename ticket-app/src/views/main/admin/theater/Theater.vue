@@ -1,21 +1,27 @@
 <template>
     <div class="order">
-        <ThraterHeader></ThraterHeader>
+        <TheaterHeader></TheaterHeader>
         <TheaterList></TheaterList>
         <TheaterPagination></TheaterPagination>
+        <TheaterAdd></TheaterAdd>
+        <TheaterEditor></TheaterEditor>
     </div>
 </template>
   
 <script>
 import TheaterPagination from './TheaterPagination.vue';
 import TheaterList from './TheaterList.vue';
-import ThraterHeader from './TheaterHeader.vue';
+import TheaterHeader from './TheaterHeader.vue';
+import TheaterAdd from './TheaterAdd.vue';
+import TheaterEditor from './TheaterEditor.vue';
 
 export default {
     components: {
         TheaterPagination,
         TheaterList,
-        ThraterHeader
+        TheaterHeader,
+        TheaterAdd,
+        TheaterEditor
     },
     data() {
         return {}

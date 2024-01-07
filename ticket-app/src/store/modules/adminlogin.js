@@ -1,7 +1,7 @@
 const getters = {
-    getAdminID: state => state.user.data.AdminID
+    getAdminID: state => state.user.data.AdminID,
+    getPermissions: state => state.user.data.Permissions
 };
-
 export default {
     namespaced: true,
     state: {

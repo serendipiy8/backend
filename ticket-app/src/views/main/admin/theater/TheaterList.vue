@@ -1,11 +1,11 @@
 <template>
     <el-table :data="tableData">
-        <el-table-column label="订单ID" width="200" prop="TheaterID"></el-table-column>
-        <el-table-column label="退票ID" width="200" prop="TheaterName"></el-table-column>
-        <el-table-column label="退票原因" width="200" prop="Address"></el-table-column>
-        <el-table-column label="退票时间" width="200" prop="Capacity"></el-table-column>
+        <el-table-column label="剧院ID" width="200" prop="TheaterID"></el-table-column>
+        <el-table-column label="剧院名称" width="200" prop="TheaterName"></el-table-column>
+        <el-table-column label="剧院地址" width="200" prop="Address"></el-table-column>
+        <el-table-column label="剧院容量" width="200" prop="Capacity"></el-table-column>
         <el-table-column label="账号ID" width="200" prop="AdminID"></el-table-column>
-        <el-table-column label="Operations">
+        <el-table-column label="操作">
             <template #default="scope">
                 <el-button size="small" @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
                 <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
@@ -45,8 +45,12 @@ export default {
         console.log(this.Form)
         const changePageHandler = this.changePageHandler;
         const searchTheaterHandler = this.searchTheaterHandler;
+        const onAddSuccessHandler = this.onAddSuccessHandler;
+        const editorSuccessHandler = this.editorSuccessHandler;
         eventBus.on("changePage", changePageHandler);
         eventBus.on("searchData", searchTheaterHandler);
+        eventBus.on("onAddSuccess", onAddSuccessHandler);
+        eventBus.on("editorSuccess", editorSuccessHandler);
         this.$api.selectTheater(this.Form).then(res => {
             console.log(res.data)
             if (res.data.code == 2000) {
@@ -58,6 +62,8 @@ export default {
         onBeforeUnmount(() => {
             eventBus.off("changePage", changePageHandler);
             eventBus.off("searchData", searchTheaterHandler);
+            eventBus.off("onAddSuccess", onAddSuccessHandler);
+            eventBus.off("editorSuccess", editorSuccessHandler);
         });
     },
     methods: {
@@ -76,17 +82,7 @@ export default {
             });
         },
         handleEdit(index, row) {
-            console.log(index, row);
-            this.$router.push({
-                path: "/admin/theater/edit",
-                query: {
-                    TheaterID: row.TheaterID,
-                    TheaterName: row.TheaterName,
-                    Address: row.Address,
-                    Capacity: row.Capacity,
-                    AdminID: row.AdminID,
-                }
-            })
+            eventBus.emit('editorEvent', row);
         },
         handleDelete(index, row) {
             this.deleteTheater.TheaterID = row.TheaterID;
@@ -106,6 +102,7 @@ export default {
                                 type: "success"
                             })
                             this.fetchData()
+                            eventBus.emit("deleteSuccess");
                         } else {
                             this.$message({
                                 message: "删除失败",
@@ -129,12 +126,17 @@ export default {
             if (Array.isArray(data)) {
                 this.tableData = data;
             } else {
-                console.log(132);
                 data = [data];
                 this.tableData = data;
                 console.log(data);
             }
         },
+        onAddSuccessHandler() {
+            this.fetchData();
+        },
+        editorSuccessHandler() {
+            this.fetchData();
+        }
     }
 }
 </script>

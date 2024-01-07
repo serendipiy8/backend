@@ -6,7 +6,7 @@
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="onSubmitSearch">查询</el-button>
-                <el-button type="primary" @click="searchTheater">添加</el-button>
+                <el-button type="primary" @click="addFormHandle">添加</el-button>
             </el-form-item>
         </el-form>
     </div>
@@ -66,7 +66,9 @@ export default {
             }
             
         },
-
+        addFormHandle() {
+            eventBus.emit('onAddEvent',true)
+        }
     }
 }
 </script>

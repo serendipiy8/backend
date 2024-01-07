@@ -6,6 +6,12 @@
         <el-table-column label="退票时间" width="200" prop="RefundTime"></el-table-column>
         <el-table-column label="账号ID" width="200" prop="UserID"></el-table-column>
         <el-table-column label="处理状态" width="200" prop="TicketStatus"></el-table-column>
+        <el-table-column label="操作">
+            <template #default="scope">
+                <el-button size="small" @click="handleCommit(scope.$index, scope.row)">确认</el-button>
+                <el-button size="small" type="danger" @click="handleRetreat(scope.$index, scope.row)">退回</el-button>
+            </template>
+        </el-table-column>
     </el-table>
 </template>
   

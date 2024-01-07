@@ -4,7 +4,7 @@
         <el-menu-item index="/admin/theater">剧院管理</el-menu-item>
         <el-menu-item index="/admin/adminrefund">退票管理</el-menu-item>
         <el-menu-item index="/admin/adminorder">订单查询</el-menu-item>
-
+        <el-menu-item index="/admin/adminmanager">管理员管理</el-menu-item>
         <div class="flex-grow" />
         <el-menu-item index="/adlogin">登录</el-menu-item>
         <el-sub-menu index="3">
@@ -17,9 +17,13 @@
   
 <script>
 import { ref } from 'vue'
-
+import { mapState, mapGetters } from 'vuex';
 const activeIndex2 = ref('1')
 export default {
+    computed: {
+        // ...mapGetters('adminlogin', ['getAdminID']),
+        ...mapState('adminlogin', ['user']),
+    },
     data() {
         return {
 
@@ -31,7 +35,7 @@ export default {
             console.log(key, keyPath);
         },
         logoutHandle() {
-            this.setAdmin({})
+            // this.setAdmin({})
             localStorage.removeItem("adminticket");
             this.$router.push("/admin")
         },
