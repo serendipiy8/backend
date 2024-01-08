@@ -98,6 +98,14 @@ const routes = [
         requireP: true // 标记需要级别
       }
     },
+    {
+      path: 'show',
+      name: 'Show',
+      component: () => import("../views/main/admin/show/AdminShow.vue"),
+      meta: {
+        requireP: true // 标记需要级别
+      }
+    },
     ]
   },
   {

@@ -9,7 +9,7 @@
       <el-form-item label="性别">
         <el-input v-model="editorForm.Gender"></el-input>
       </el-form-item>
-      <el-form-item label="信用卡号">
+      <el-form-item label="身份证号">
         <el-input v-model="editorForm.IDcard"></el-input>
       </el-form-item>
       <el-form-item label="住址">

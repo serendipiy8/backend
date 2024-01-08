@@ -1,7 +1,7 @@
 <template>
     <el-Dialog v-model="dialogVisible" title="添加票" width="50%" :before-close="handleClose">
-        <el-form label="70px" :model="addForm" ref="addForm">
-            <el-form-item label="演出场次ID">
+        <el-form label-width="70px" :model="addForm" ref="addForm">
+            <el-form-item label="演出ID">
                 <el-input v-model="addForm.ShowID"></el-input>
             </el-form-item>
             <el-form-item label="价格">

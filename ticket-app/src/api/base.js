@@ -26,6 +26,11 @@ const base = {
     editorAdmin:"/administrators",
     getUser:"/users/information",
     editorUser:"/users/information",
+    selectShow:"/Shows",
+    addShow:"/shows/adminpost",
+    searchShow:"/shows/queryShowID",
+    editorShow:"/shows/adminadvise",
+    deleteShow:"/shows/admindelete",
 }
 
 

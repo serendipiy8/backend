@@ -1,6 +1,6 @@
 <template>
     <el-Dialog v-model="dialogVisible" title="编辑剧院信息" width="50%" :before-close="handleClose">
-        <el-form label="70px" :model="editorForm" ref="addForm">
+        <el-form label-width="70px" :model="editorForm" ref="addForm">
             <el-form-item label="编辑名称">
                 <el-input v-model="editorForm.TheaterName"></el-input>
             </el-form-item>

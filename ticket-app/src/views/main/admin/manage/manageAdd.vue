@@ -1,6 +1,6 @@
 <template>
     <el-Dialog v-model="dialogVisible" title="添加票" width="50%" :before-close="handleClose">
-        <el-form label="70px" :model="addForm" ref="addForm">
+        <el-form label-width="90px" :model="addForm" ref="addForm">
             <el-form-item label="管理员账号">
                 <el-input v-model="addForm.Account"></el-input>
             </el-form-item>

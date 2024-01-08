@@ -1,14 +1,32 @@
 <template>
-    <el-Dialog v-model="dialogVisible" title="添加剧院" width="50%" :before-close="handleClose">
+    <el-Dialog v-model="dialogVisible" title="添加票" width="50%" :before-close="handleClose">
         <el-form label-width="70px" :model="addForm" ref="addForm">
-            <el-form-item label="剧院名称">
-                <el-input v-model="addForm.TheaterName"></el-input>
+            <el-form-item label="演出ID">
+                <el-input v-model="addForm.ShowID"></el-input>
             </el-form-item>
-            <el-form-item label="剧院地址">
-                <el-input v-model="addForm.Address"></el-input>
+            <el-form-item label="演出名称">
+                <el-input v-model="addForm.ShowName"></el-input>
             </el-form-item>
-            <el-form-item label="剧院容量">
-                <el-input v-model="addForm.Capacity"></el-input>
+            <el-form-item label="剧院ID">
+                <el-input v-model="addForm.TheaterID"></el-input>
+            </el-form-item>
+            <el-form-item label="演出日期">
+                <el-input v-model="addForm.ShowDate"></el-input>
+            </el-form-item>
+            <el-form-item label="演出时长">
+                <el-input v-model="addForm.Duration"></el-input>
+            </el-form-item>
+            <el-form-item label="简介">
+                <el-input v-model="addForm.Description"></el-input>
+            </el-form-item>
+            <el-form-item label="演出地点">
+                <el-input v-model="addForm.City"></el-input>
+            </el-form-item>
+            <el-form-item label="分类">
+                <el-input v-model="addForm.Category"></el-input>
+            </el-form-item>
+            <el-form-item label="图片">
+                <el-input v-model="addForm.Image"></el-input>
             </el-form-item>
         </el-form>
         <el-button @click="dialogVisible = false">取消</el-button>
@@ -51,7 +69,7 @@ export default {
         },
         sureSubmit() {
             console.log(this.addForm)
-            this.$api.addTheater(this.addForm).then((res) => {
+            this.$api.addShow(this.addForm).then((res) => {
                 console.log(res.data);
                 if (res.data.code == 2000) {
                     // this.clearForm();
@@ -74,10 +92,16 @@ export default {
         return {
             dialogVisible: false,
             addForm: {
-                TheaterName: "",
-                Address: "",
-                Capacity: "",
                 AdminID: "",
+                Category: "",
+                City: "",
+                Description: "",
+                Duration: "",
+                ShowDate: "",
+                ShowID: "",
+                ShowName: "",
+                TheaterID: "",
+                Image: "",
             }
         }
     }

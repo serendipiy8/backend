@@ -1,6 +1,7 @@
 <template>
     <el-menu :default-active="activeIndex2" class="el-menu" mode="horizontal" @select="handleSelect" router>
         <el-menu-item index="/admin/adminticket">售票管理</el-menu-item>
+        <el-menu-item index="/admin/show">演出管理</el-menu-item>
         <el-menu-item index="/admin/theater">剧院管理</el-menu-item>
         <el-menu-item index="/admin/adminrefund">退票管理</el-menu-item>
         <el-menu-item index="/admin/adminorder">订单查询</el-menu-item>

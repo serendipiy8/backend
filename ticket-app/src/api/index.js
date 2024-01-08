@@ -76,6 +76,21 @@ const api = {
     getUser(params) {
         return axios.get(base.baseUrl+ base.getUser, {params})
     },
+    selectShow(params) {
+        return axios.get(base.baseUrl+ base.selectShow, {params})
+    },
+    addShow(params) {
+        return axios.post(base.baseUrl+ base.addShow, params)
+    },
+    searchShow(params) {
+        return axios.get(base.baseUrl+ base.searchShow, {params})
+    },
+    editorShow(params) {
+        return axios.put(base.baseUrl+ base.editorShow, params)
+    },
+    deleteShow(params) {
+        return axios.delete(base.baseUrl+ base.deleteShow, {params})
+    },
 }
 
 export default api

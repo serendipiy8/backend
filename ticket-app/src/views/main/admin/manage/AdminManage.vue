@@ -31,7 +31,7 @@ export default {
   
 <style>
 .order {
-    width: 1200px;
+    width: 1100px;
     margin: 0 auto;
     padding-top: 15px;
 }
