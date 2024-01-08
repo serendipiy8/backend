@@ -1,0 +1,3673 @@
+{
+	"project": {
+		"name": "厄里倪俄斯的私有项目",
+		"description": "",
+		"details": {
+			"variable": [],
+			"servers": [
+				{
+					"server_id": "default",
+					"name": "默认服务"
+				}
+			],
+			"markList": [
+				{
+					"key": "developing",
+					"name": "开发中",
+					"color": "#3A86FF",
+					"is_default": true
+				},
+				{
+					"key": "complated",
+					"name": "已完成",
+					"color": "#2BA58F",
+					"is_default": true
+				},
+				{
+					"key": "modifying",
+					"name": "需修改",
+					"color": "#EC4646",
+					"is_default": true
+				}
+			],
+			"script": {
+				"pre_script": "",
+				"test": ""
+			},
+			"request": {
+				"query": [
+					{
+						"is_checked": "1",
+						"type": "Text",
+						"key": "",
+						"value": "",
+						"description": ""
+					}
+				],
+				"header": [
+					{
+						"is_checked": "1",
+						"type": "Text",
+						"key": "",
+						"value": "",
+						"description": ""
+					}
+				],
+				"body": [
+					{
+						"is_checked": "1",
+						"type": "Text",
+						"key": "",
+						"value": "",
+						"description": ""
+					}
+				]
+			},
+			"mock_rules": []
+		}
+	},
+	"apis": [
+		{
+			"target_type": "folder",
+			"name": "api",
+			"mark": "developing",
+			"sort": 3,
+			"tags": [],
+			"created_uuid": "UZWXL009421B",
+			"request": {
+				"description": ""
+			},
+			"children": [
+				{
+					"target_type": "folder",
+					"name": "adminfunctions",
+					"mark": "developing",
+					"sort": 8,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "get",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/adminfunctions",
+							"request": {
+								"url": "/adminfunctions",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "FunctionID",
+											"value": "2024010522294856",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "delete",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "DELETE",
+							"mock": "{}",
+							"mock_url": "/adminfunctions",
+							"request": {
+								"url": "/adminfunctions",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "FunctionID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010522318374"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "post",
+							"mark": "developing",
+							"sort": 2,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/adminfunctions",
+							"request": {
+								"url": "/adminfunctions",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Name",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "管理管理员"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Permissions",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "5"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "Get",
+							"mark": "developing",
+							"sort": 5,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Adminfunctions",
+							"request": {
+								"url": "/Adminfunctions",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": []
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "revise",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/adminfunctions",
+							"request": {
+								"url": "/adminfunctions",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "FunctionID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010522308601"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Name",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Permissions",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "4"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				},
+				{
+					"target_type": "folder",
+					"name": "theaters",
+					"mark": "developing",
+					"sort": 3,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "post",
+							"mark": "developing",
+							"sort": 2,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/theaters",
+							"request": {
+								"url": "http://127.0.0.1:5000/theaters",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TheaterName",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "宜家"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Address",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "天津市"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Capacity",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "1500"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "AdminID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "delete",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "DELETE",
+							"mock": "{}",
+							"mock_url": "/theaters",
+							"request": {
+								"url": "/theaters",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TheaterID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010522520863\nuser_info = db.session.query(\n    cls.TheaterID,\n    cls.TheaterName,\n    cls.Address,\n    cls.Capacity,\n    cls.AdminID,\n).filter(cls.TheaterID == theaterid).first()"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "Get",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Theaters",
+							"request": {
+								"url": "/Theaters",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "revise",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/theaters",
+							"request": {
+								"url": "/theaters",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TheaterID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010800483420"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TheaterName",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Address",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "上海市"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Capacity",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "query",
+							"mark": "developing",
+							"sort": 6,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/theaters",
+							"request": {
+								"url": "http://127.0.0.1:5000/theaters",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "TheaterID",
+											"value": "2024010800280196",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				},
+				{
+					"target_type": "folder",
+					"name": "administrators",
+					"mark": "developing",
+					"sort": 7,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "get",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/administrators",
+							"request": {
+								"url": "/administrators",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "AdminID",
+											"value": "2024010522377409",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "delete",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "DELETE",
+							"mock": "{}",
+							"mock_url": "/administrators",
+							"request": {
+								"url": "/administrators",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "AdminID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010522372416"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "get_all",
+							"mark": "developing",
+							"sort": 5,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Administrators",
+							"request": {
+								"url": "/Administrators",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": []
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "login",
+							"mark": "developing",
+							"sort": 6,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/administrators/login",
+							"request": {
+								"url": "127.0.0.1:5000/administrators/login",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "Account",
+											"value": "1321535",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "Password",
+											"value": "adsD",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "revise",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/administrators",
+							"request": {
+								"url": "/administrators",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "AdminID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010522377409"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "AdminType",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "普通管理员"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Account",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "1321535"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Password",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Permissions",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "4"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "post",
+							"mark": "developing",
+							"sort": 2,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/administrators",
+							"request": {
+								"url": "/administrators",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "AdminType",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "剧院管理员"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Account",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2423345"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Password",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "dasD"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Permissions",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "4"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				},
+				{
+					"target_type": "folder",
+					"name": "users",
+					"mark": "developing",
+					"sort": 1,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "information",
+							"mark": "developing",
+							"sort": 5,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/users/information",
+							"request": {
+								"url": "/users/information",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "UserID",
+											"value": "",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "register",
+							"mark": "developing",
+							"sort": 2,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/register",
+							"request": {
+								"url": "users/register",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "login",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/login",
+							"request": {
+								"url": "users/login",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "username",
+											"value": "hello1",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "password",
+											"value": "123456",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "Get",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Users",
+							"request": {
+								"url": "127.0.0.1:5000/Users",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": []
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "information",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/users/information",
+							"request": {
+								"url": "users/information",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "RealName",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "wang"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Gender",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "男"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "IDcard",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "123"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Address",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "山西省吕梁"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Account",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "123456"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "Email",
+											"value": "2085616045@qq.com",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "UserID",
+											"value": "2023120417031568",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				},
+				{
+					"target_type": "folder",
+					"name": "refunds",
+					"mark": "developing",
+					"sort": 5,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "refunds",
+							"mark": "developing",
+							"sort": 5,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/refunds",
+							"request": {
+								"url": "/refunds",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "RefundID",
+											"value": "",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "TicketStatus",
+											"value": "",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "refunds",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/refunds",
+							"request": {
+								"url": "127.0.0.1:5000/refunds",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "UserID",
+											"value": "22222",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "AdminID",
+											"value": "66666",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "RefundTime",
+											"value": "2023-4-3",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "RefundReason",
+											"value": "有时间",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "TicketStatus",
+											"value": "未处理",
+											"not_null": 1,
+											"type": "Text"
+										},
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "OrderID",
+											"value": "55555",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "refundsOrder",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/refundsOrder",
+							"request": {
+								"url": "/refundsOrder",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "OrderID",
+											"value": "55555",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "Get",
+							"mark": "developing",
+							"sort": 2,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Refunds",
+							"request": {
+								"url": "/Refunds",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "refunds",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/refunds",
+							"request": {
+								"url": "/refunds",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "RefundID",
+											"value": "2024010522443527",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				},
+				{
+					"target_type": "folder",
+					"name": "orders",
+					"mark": "developing",
+					"sort": 6,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "post",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/orders",
+							"request": {
+								"url": "127.0.0.1:5000/orders",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "UserID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "666666"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TicketID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "32434"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "PurchaseTime",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2023-5-8"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "OrderStatus",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "未支付"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Quantity",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "1"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "get",
+							"mark": "developing",
+							"sort": 2,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/orders",
+							"request": {
+								"url": "/orders",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "OrderID",
+											"value": "2024010520121520",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "queryUser",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/orders/queryUser",
+							"request": {
+								"url": "/orders/queryUser?UserID=666666",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"query": {
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "UserID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "666666"
+										}
+									]
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "Get",
+							"mark": "developing",
+							"sort": 5,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Orders",
+							"request": {
+								"url": "127.0.0.1:5000/Orders",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": []
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "refund",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/orders",
+							"request": {
+								"url": "/orders",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "OrderID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010522400628"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "OrderStatus",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "已支付"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				},
+				{
+					"target_type": "folder",
+					"name": "ticketprices",
+					"mark": "developing",
+					"sort": 2,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "revise",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/ticketprices",
+							"request": {
+								"url": "/ticketprices",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TicketID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Price",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Category",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TotalQuantity",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "RemainingQuantity",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "post",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/ticketprices",
+							"request": {
+								"url": "/ticketprices",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "22222"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Price",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "80"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Category",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "奇幻"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TotalQuantity",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "150"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "RemainingQuantity",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "120"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "showQuery",
+							"mark": "developing",
+							"sort": 5,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/TicketpricesQuery",
+							"request": {
+								"url": "/TicketpricesQuery",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "22222"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "query",
+							"mark": "developing",
+							"sort": 7,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/ticketprices",
+							"request": {
+								"url": "/ticketprices",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "TicketID",
+											"value": "2024010522520642",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "Get",
+							"mark": "developing",
+							"sort": 6,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Ticketprices",
+							"request": {
+								"url": "/Ticketprices",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": []
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "delete",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "DELETE",
+							"mock": "{}",
+							"mock_url": "/ticketprices",
+							"request": {
+								"url": "127.0.0.1:5000/ticketprices",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TicketID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010622468064"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				},
+				{
+					"target_type": "folder",
+					"name": "shows",
+					"mark": "developing",
+					"sort": 4,
+					"tags": [],
+					"created_uuid": "UZWXL009421B",
+					"request": {
+						"description": ""
+					},
+					"children": [
+						{
+							"target_type": "api",
+							"name": "admindelete",
+							"mark": "developing",
+							"sort": 6,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "DELETE",
+							"mock": "{}",
+							"mock_url": "/shows/admindelete",
+							"request": {
+								"url": "/shows/admindelete",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "adminpost",
+							"mark": "developing",
+							"sort": 4,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "POST",
+							"mock": "{}",
+							"mock_url": "/adminpost",
+							"request": {
+								"url": "shows/adminpost",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TheaterID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "123"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowName",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "梁山伯与祝英台"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Description",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "lsb zyt"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowDate",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2023-10-6"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Duration",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "200"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "AdminID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "4324"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Image",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "http://127.0.0.1:5000/shows/adminpost"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Category",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "爱情"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "City",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "天津"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "queryShowName",
+							"mark": "developing",
+							"sort": 2,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/queryShowName",
+							"request": {
+								"url": "shows/queryShowName",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowName",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "梁山伯与祝英台"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "queryITheaterID",
+							"mark": "developing",
+							"sort": 3,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/shows/queryITheaterID",
+							"request": {
+								"url": "/shows/queryITheaterID",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TheaterID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "123"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "adminadvise",
+							"mark": "developing",
+							"sort": 5,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "PUT",
+							"mock": "{}",
+							"mock_url": "/shows/adminadvise",
+							"request": {
+								"url": "/shows/adminadvise",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "2024010522478473"
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "TheaterID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowName",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Description",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "ShowDate",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Duration",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "AdminID",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Image",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "Category",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": ""
+										},
+										{
+											"description": "",
+											"is_checked": 1,
+											"key": "City",
+											"type": "Text",
+											"not_null": 1,
+											"field_type": "String",
+											"value": "上海"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "Get",
+							"mark": "developing",
+							"sort": 7,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/Shows",
+							"request": {
+								"url": "/Shows",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "",
+											"value": "",
+											"not_null": 1,
+											"type": "Text",
+											"static": true
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						},
+						{
+							"target_type": "api",
+							"name": "queryShowID",
+							"mark": "developing",
+							"sort": 1,
+							"tags": [],
+							"created_uuid": "UZWXL009421B",
+							"method": "GET",
+							"mock": "{}",
+							"mock_url": "/shows/queryShowID",
+							"request": {
+								"url": "/shows/queryShowID",
+								"description": "",
+								"event": {
+									"pre_script": "",
+									"test": ""
+								},
+								"pre_tasks": [],
+								"post_tasks": [],
+								"body": {
+									"mode": "urlencoded",
+									"parameter": [
+										{
+											"description": "",
+											"field_type": "String",
+											"is_checked": 1,
+											"key": "ShowID",
+											"value": "2024010420334213",
+											"not_null": 1,
+											"type": "Text"
+										}
+									],
+									"raw": "",
+									"raw_para": [],
+									"raw_schema": {
+										"type": "object"
+									}
+								}
+							},
+							"response": {
+								"success": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "成功",
+										"isDefault": 1,
+										"code": 200,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								},
+								"error": {
+									"raw": "",
+									"parameter": [],
+									"expect": {
+										"name": "失败",
+										"isDefault": -1,
+										"code": 404,
+										"contentType": "json",
+										"verifyType": "schema",
+										"mock": "",
+										"schema": []
+									}
+								}
+							},
+							"children": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"envs": [
+		{
+			"env_id": "-1",
+			"list": {},
+			"name": "默认环境",
+			"pre_url": "",
+			"pre_urls": {
+				"default": ""
+			}
+		},
+		{
+			"env_id": "-2",
+			"list": {},
+			"name": "Mock环境",
+			"pre_url": "https://console-mock.apipost.cn/mock/b144fc49-6a55-47f9-b15b-b0459e4839e8/",
+			"pre_urls": {
+				"default": "https://console-mock.apipost.cn/mock/b144fc49-6a55-47f9-b15b-b0459e4839e8/"
+			}
+		},
+		{
+			"env_id": "e51676d6-96a2-4946-9adc-501fd624ed56",
+			"list": {},
+			"name": "dev",
+			"pre_url": "http://39.106.37.28:5000",
+			"pre_urls": {
+				"default": "http://39.106.37.28:5000"
+			}
+		}
+	],
+	"models": []
+}
