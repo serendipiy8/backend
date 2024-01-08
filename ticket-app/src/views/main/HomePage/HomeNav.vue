@@ -5,7 +5,7 @@
             <h3>{{ product.title }}</h3>
             <ul>
                 <li v-for="(item, index) in product.list" :key="index">
-                    <a :href="item.url">{{ item.name }}</a>
+                    <router-link :to="item.url">{{ item.name }}</router-link>
                     <span v-if="item.hot" class="hot-tag">HOT</span>
                 </li>
             </ul>
@@ -36,7 +36,7 @@ export default {
                         }, {
                             id: 3,
                             name: "郎朗音乐盛典",
-                            url: "",
+                            url: "/concert/open",
                             hot: false
                         },
                     ]
@@ -47,7 +47,7 @@ export default {
                         {
                             id: 1,
                             name: "开心麻花✖百老汇2024贺岁大戏《婚礼歌手》",
-                            url: "",
+                            url: "/concert/golife",
                             hot: true
                         },
                         {
@@ -69,13 +69,13 @@ export default {
                         {
                             id: 1,
                             name: "欧阳娜娜·初星Stardust古典跨界巡回音乐会-广州站",
-                            url: "",
+                            url: "/concert/logo",
                             hot: true
                         },
                         {
                             id: 2,
                             name: "郎朗钢琴元宇宙暨郎朗钢琴盛典",
-                            url: "",
+                            url: "/concert/open",
                             hot: true
                         }, {
                             id: 3,
@@ -97,7 +97,7 @@ export default {
                         {
                             id: 2,
                             name: "永久的当下：斯蒂芬·肖尔回顾展",
-                            url: "",
+                            url: "/concert/heigh",
                             hot: false
                         }, {
                             id: 3,

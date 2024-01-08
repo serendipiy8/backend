@@ -101,7 +101,7 @@ class TicketpricesOtherResource(Resource):
 			loggings.exception(1, e)
 			return jsonify(code=RET.PARAMERR, message="参数类型不正确或缺失", error="参数类型不正确或缺失")
 
-		res = TicketpricesService.ticketprices_put(**kwargs)
+		res = TicketpricesService.ticketprices_revise(**kwargs)
 
 		if res['code'] == RET.OK:
 			return jsonify(code=res['code'], message=res['message'], data=res['data'])

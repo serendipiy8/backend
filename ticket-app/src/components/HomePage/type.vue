@@ -44,7 +44,7 @@ export default {
             console.log(data.value, index);
             this.currentIndex = index;
             this.flag = false;
-            this.$emit("type", item);
+            this.$emit("type", index);
         }
     },
 }

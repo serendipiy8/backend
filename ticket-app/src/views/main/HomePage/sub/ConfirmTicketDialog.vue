@@ -5,8 +5,8 @@
         <p>支付信息：{{ paymentInfo }}</p>
         <img :src="qrCode" alt="二维码">
       </div>
-      <button @click="handlePaymentComplete">支付完成</button>
-      <button @click="handleCancel">取消</button>
+      <el-button @click="handlePaymentComplete">支付完成</el-button>
+      <el-button @click="handleCancel">取消</el-button>
     </div>
   </template>
   

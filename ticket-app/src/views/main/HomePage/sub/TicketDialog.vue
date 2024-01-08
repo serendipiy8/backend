@@ -21,8 +21,8 @@
                 </option>
             </select>
 
-            <button @click="confirmTicket">确认</button>
-            <button @click="cancelTicket">取消</button>
+            <el-button @click="confirmTicket">确认</el-button>
+            <el-button @click="cancelTicket">取消</el-button>
         </div>
     </div>
 </template>

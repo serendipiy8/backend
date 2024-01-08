@@ -50,7 +50,7 @@ const api = {
         return axios.post(base.baseUrl + base.addTicket, params)
     },
     deleteTicket(params) {
-        return axios.delete(base.baseUrl + base.deleteTicket+'/' + {params})
+        return axios.delete(base.baseUrl + base.deleteTicket+'/' + params)
     },
     editorTicket(params) {
         return axios.put(base.baseUrl + base.editorTicket, params)

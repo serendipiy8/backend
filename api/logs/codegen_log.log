@@ -684,3 +684,681 @@ Traceback (most recent call last):
           └ <werkzeug.exceptions.Aborter object at 0x00000293C7353970>
 
 werkzeug.exceptions.BadRequest: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+2024-01-08 08:55:55.395 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+[SQL: DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s]
+[parameters: {'TicketID_1': '[objectObject]'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002392CBFA3A0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002392D001C40>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002392E89FAC0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TicketID_1': '[objectObject]'}
+    │      │       └ 'DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s'
+    │      └ <function Cursor.execute at 0x000002392E1AD4C0>
+    └ <pymysql.cursors.Cursor object at 0x000002392E8A61C0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+             │    └ <function Cursor._query at 0x000002392E1AD940>
+             └ <pymysql.cursors.Cursor object at 0x000002392E8A61C0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+    │    └ <function Connection.query at 0x000002392E1B89D0>
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002392E1B9040>
+    │    │                └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002392E1B9820>
+    └ <pymysql.connections.MySQLResult object at 0x000002392E89FCA0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002392E89FCA0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002392E1B75E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002392E89FBE0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002392E89FBE0>
+    │   └ <function raise_mysql_exception at 0x000002392E074D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Truncated incorrect DOUBLE value: '[objectObject]'"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002390C114670>
+    └ <Thread(Thread-1, started daemon 17472)>
+
+  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002390C1143A0>
+    └ <Thread(Thread-1, started daemon 17472)>
+
+  File "D:\Python\Python39\lib\threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 17472)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1, started daemon 17472)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>>
+    └ <Thread(Thread-1, started daemon 17472)>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002392BC47AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 52037)
+    │    │               └ <socket.socket fd=1056, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000002392BC47CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 52037)
+    │    │              └ <socket.socket fd=1056, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000002392BC47DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+    │    │                   │        └ ('127.0.0.1', 52037)
+    │    │                   └ <socket.socket fd=1056, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002392BE84550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002392E838A60>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002392BD72160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002392E838A60>
+
+  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002392E838A60>>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002392E7686A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002392E838A60>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002392E8698B0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002392E7C1F90>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002392E8699D0>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1056>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002392E7686A0>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002392E8699D0>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1056>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000002392C3AB790>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002392C3A8CA0>
+               └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002392C3A8C10>
+         └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'TicketID': '[object Object]'}
+           │    │           │    │              │    └ 'ticketprices.Ticketprices'
+           │    │           │    │              └ <Rule '/ticketprices/<TicketID>' (POST, HEAD, PUT, DELETE, OPTIONS, GET) -> ticketprices.Ticketprices>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002392CFE88B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002392C3A8EE0>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {'TicketID': '[object Object]'}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x000002392E6BB430>
+
+  File "D:\Python\Python39\lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           │                       │    │                   └ {'TicketID': '[object Object]'}
+           │                       │    └ <function Resource.dispatch_request at 0x000002392E1DB5E0>
+           │                       └ <api_1_0.ticketpricesResource.ticketpricesResource.TicketpricesResource object at 0x000002392E89F640>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {'TicketID': '[object Object]'}
+           │     └ ()
+           └ <bound method TicketpricesResource.delete of <class 'api_1_0.ticketpricesResource.ticketpricesResource.TicketpricesResource'>>
+
+  File "E:\code\backend\api\api_1_0\ticketpricesResource\ticketpricesResource.py", line 60, in delete
+    res = TicketpricesController.delete(**kwargs)
+          │                      │        └ {'TicketID': '[object Object]'}
+          │                      └ <classmethod object at 0x000002392E6B42B0>
+          └ <class 'controller.ticketpricesController.TicketpricesController'>
+
+> File "E:\code\backend\api\controller\ticketpricesController.py", line 119, in delete
+    res.delete()
+    │   └ <function Query.delete at 0x000002392CE45790>
+    └ <flask_sqlalchemy.query.Query object at 0x000002392E89F850>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 3181, in delete
+    result: CursorResult[Any] = self.session.execute(
+                         │      │    │       └ <function Session.execute at 0x000002392CEC8040>
+                         │      │    └ <sqlalchemy.orm.session.Session object at 0x000002392E89F610>
+                         │      └ <flask_sqlalchemy.query.Query object at 0x000002392E89F850>
+                         └ typing.Any
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x000002392CEC4F70>
+           └ <sqlalchemy.orm.session.Session object at 0x000002392E89F610>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                   │      │                 └ <classmethod object at 0x000002392CE90B50>
+                   │      └ <class 'sqlalchemy.orm.bulk_persistence.BulkORMDelete'>
+                   └ typing.Any
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\bulk_persistence.py", line 1946, in orm_execute_statement
+    return super().orm_execute_statement(
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             │    └ <function Connection.execute at 0x000002392CB414C0>
+             └ <sqlalchemy.engine.base.Connection object at 0x000002392E89FAC0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.annotation.AnnotatedDelete object at 0x000002392E89FC10>>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000002392CB41790>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002392E89FAC0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000002392CB41940>
+          └ <sqlalchemy.engine.base.Connection object at 0x000002392E89FAC0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000002392CB419D0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002392E89FAC0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000002392CB41C10>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002392E89FAC0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1292, "Truncated incorrect DOUBLE value: '[objectObject]'"), <trace...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1292, "Truncated incorrect DOUBLE value: \'[objectObject]\'")')
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002392CBFA3A0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002392D001C40>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002392E89FAC0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TicketID_1': '[objectObject]'}
+    │      │       └ 'DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s'
+    │      └ <function Cursor.execute at 0x000002392E1AD4C0>
+    └ <pymysql.cursors.Cursor object at 0x000002392E8A61C0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+             │    └ <function Cursor._query at 0x000002392E1AD940>
+             └ <pymysql.cursors.Cursor object at 0x000002392E8A61C0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+    │    └ <function Connection.query at 0x000002392E1B89D0>
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002392E1B9040>
+    │    │                └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002392E1B9820>
+    └ <pymysql.connections.MySQLResult object at 0x000002392E89FCA0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002392E89FCA0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002392E1B75E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002392E89FBE0>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002392E89FBE0>
+    │   └ <function raise_mysql_exception at 0x000002392E074D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Truncated incorrect DOUBLE value: '[objectObject]'"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+[SQL: DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s]
+[parameters: {'TicketID_1': '[objectObject]'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-01-08 08:56:53.352 | ERROR    | utils.loggings:exception:40 - (pymysql.err.OperationalError) (1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+[SQL: DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s]
+[parameters: {'TicketID_1': '[objectObject]'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002392CBFA3A0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002392D001C40>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002392EC01A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TicketID_1': '[objectObject]'}
+    │      │       └ 'DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s'
+    │      └ <function Cursor.execute at 0x000002392E1AD4C0>
+    └ <pymysql.cursors.Cursor object at 0x000002392EC06100>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+             │    └ <function Cursor._query at 0x000002392E1AD940>
+             └ <pymysql.cursors.Cursor object at 0x000002392EC06100>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+    │    └ <function Connection.query at 0x000002392E1B89D0>
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002392E1B9040>
+    │    │                └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002392E1B9820>
+    └ <pymysql.connections.MySQLResult object at 0x000002392EC01C10>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002392EC01C10>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002392E1B75E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002392EC01B50>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002392EC01B50>
+    │   └ <function raise_mysql_exception at 0x000002392E074D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Truncated incorrect DOUBLE value: '[objectObject]'"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+pymysql.err.OperationalError: (1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "D:\Python\Python39\lib\threading.py", line 937, in _bootstrap
+    self._bootstrap_inner()
+    │    └ <function Thread._bootstrap_inner at 0x000002390C114670>
+    └ <Thread(Thread-1, started daemon 17472)>
+
+  File "D:\Python\Python39\lib\threading.py", line 980, in _bootstrap_inner
+    self.run()
+    │    └ <function Thread.run at 0x000002390C1143A0>
+    └ <Thread(Thread-1, started daemon 17472)>
+
+  File "D:\Python\Python39\lib\threading.py", line 917, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {}
+    │    │        │    │        └ <Thread(Thread-1, started daemon 17472)>
+    │    │        │    └ ()
+    │    │        └ <Thread(Thread-1, started daemon 17472)>
+    │    └ <bound method BaseWSGIServer.serve_forever of <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>>
+    └ <Thread(Thread-1, started daemon 17472)>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 806, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+                                        └ 0.5
+
+  File "D:\Python\Python39\lib\socketserver.py", line 237, in serve_forever
+    self._handle_request_noblock()
+    │    └ <function BaseServer._handle_request_noblock at 0x000002392BC47AF0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 316, in _handle_request_noblock
+    self.process_request(request, client_address)
+    │    │               │        └ ('127.0.0.1', 52073)
+    │    │               └ <socket.socket fd=1204, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.process_request at 0x000002392BC47CA0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 347, in process_request
+    self.finish_request(request, client_address)
+    │    │              │        └ ('127.0.0.1', 52073)
+    │    │              └ <socket.socket fd=1204, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <function BaseServer.finish_request at 0x000002392BC47DC0>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    │    │                   │        │               └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+    │    │                   │        └ ('127.0.0.1', 52073)
+    │    │                   └ <socket.socket fd=1204, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 5000), raddr=...
+    │    └ <class 'werkzeug.serving.WSGIRequestHandler'>
+    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+
+  File "D:\Python\Python39\lib\socketserver.py", line 747, in __init__
+    self.handle()
+    │    └ <function WSGIRequestHandler.handle at 0x000002392BE84550>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002392E8383D0>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 390, in handle
+    super().handle()
+
+  File "D:\Python\Python39\lib\http\server.py", line 425, in handle
+    self.handle_one_request()
+    │    └ <function BaseHTTPRequestHandler.handle_one_request at 0x000002392BD72160>
+    └ <werkzeug.serving.WSGIRequestHandler object at 0x000002392E8383D0>
+
+  File "D:\Python\Python39\lib\http\server.py", line 413, in handle_one_request
+    method()
+    └ <bound method WSGIRequestHandler.run_wsgi of <werkzeug.serving.WSGIRequestHandler object at 0x000002392E8383D0>>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 362, in run_wsgi
+    execute(self.server.app)
+    │       │    │      └ <werkzeug.debug.DebuggedApplication object at 0x000002392E7686A0>
+    │       │    └ <werkzeug.serving.BaseWSGIServer object at 0x000002392E768FD0>
+    │       └ <werkzeug.serving.WSGIRequestHandler object at 0x000002392E8383D0>
+    └ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002392EBA9820>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    for data in application_iter:
+                └ <generator object DebuggedApplication.debug_application at 0x000002392EBEFD60>
+
+  File "D:\Python\Python39\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               │    │   │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002392EBA9D30>
+               │    │   └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1204>, 'wsgi.errors': <_io.TextIOW...
+               │    └ <Flask 'app'>
+               └ <werkzeug.debug.DebuggedApplication object at 0x000002392E7686A0>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           │    │        │        └ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002392EBA9D30>
+           │    │        └ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1204>, 'wsgi.errors': <_io.TextIOW...
+           │    └ <function Flask.wsgi_app at 0x000002392C3AB790>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               │    └ <function Flask.full_dispatch_request at 0x000002392C3A8CA0>
+               └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         │    └ <function Flask.dispatch_request at 0x000002392C3A8C10>
+         └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           │    │           │    │              │    │            └ {'TicketID': '[object Object]'}
+           │    │           │    │              │    └ 'ticketprices.Ticketprices'
+           │    │           │    │              └ <Rule '/ticketprices/<TicketID>' (POST, HEAD, PUT, DELETE, OPTIONS, GET) -> ticketprices.Ticketprices>
+           │    │           │    └ {'static': <function Flask.__init__.<locals>.<lambda> at 0x000002392CFE88B0>, 'apiversion.Apiversion': <function View.as_view...
+           │    │           └ <Flask 'app'>
+           │    └ <function Flask.ensure_sync at 0x000002392C3A8EE0>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+           │         │       └ {'TicketID': '[object Object]'}
+           │         └ ()
+           └ <function View.as_view.<locals>.view at 0x000002392E6BB430>
+
+  File "D:\Python\Python39\lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           │                       │    │                   └ {'TicketID': '[object Object]'}
+           │                       │    └ <function Resource.dispatch_request at 0x000002392E1DB5E0>
+           │                       └ <api_1_0.ticketpricesResource.ticketpricesResource.TicketpricesResource object at 0x000002392EC01520>
+           └ <Flask 'app'>
+
+  File "D:\Python\Python39\lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+           │     │       └ {'TicketID': '[object Object]'}
+           │     └ ()
+           └ <bound method TicketpricesResource.delete of <class 'api_1_0.ticketpricesResource.ticketpricesResource.TicketpricesResource'>>
+
+  File "E:\code\backend\api\api_1_0\ticketpricesResource\ticketpricesResource.py", line 60, in delete
+    res = TicketpricesController.delete(**kwargs)
+          │                      │        └ {'TicketID': '[object Object]'}
+          │                      └ <classmethod object at 0x000002392E6B42B0>
+          └ <class 'controller.ticketpricesController.TicketpricesController'>
+
+> File "E:\code\backend\api\controller\ticketpricesController.py", line 119, in delete
+    res.delete()
+    │   └ <function Query.delete at 0x000002392CE45790>
+    └ <flask_sqlalchemy.query.Query object at 0x000002392EC01700>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\query.py", line 3181, in delete
+    result: CursorResult[Any] = self.session.execute(
+                         │      │    │       └ <function Session.execute at 0x000002392CEC8040>
+                         │      │    └ <sqlalchemy.orm.session.Session object at 0x000002392EC014C0>
+                         │      └ <flask_sqlalchemy.query.Query object at 0x000002392EC01700>
+                         └ typing.Any
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x000002392CEC4F70>
+           └ <sqlalchemy.orm.session.Session object at 0x000002392EC014C0>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                   │      │                 └ <classmethod object at 0x000002392CE90B50>
+                   │      └ <class 'sqlalchemy.orm.bulk_persistence.BulkORMDelete'>
+                   └ typing.Any
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\bulk_persistence.py", line 1946, in orm_execute_statement
+    return super().orm_execute_statement(
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             │    └ <function Connection.execute at 0x000002392CB414C0>
+             └ <sqlalchemy.engine.base.Connection object at 0x000002392EC01A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.annotation.AnnotatedDelete object at 0x000002392EC01BB0>>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000002392CB41790>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002392EC01A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000002392CB41940>
+          └ <sqlalchemy.engine.base.Connection object at 0x000002392EC01A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000002392CB419D0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000002392EC01A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000002392CB41C10>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002392EC01A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ OperationalError(1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+          │                    │              └ (<class 'pymysql.err.OperationalError'>, OperationalError(1292, "Truncated incorrect DOUBLE value: '[objectObject]'"), <trace...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ OperationalError('(pymysql.err.OperationalError) (1292, "Truncated incorrect DOUBLE value: \'[objectObject]\'")')
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000002392CBFA3A0>
+    │    └ <sqlalchemy.dialects.mysql.pymysql.MySQLDialect_pymysql object at 0x000002392D001C40>
+    └ <sqlalchemy.engine.base.Connection object at 0x000002392EC01A30>
+
+  File "D:\Python\Python39\lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ {'TicketID_1': '[objectObject]'}
+    │      │       └ 'DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s'
+    │      └ <function Cursor.execute at 0x000002392E1AD4C0>
+    └ <pymysql.cursors.Cursor object at 0x000002392EC06100>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 158, in execute
+    result = self._query(query)
+             │    │      └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+             │    └ <function Cursor._query at 0x000002392E1AD940>
+             └ <pymysql.cursors.Cursor object at 0x000002392EC06100>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\cursors.py", line 325, in _query
+    conn.query(q)
+    │    │     └ "DELETE FROM ticketprices WHERE ticketprices.`TicketID` = '[objectObject]'"
+    │    └ <function Connection.query at 0x000002392E1B89D0>
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 549, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+    │    │                │    │                             └ False
+    │    │                │    └ <function Connection._read_query_result at 0x000002392E1B9040>
+    │    │                └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+    │    └ 0
+    └ <pymysql.connections.Connection object at 0x000002392E7D0340>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 779, in _read_query_result
+    result.read()
+    │      └ <function MySQLResult.read at 0x000002392E1B9820>
+    └ <pymysql.connections.MySQLResult object at 0x000002392EC01C10>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 1157, in read
+    first_packet = self.connection._read_packet()
+                   │    └ None
+                   └ <pymysql.connections.MySQLResult object at 0x000002392EC01C10>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\connections.py", line 729, in _read_packet
+    packet.raise_for_error()
+    │      └ <function MysqlPacket.raise_for_error at 0x000002392E1B75E0>
+    └ <pymysql.protocol.MysqlPacket object at 0x000002392EC01B50>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    │   │                     │    └ <member '_data' of 'MysqlPacket' objects>
+    │   │                     └ <pymysql.protocol.MysqlPacket object at 0x000002392EC01B50>
+    │   └ <function raise_mysql_exception at 0x000002392E074D30>
+    └ <module 'pymysql.err' from 'D:\\Python\\Python39\\lib\\site-packages\\pymysql\\err.py'>
+
+  File "D:\Python\Python39\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+          │          │      └ "Truncated incorrect DOUBLE value: '[objectObject]'"
+          │          └ 1292
+          └ <class 'pymysql.err.OperationalError'>
+
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (1292, "Truncated incorrect DOUBLE value: '[objectObject]'")
+[SQL: DELETE FROM ticketprices WHERE ticketprices.`TicketID` = %(TicketID_1)s]
+[parameters: {'TicketID_1': '[objectObject]'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

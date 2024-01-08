@@ -26,7 +26,7 @@
 
                 </div>
             </div>
-            <button @click="showTicketDialog">购票</button>
+            <el-button @click="showTicketDialog">购票</el-button>
             <TicketDialog :visible="ticketDialogVisible" :timerData="timerData" :selecterData="selecterData"
                 :username="username" @confirm="handleConfirmTicket" @close="handleCloseTicket">
             </TicketDialog>
