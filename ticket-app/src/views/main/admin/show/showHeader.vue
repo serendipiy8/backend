@@ -2,7 +2,7 @@
     <div class="head">
         <el-form ref="searchForm" :model="search">
             <el-form-item>
-                <el-input v-model="search.ShowID" placeholder="请输入票ID"/>
+                <el-input v-model="search.ShowID" placeholder="请输入演出ID"/>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="onSubmitSearch">查询</el-button>

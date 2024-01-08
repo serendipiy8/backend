@@ -1,4 +1,4 @@
-<template>ShowID
+<template>
     <el-Dialog v-model="dialogVisible" title="编辑票信息" width="50%" :before-close="handleClose">
         <el-form label-width="80px" :model="editorForm" ref="addForm">
             <el-form-item label="演出ID">

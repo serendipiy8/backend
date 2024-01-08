@@ -28,7 +28,7 @@ export default {
         onSubmitSearch() {
             if (this.search.TicketID == "") {
                 this.$message({
-                    message: "请输入票ID",
+                    message: "请输入ID",
                     type: "warning"
                 });
                 return;
