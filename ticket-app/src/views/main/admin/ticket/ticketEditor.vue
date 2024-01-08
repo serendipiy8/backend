@@ -1,14 +1,20 @@
 <template>
-    <el-Dialog v-model="dialogVisible" title="编辑剧院信息" width="50%" :before-close="handleClose">
+    <el-Dialog v-model="dialogVisible" title="编辑票信息" width="50%" :before-close="handleClose">
         <el-form label="70px" :model="editorForm" ref="addForm">
-            <el-form-item label="编辑名称">
-                <el-input v-model="editorForm.TheaterName"></el-input>
+            <el-form-item label="演出场次ID">
+                <el-input v-model="editorForm.ShowID"></el-input>
             </el-form-item>
-            <el-form-item label="编辑地址">
-                <el-input v-model="editorForm.Address"></el-input>
+            <el-form-item label="价格">
+                <el-input v-model="editorForm.Price"></el-input>
             </el-form-item>
-            <el-form-item label="编辑容量">
-                <el-input v-model="editorForm.Capacity"></el-input>
+            <el-form-item label="票档">
+                <el-input v-model="editorForm.Category"></el-input>
+            </el-form-item>
+            <el-form-item label="剩余数量">
+                <el-input v-model="editorForm.RemainingQuantity"></el-input>
+            </el-form-item>
+            <el-form-item label="总数量">
+                <el-input v-model="editorForm.TotalQuantity"></el-input>
             </el-form-item>
         </el-form>
         <el-button @click="dialogVisible = false">取消</el-button>
@@ -50,16 +56,18 @@ export default {
         },
         editorFormHandle(data) {
             this.dialogVisible = true;
-            this.editorForm.TheaterID = data.TheaterID;
-            this.editorForm.TheaterName = data.TheaterName;
-            this.editorForm.Address = data.Address;
-            this.editorForm.Capacity = data.Capacity;
+            this.editorForm.TicketID = data.TicketID;
+            this.editorForm.ShowID = data.ShowID;
+            this.editorForm.Price = data.Price;
+            this.editorForm.Category = data.Category;
+            this.editorForm.RemainingQuantity = data.RemainingQuantity;
+            this.editorForm.TotalQuantity = data.TotalQuantity; 
         },
         editorSubmit() {
             // this.editorForm.AdminID = this.getAdminID
             const formData = qs.stringify(this.editorForm);
             console.log(formData)
-            this.$api.editorTheator(formData, {
+            this.$api.editorTicket(formData, {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
@@ -85,10 +93,12 @@ export default {
         return {
             dialogVisible: false,
             editorForm: {
-                TheaterID: "",
-                TheaterName: "",
+                Category: "",
                 Address: "",
-                Capacity: "",
+                Price: "",
+                RemainingQuantity: "",
+                ShowID: "",
+                TotalQuantity: "",
                 // AdminID: "",
             }
         }

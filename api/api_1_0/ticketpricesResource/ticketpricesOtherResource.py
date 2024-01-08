@@ -35,7 +35,7 @@ class TicketpricesOtherResource(Resource):
 	@classmethod
 	def ticketprices_query(cls):
 		parser = reqparse.RequestParser()
-		parser.add_argument('TicketID', type=str, location='form', required=True, help='票ID数据类型不匹配')
+		parser.add_argument('TicketID', type=str, location='args', required=True, help='票ID数据类型不匹配')
 
 		try:
 			# 获取请求中参数并转换为字典对象

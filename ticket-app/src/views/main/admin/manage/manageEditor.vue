@@ -1,14 +1,17 @@
 <template>
-    <el-Dialog v-model="dialogVisible" title="编辑剧院信息" width="50%" :before-close="handleClose">
+    <el-Dialog v-model="dialogVisible" title="编辑票信息" width="50%" :before-close="handleClose">
         <el-form label="70px" :model="editorForm" ref="addForm">
-            <el-form-item label="编辑名称">
-                <el-input v-model="editorForm.TheaterName"></el-input>
+            <el-form-item label="管理员账号">
+                <el-input v-model="editorForm.Account"></el-input>
             </el-form-item>
-            <el-form-item label="编辑地址">
-                <el-input v-model="editorForm.Address"></el-input>
+            <el-form-item label="密码">
+                <el-input v-model="editorForm.Password"></el-input>
             </el-form-item>
-            <el-form-item label="编辑容量">
-                <el-input v-model="editorForm.Capacity"></el-input>
+            <el-form-item label="管理员类别">
+                <el-input v-model="editorForm.AdminType"></el-input>
+            </el-form-item>
+            <el-form-item label="权限别">
+                <el-input v-model="editorForm.Permissions"></el-input>
             </el-form-item>
         </el-form>
         <el-button @click="dialogVisible = false">取消</el-button>
@@ -50,16 +53,17 @@ export default {
         },
         editorFormHandle(data) {
             this.dialogVisible = true;
-            this.editorForm.TheaterID = data.TheaterID;
-            this.editorForm.TheaterName = data.TheaterName;
-            this.editorForm.Address = data.Address;
-            this.editorForm.Capacity = data.Capacity;
+            this.editorForm.AdminID = data.AdminID;
+            this.editorForm.Account = data.Account;
+            this.editorForm.AdminType = data.AdminType;
+            this.editorForm.Password = data.Password;
+            this.editorForm.Permissions = data.Permissions; 
         },
         editorSubmit() {
             // this.editorForm.AdminID = this.getAdminID
             const formData = qs.stringify(this.editorForm);
             console.log(formData)
-            this.$api.editorTheator(formData, {
+            this.$api.editorAdmin(formData, {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
@@ -85,11 +89,11 @@ export default {
         return {
             dialogVisible: false,
             editorForm: {
-                TheaterID: "",
-                TheaterName: "",
-                Address: "",
-                Capacity: "",
-                // AdminID: "",
+                Account: "",
+                AdminID: "",
+                AdminType: "",
+                Password: "",
+                Permissions: "",
             }
         }
     }

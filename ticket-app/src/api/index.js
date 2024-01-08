@@ -37,6 +37,39 @@ const api = {
     editorTheator(params) {
         return axios.put(base.baseUrl + base.editorTheator, params)
     },
+    commitRefund(params) {
+        return axios.put(base.baseUrl + base.commitRefund, params)
+    },
+    selectTicket(params) {
+        return axios.get(base.baseUrl + base.selectTicket, {params})
+    },
+    searchTicket(params) {
+        return axios.get(base.baseUrl + base.searchTicket, {params})
+    },
+    addTicket(params) {
+        return axios.post(base.baseUrl + base.addTicket, params)
+    },
+    deleteTicket(params) {
+        return axios.delete(base.baseUrl + base.deleteTicket+'/' + {params})
+    },
+    editorTicket(params) {
+        return axios.put(base.baseUrl + base.editorTicket, params)
+    },
+    selectAdmin(params) {
+        return axios.get(base.baseUrl + base.selectAdmin, {params})
+    },
+    deleteAdmin(params) {
+        return axios.delete(base.baseUrl + base.deleteAdmin, {params})
+    },
+    addAdmin(params) {
+        return axios.post(base.baseUrl + base.addAdmin, params)
+    },
+    searchAdmin(params) {
+        return axios.get(base.baseUrl + base.searchAdmin, {params})
+    },
+    editorAdmin(params) {
+        return axios.put(base.baseUrl + base.editor, params)
+    },
 }
 
 export default api

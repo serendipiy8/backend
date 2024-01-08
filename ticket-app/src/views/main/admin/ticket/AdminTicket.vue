@@ -1,13 +1,27 @@
 <template>
-    <div>
-        售票管理
+    <div class="order">
+        <ticketHeader></ticketHeader>
+        <ticketList></ticketList>
+        <ticketPagination></ticketPagination>
+        <ticketAdd></ticketAdd>
+        <ticketEditor></ticketEditor>
     </div>
 </template>
   
 <script>
+import ticketPagination from './ticketPagination.vue';
+import ticketList from './ticketList.vue';
+import ticketHeader from './ticketHeader.vue';
+import ticketAdd from './ticketAdd.vue';
+import ticketEditor from './ticketEditor.vue';
 
 export default {
     components: {
+        ticketPagination,
+        ticketList,
+        ticketHeader,
+        ticketAdd,
+        ticketEditor
     },
     data() {
         return {}
@@ -15,4 +29,10 @@ export default {
 }
 </script>
   
-<style></style>
+<style>
+.order {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+</style>

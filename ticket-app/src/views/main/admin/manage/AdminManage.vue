@@ -1,16 +1,38 @@
 <template>
-    <div>
-        guanli
+    <div class="order">
+        <manageHeader></manageHeader>
+        <manageList></manageList>
+        <managePagination></managePagination>
+        <manageAdd></manageAdd>
+        <manageEditor></manageEditor>
     </div>
 </template>
-
+  
 <script>
+import managePagination from './managePagination.vue';
+import manageList from './manageList.vue';
+import manageHeader from './manageHeader.vue';
+import manageAdd from './manageAdd.vue';
+import manageEditor from './manageEditor.vue';
+
 export default {
-    name: 'TheaterAdd',
-    
+    components: {
+        managePagination,
+        manageList,
+        manageHeader,
+        manageAdd,
+        manageEditor
+    },
+    data() {
+        return {}
+    },
 }
 </script>
-
-<style scoped>
-
+  
+<style>
+.order {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 15px;
+}
 </style>

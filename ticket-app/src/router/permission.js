@@ -18,7 +18,8 @@ router.beforeEach((to, from, next) => {
       console.log('Token not found')
       next({ path: "/login" });
     }
-  } else if (isAdminManagerRoute && Permissions != 5) {
+  }
+  else if (isAdminManagerRoute && Permissions != 5) {
     console.log('Permissions', store.state.adminlogin.user.data.Permissions);
     // console.log('Permissions', Permissions);
     console.log('AdminManager权限不足');
