@@ -34,7 +34,7 @@ export default {
         },
 
         logoutHandle() {
-            this.setUser({})
+            // this.setUser({})
             localStorage.removeItem("ticket");
             this.$store.dispatch('logout');
             this.$router.push("/login")

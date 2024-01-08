@@ -23,7 +23,9 @@ const base = {
     deleteAdmin:"/administrators",
     searchAdmin:"/administrators",
     addAdmin:"/administrators",
-    editor:"/administrators",
+    editorAdmin:"/administrators",
+    getUser:"/users/information",
+    editorUser:"/users/information",
 }
 
 

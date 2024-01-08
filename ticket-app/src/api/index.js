@@ -68,7 +68,13 @@ const api = {
         return axios.get(base.baseUrl + base.searchAdmin, {params})
     },
     editorAdmin(params) {
-        return axios.put(base.baseUrl + base.editor, params)
+        return axios.put(base.baseUrl + base.editorAdmin, params)
+    },
+    editorUser(params) {
+        return axios.put(base.baseUrl + base.editorUser, params)
+    },
+    getUser(params) {
+        return axios.get(base.baseUrl+ base.getUser, {params})
     },
 }
 

@@ -10,7 +10,7 @@
             <el-form-item label="管理员类别">
                 <el-input v-model="editorForm.AdminType"></el-input>
             </el-form-item>
-            <el-form-item label="权限别">
+            <el-form-item label="权限">
                 <el-input v-model="editorForm.Permissions"></el-input>
             </el-form-item>
         </el-form>
@@ -31,7 +31,7 @@ const qs = require('qs');
 export default {
     computed: {
         ...mapGetters('adminlogin', ['getAdminID']),
-        ...mapState('adminogin', ['user']),
+        ...mapState('adminlogin', ['user']),
     },
     mounted() {
         const editorFormHandle = this.editorFormHandle;
@@ -73,12 +73,12 @@ export default {
                     this.dialogVisible = false;
                     eventBus.emit("editorSuccess");
                     this.$message({
-                        message: "添加成功",
+                        message: "编辑成功",
                         type: "success"
                     });
                 } else {
                     this.$message({
-                        message: "添加失败",
+                        message: "编辑失败",
                         type: "error"
                     });
                 }
